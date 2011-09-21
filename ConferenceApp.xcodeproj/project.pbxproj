@@ -1,0 +1,273 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		88675A851429B713003A42E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A841429B713003A42E1 /* UIKit.framework */; };
+		88675A871429B713003A42E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A861429B713003A42E1 /* Foundation.framework */; };
+		88675A891429B713003A42E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A881429B713003A42E1 /* CoreGraphics.framework */; };
+		88675A8F1429B713003A42E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88675A8D1429B713003A42E1 /* InfoPlist.strings */; };
+		88675A911429B713003A42E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88675A901429B713003A42E1 /* main.m */; };
+		88675A951429B713003A42E1 /* ConferenceAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88675A941429B713003A42E1 /* ConferenceAppAppDelegate.m */; };
+		88675A981429B713003A42E1 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88675A961429B713003A42E1 /* MainWindow.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		88675A801429B713003A42E1 /* ConferenceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConferenceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		88675A841429B713003A42E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		88675A861429B713003A42E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		88675A881429B713003A42E1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		88675A8C1429B713003A42E1 /* ConferenceApp-Info.plist */ = {isa = PBXFileReference; path = "ConferenceApp-Info.plist"; sourceTree = "<group>"; };
+		88675A8E1429B713003A42E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		88675A901429B713003A42E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		88675A921429B713003A42E1 /* ConferenceApp-Prefix.pch */ = {isa = PBXFileReference; path = "ConferenceApp-Prefix.pch"; sourceTree = "<group>"; };
+		88675A931429B713003A42E1 /* ConferenceAppAppDelegate.h */ = {isa = PBXFileReference; path = ConferenceAppAppDelegate.h; sourceTree = "<group>"; };
+		88675A941429B713003A42E1 /* ConferenceAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConferenceAppAppDelegate.m; sourceTree = "<group>"; };
+		88675A971429B713003A42E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88675A7D1429B713003A42E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88675A851429B713003A42E1 /* UIKit.framework in Frameworks */,
+				88675A871429B713003A42E1 /* Foundation.framework in Frameworks */,
+				88675A891429B713003A42E1 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88675A751429B713003A42E1 = {
+			isa = PBXGroup;
+			children = (
+				88675A8A1429B713003A42E1 /* ConferenceApp */,
+				88675A831429B713003A42E1 /* Frameworks */,
+				88675A811429B713003A42E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		88675A811429B713003A42E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88675A801429B713003A42E1 /* ConferenceApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		88675A831429B713003A42E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				88675A841429B713003A42E1 /* UIKit.framework */,
+				88675A861429B713003A42E1 /* Foundation.framework */,
+				88675A881429B713003A42E1 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		88675A8A1429B713003A42E1 /* ConferenceApp */ = {
+			isa = PBXGroup;
+			children = (
+				88675A931429B713003A42E1 /* ConferenceAppAppDelegate.h */,
+				88675A941429B713003A42E1 /* ConferenceAppAppDelegate.m */,
+				88675A961429B713003A42E1 /* MainWindow.xib */,
+				88675A8B1429B713003A42E1 /* Supporting Files */,
+			);
+			path = ConferenceApp;
+			sourceTree = "<group>";
+		};
+		88675A8B1429B713003A42E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				88675A8C1429B713003A42E1 /* ConferenceApp-Info.plist */,
+				88675A8D1429B713003A42E1 /* InfoPlist.strings */,
+				88675A901429B713003A42E1 /* main.m */,
+				88675A921429B713003A42E1 /* ConferenceApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		88675A7F1429B713003A42E1 /* ConferenceApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 88675A9B1429B713003A42E1 /* Build configuration list for PBXNativeTarget "ConferenceApp" */;
+			buildPhases = (
+				88675A7C1429B713003A42E1 /* Sources */,
+				88675A7D1429B713003A42E1 /* Frameworks */,
+				88675A7E1429B713003A42E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ConferenceApp;
+			productName = ConferenceApp;
+			productReference = 88675A801429B713003A42E1 /* ConferenceApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		88675A771429B713003A42E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "http://peterfriese.de";
+			};
+			buildConfigurationList = 88675A7A1429B713003A42E1 /* Build configuration list for PBXProject "ConferenceApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 88675A751429B713003A42E1;
+			productRefGroup = 88675A811429B713003A42E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				88675A7F1429B713003A42E1 /* ConferenceApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		88675A7E1429B713003A42E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88675A8F1429B713003A42E1 /* InfoPlist.strings in Resources */,
+				88675A981429B713003A42E1 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		88675A7C1429B713003A42E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				88675A911429B713003A42E1 /* main.m in Sources */,
+				88675A951429B713003A42E1 /* ConferenceAppAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		88675A8D1429B713003A42E1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88675A8E1429B713003A42E1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		88675A961429B713003A42E1 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88675A971429B713003A42E1 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		88675A991429B713003A42E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		88675A9A1429B713003A42E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		88675A9C1429B713003A42E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ConferenceApp/ConferenceApp-Prefix.pch";
+				INFOPLIST_FILE = "ConferenceApp/ConferenceApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		88675A9D1429B713003A42E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ConferenceApp/ConferenceApp-Prefix.pch";
+				INFOPLIST_FILE = "ConferenceApp/ConferenceApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		88675A7A1429B713003A42E1 /* Build configuration list for PBXProject "ConferenceApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88675A991429B713003A42E1 /* Debug */,
+				88675A9A1429B713003A42E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		88675A9B1429B713003A42E1 /* Build configuration list for PBXNativeTarget "ConferenceApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				88675A9C1429B713003A42E1 /* Debug */,
+				88675A9D1429B713003A42E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 88675A771429B713003A42E1 /* Project object */;
+}
