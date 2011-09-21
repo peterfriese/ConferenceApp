@@ -9,14 +9,62 @@
 #import "ConferenceAppAppDelegate.h"
 #import <RestKit/RestKit.h>
 #import <RestKit/CoreData/CoreData.h>
+#import "SessionsViewController.h"
+#import "Session.h"
 
 @implementation ConferenceAppAppDelegate
 
 @synthesize window = _window;
+@synthesize tabBarController = _tabBarController;
+
+- (void)setupRestKit
+{
+    RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://peterfriese.local/~peterfriese/ece2011-data"];
+    
+    objectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
+
+    NSString *databaseName = @"ConferenceData.sqlite";
+    objectManager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:databaseName];
+    
+    RKManagedObjectMapping *sessionMapping = [RKManagedObjectMapping mappingForClass:[Session class]];
+    sessionMapping.primaryKeyAttribute = @"sessionId";
+    [sessionMapping mapKeyPathsToAttributes:
+        @"id", @"sessionId",
+        @"title", @"title",
+        @"abstract", @"abstract",
+        @"type", @"type",
+        @"room", @"room",
+        @"status", @"status",
+        @"date", @"date",
+        @"startTime", @"startTime",
+        @"endTime", @"endTime",
+        @"createdAt", @"createdAt", 
+        @"category", @"category", nil];
+    
+    [objectManager.mappingProvider setMapping:sessionMapping forKeyPath:@"session"];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // Init RestKit
+    [self setupRestKit];
+    
+    // this will hold our Tab Bar Controllers
+    NSMutableArray *tabBarControllers = [[NSMutableArray alloc] init];
+    
+    // Sessions View Controller and NavigationController
+    SessionsViewController *sessionsViewController = [[SessionsViewController alloc] init];
+    UINavigationController *sessionsNavigationController = [[UINavigationController alloc] initWithRootViewController:sessionsViewController];
+    [sessionsViewController release];
+    [tabBarControllers addObject:sessionsNavigationController];
+    [sessionsNavigationController release];
+    
+    // Produce Tab Bar Controller
+    self.tabBarController = [[UITabBarController alloc] init];
+    [self.tabBarController setViewControllers:tabBarControllers];
+    [tabBarControllers release];
+    
+    [self.window addSubview:_tabBarController.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -62,6 +110,7 @@
 
 - (void)dealloc
 {
+    [_tabBarController release];
     [_window release];
     [super dealloc];
 }

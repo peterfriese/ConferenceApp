@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		882025B21429D17E003BA1F5 /* SessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882025B11429D17E003BA1F5 /* SessionsViewController.m */; };
+		882025BA1429D704003BA1F5 /* ConferenceApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 882025B81429D704003BA1F5 /* ConferenceApp.xcdatamodeld */; };
+		882025BD1429D85F003BA1F5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 882025BC1429D85F003BA1F5 /* Session.m */; };
 		88675A851429B713003A42E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A841429B713003A42E1 /* UIKit.framework */; };
 		88675A871429B713003A42E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A861429B713003A42E1 /* Foundation.framework */; };
 		88675A891429B713003A42E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A881429B713003A42E1 /* CoreGraphics.framework */; };
@@ -23,7 +26,6 @@
 		88BDF1BD1429C936008E2774 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88BDF1B61429C936008E2774 /* InfoPlist.strings */; };
 		88BDF1BE1429C936008E2774 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88BDF1B81429C936008E2774 /* MainWindow.xib */; };
 		88BDF1BF1429C936008E2774 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BDF1BA1429C936008E2774 /* main.m */; };
-		88BDF1C21429CA34008E2774 /* ConferenceApp-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 88BDF1C11429CA34008E2774 /* ConferenceApp-Info.plist */; };
 		88FAA9B21429BE7A00238530 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AC31429B8E3003A42E1 /* libRestKitCoreData.a */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		882025B01429D17E003BA1F5 /* SessionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionsViewController.h; sourceTree = "<group>"; };
+		882025B11429D17E003BA1F5 /* SessionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionsViewController.m; sourceTree = "<group>"; };
+		882025B91429D704003BA1F5 /* ConferenceApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConferenceApp.xcdatamodel; sourceTree = "<group>"; };
+		882025BB1429D85F003BA1F5 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		882025BC1429D85F003BA1F5 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		88675A801429B713003A42E1 /* ConferenceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConferenceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88675A841429B713003A42E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88675A861429B713003A42E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -158,12 +165,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		882025B71429D6D4003BA1F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				882025B81429D704003BA1F5 /* ConferenceApp.xcdatamodeld */,
+				882025BB1429D85F003BA1F5 /* Session.h */,
+				882025BC1429D85F003BA1F5 /* Session.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		88675A751429B713003A42E1 = {
 			isa = PBXGroup;
 			children = (
-				88BDF1C01429CA34008E2774 /* Resources */,
-				88BDF1B11429C936008E2774 /* Source */,
 				88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */,
+				88BDF1B11429C936008E2774 /* Source */,
+				88BDF1C01429CA34008E2774 /* Resources */,
+				882025B71429D6D4003BA1F5 /* Model */,
 				88675A831429B713003A42E1 /* Frameworks */,
 				88675A811429B713003A42E1 /* Products */,
 			);
@@ -219,6 +237,8 @@
 				88BDF1B61429C936008E2774 /* InfoPlist.strings */,
 				88BDF1B81429C936008E2774 /* MainWindow.xib */,
 				88BDF1BA1429C936008E2774 /* main.m */,
+				882025B01429D17E003BA1F5 /* SessionsViewController.h */,
+				882025B11429D17E003BA1F5 /* SessionsViewController.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -370,7 +390,6 @@
 			files = (
 				88BDF1BD1429C936008E2774 /* InfoPlist.strings in Resources */,
 				88BDF1BE1429C936008E2774 /* MainWindow.xib in Resources */,
-				88BDF1C21429CA34008E2774 /* ConferenceApp-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,6 +402,9 @@
 			files = (
 				88BDF1BC1429C936008E2774 /* ConferenceAppAppDelegate.m in Sources */,
 				88BDF1BF1429C936008E2774 /* main.m in Sources */,
+				882025B21429D17E003BA1F5 /* SessionsViewController.m in Sources */,
+				882025BA1429D704003BA1F5 /* ConferenceApp.xcdatamodeld in Sources */,
+				882025BD1429D85F003BA1F5 /* Session.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +453,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -439,7 +461,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "${SOURCE_ROOT}/Frameworks/RestKit/Build";
+				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
 			};
 			name = Debug;
 		};
@@ -451,7 +473,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -460,7 +482,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "${SOURCE_ROOT}/Frameworks/RestKit/Build";
+				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -515,6 +537,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		882025B81429D704003BA1F5 /* ConferenceApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				882025B91429D704003BA1F5 /* ConferenceApp.xcdatamodel */,
+			);
+			currentVersion = 882025B91429D704003BA1F5 /* ConferenceApp.xcdatamodel */;
+			path = ConferenceApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 88675A771429B713003A42E1 /* Project object */;
 }
