@@ -7,6 +7,8 @@
 //
 
 #import "ConferenceAppAppDelegate.h"
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData/CoreData.h>
 
 @implementation ConferenceAppAppDelegate
 
