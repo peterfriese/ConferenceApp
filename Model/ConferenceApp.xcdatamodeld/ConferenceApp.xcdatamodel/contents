@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="ConferenceApp" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Session" representedClassName="Session">
+        <attribute name="abstract" optional="YES" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date"/>
+        <attribute name="date" optional="YES" attributeType="Date"/>
+        <attribute name="endTime" optional="YES" attributeType="Date"/>
+        <attribute name="room" optional="YES" attributeType="String"/>
+        <attribute name="sessionId" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
+        <attribute name="startTime" optional="YES" attributeType="Date"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Session" positionX="-4365" positionY="-4365" width="128" height="210"/>
+    </elements>
 </model>

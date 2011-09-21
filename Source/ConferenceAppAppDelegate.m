@@ -26,6 +26,13 @@
     NSString *databaseName = @"ConferenceData.sqlite";
     objectManager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:databaseName];
     
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+    [timeFormatter setDateFormat:@"HH:mm:ss"];
+    [RKObjectMapping setDefaultDateFormatters:[NSArray arrayWithObjects:dateFormatter, timeFormatter, nil]];
+    [dateFormatter release];
+    [timeFormatter release];
     RKManagedObjectMapping *sessionMapping = [RKManagedObjectMapping mappingForClass:[Session class]];
     sessionMapping.primaryKeyAttribute = @"sessionId";
     [sessionMapping mapKeyPathsToAttributes:
@@ -42,6 +49,7 @@
         @"category", @"category", nil];
     
     [objectManager.mappingProvider setMapping:sessionMapping forKeyPath:@"session"];
+
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -60,7 +68,7 @@
     [sessionsNavigationController release];
     
     // Produce Tab Bar Controller
-    self.tabBarController = [[UITabBarController alloc] init];
+    self.tabBarController = [[[UITabBarController alloc] init] autorelease];
     [self.tabBarController setViewControllers:tabBarControllers];
     [tabBarControllers release];
     

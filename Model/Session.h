@@ -6,8 +6,8 @@
 //  Copyright (c) 2011 http://peterfriese.de. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData/CoreData.h>
 
 
 @interface Session : NSManagedObject {

@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Session.h"
 
-@interface SessionsViewController : UITableViewController
+#import <RestKit/CoreData/CoreData.h>
+
+@interface SessionsViewController : UITableViewController<NSFetchedResultsControllerDelegate, RKObjectLoaderDelegate>
+
+@property (nonatomic, retain) NSArray *sessions;
+
+@property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 
 @end

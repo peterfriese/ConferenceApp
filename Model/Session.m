@@ -10,6 +10,7 @@
 
 
 @implementation Session
+
 @dynamic sessionId;
 @dynamic title;
 @dynamic abstract;
