@@ -30,6 +30,7 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
     [timeFormatter setDateFormat:@"HH:mm:ss"];
+    [RKObjectMapping setPreferredDateFormatter:dateFormatter];
     [RKObjectMapping setDefaultDateFormatters:[NSArray arrayWithObjects:dateFormatter, timeFormatter, nil]];
     [dateFormatter release];
     [timeFormatter release];

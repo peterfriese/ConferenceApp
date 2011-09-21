@@ -42,11 +42,13 @@
 - (NSFetchedResultsController *)fetchedResultsController 
 { 
     if (_fetchedResultsController == nil) {
-        NSFetchRequest *request = [Session fetchRequest];
-        NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"startTime" ascending:YES];
-        [request setSortDescriptors:[NSArray arrayWithObject:descriptor]];
-    
-        self.fetchedResultsController = [Session fetchRequestAllGroupedBy:@"startTime" withPredicate:nil sortedBy:@"startTime" ascending:YES];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"yyyy-MM-dd"];
+        NSDate *date = [formatter dateFromString:@"2011-03-21"];
+        self.fetchedResultsController = [Session fetchRequestAllGroupedBy:@"startTime" 
+                                                            withPredicate:[NSPredicate predicateWithFormat:@"date == %@", date] 
+                                                                 sortedBy:@"startTime" 
+                                                                ascending:YES];
         self.fetchedResultsController.delegate = self;
     }
     return _fetchedResultsController;
@@ -187,6 +189,7 @@
     Session *session = (Session *)[self.fetchedResultsController objectAtIndexPath:indexPath];
     // Session *session = [self.sessions objectAtIndex:[indexPath row]];
     cell.textLabel.text = session.title;
+    NSLog(@"Date formmater: %@", [[RKObjectMapping preferredDateFormatter] dateFormat]);
     
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
     [timeFormatter setDateFormat:@"HH:mm:ss"];
