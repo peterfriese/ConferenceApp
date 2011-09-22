@@ -10,7 +10,6 @@
 #import <RestKit/RestKit.h>
 #import <RestKit/CoreData/CoreData.h>
 #import "SessionTableViewController.h"
-#import "SessionsViewController.h"
 #import "Session.h"
 
 @implementation ConferenceAppAppDelegate

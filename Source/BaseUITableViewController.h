@@ -16,4 +16,7 @@
 - (Class)managedObject;
 - (void)loadData;
 
+- (void)configureCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject atIndexPath:(NSIndexPath *)indexPath;
+- (NSFetchedResultsController *)fetchedResultsControllerForTableView:(UITableView *)tableView;
+
 @end

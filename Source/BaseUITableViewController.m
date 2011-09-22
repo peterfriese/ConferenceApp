@@ -17,7 +17,6 @@
 @property (nonatomic, retain) NSFetchedResultsController *filteredFetchedResultsController;
 @end
 
-
 @implementation BaseUITableViewController
 
 #pragma mark - View lifecycle
@@ -150,10 +149,53 @@
     [self.tableView beginUpdates];
 }
 
--(void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
 {
     [self.tableView endUpdates];
 }
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type 
+{
+    NSIndexSet *set = [NSIndexSet indexSetWithIndex:sectionIndex];
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [[self tableView] insertSections:set withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [[self tableView] deleteSections:set withRowAnimation:UITableViewRowAnimationFade];
+            
+        default:
+            break;
+    }
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+{
+    UITableView *tv = [self tableView];
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+            [tv insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeDelete:
+            [tv deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        case NSFetchedResultsChangeUpdate:
+            [self configureCell:[tv cellForRowAtIndexPath:indexPath] withManagedObject:nil atIndexPath:indexPath];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+            [tv deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [tv insertRowsAtIndexPaths:[NSArray arrayWithObject:newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+            
+        default:
+            break;
+    }
+}
+
 
 #pragma mark - Table view data source
 
@@ -177,19 +219,15 @@
 }
 
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-{
-    NSArray *sections = [[self fetchedResultsControllerForTableView:tableView] sections];
-    if ([sections count]) {
-        id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
-        return [sectionInfo name];
-    }
-    return @"";
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView instantiateCellForRowAtIndexPath:(NSIndexPath *)indexPath withReuseIdentifier:(NSString *)cellIdentifier
 {
     return [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier] autorelease];
+}
+
+- (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+{
+    NSManagedObject *managedObject = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
+    [self configureCell:cell withManagedObject:managedObject atIndexPath:indexPath];
 }
 
 - (void)configureCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject atIndexPath:(NSIndexPath *)indexPath
@@ -206,9 +244,7 @@
         cell = [self tableView:tableView instantiateCellForRowAtIndexPath:indexPath withReuseIdentifier:CellIdentifier];
     }
     
-    NSManagedObject *managedObject = [[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
-    [self configureCell:cell withManagedObject:managedObject atIndexPath:indexPath];
-    
+    [self tableView:tableView configureCell:cell atIndexPath:indexPath];
     return cell;
 }
 

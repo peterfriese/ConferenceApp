@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		882025B21429D17E003BA1F5 /* SessionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 882025B11429D17E003BA1F5 /* SessionsViewController.m */; };
 		882025BA1429D704003BA1F5 /* ConferenceApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 882025B81429D704003BA1F5 /* ConferenceApp.xcdatamodeld */; };
 		882025BD1429D85F003BA1F5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 882025BC1429D85F003BA1F5 /* Session.m */; };
 		88202633142B21A5003BA1F5 /* BaseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202632142B21A5003BA1F5 /* BaseUITableViewController.m */; };
@@ -119,8 +118,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		882025B01429D17E003BA1F5 /* SessionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionsViewController.h; sourceTree = "<group>"; };
-		882025B11429D17E003BA1F5 /* SessionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionsViewController.m; sourceTree = "<group>"; };
 		882025B91429D704003BA1F5 /* ConferenceApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConferenceApp.xcdatamodel; sourceTree = "<group>"; };
 		882025BB1429D85F003BA1F5 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		882025BC1429D85F003BA1F5 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
@@ -243,8 +240,6 @@
 				88BDF1B61429C936008E2774 /* InfoPlist.strings */,
 				88BDF1B81429C936008E2774 /* MainWindow.xib */,
 				88BDF1BA1429C936008E2774 /* main.m */,
-				882025B01429D17E003BA1F5 /* SessionsViewController.h */,
-				882025B11429D17E003BA1F5 /* SessionsViewController.m */,
 				88202631142B21A5003BA1F5 /* BaseUITableViewController.h */,
 				88202632142B21A5003BA1F5 /* BaseUITableViewController.m */,
 				8820263F142B35AD003BA1F5 /* SessionTableViewController.h */,
@@ -412,7 +407,6 @@
 			files = (
 				88BDF1BC1429C936008E2774 /* ConferenceAppAppDelegate.m in Sources */,
 				88BDF1BF1429C936008E2774 /* main.m in Sources */,
-				882025B21429D17E003BA1F5 /* SessionsViewController.m in Sources */,
 				882025BA1429D704003BA1F5 /* ConferenceApp.xcdatamodeld in Sources */,
 				882025BD1429D85F003BA1F5 /* Session.m in Sources */,
 				88202633142B21A5003BA1F5 /* BaseUITableViewController.m in Sources */,

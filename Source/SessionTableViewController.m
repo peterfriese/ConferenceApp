@@ -16,6 +16,16 @@
     return @"/sessions.json";
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSArray *sections = [[self fetchedResultsControllerForTableView:tableView] sections];
+    if ([sections count]) {
+        id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
+        return [sectionInfo name];
+    }
+    return @"";
+}
+
 - (void)configureCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject atIndexPath:(NSIndexPath *)indexPath
 {
     Session *session = (Session*)managedObject;
