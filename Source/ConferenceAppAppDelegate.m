@@ -9,6 +9,7 @@
 #import "ConferenceAppAppDelegate.h"
 #import <RestKit/RestKit.h>
 #import <RestKit/CoreData/CoreData.h>
+#import "SessionTableViewController.h"
 #import "SessionsViewController.h"
 #import "Session.h"
 
@@ -62,7 +63,7 @@
     NSMutableArray *tabBarControllers = [[NSMutableArray alloc] init];
     
     // Sessions View Controller and NavigationController
-    SessionsViewController *sessionsViewController = [[SessionsViewController alloc] init];
+    SessionTableViewController *sessionsViewController = [[SessionTableViewController alloc] init];
     UINavigationController *sessionsNavigationController = [[UINavigationController alloc] initWithRootViewController:sessionsViewController];
     [sessionsViewController release];
     [tabBarControllers addObject:sessionsNavigationController];
