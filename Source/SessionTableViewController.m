@@ -16,7 +16,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Sessions";
-        self.scopes = [NSArray arrayWithObjects:@"Title", @"Speaker", nil];
+        self.scopes = [NSDictionary dictionaryWithObjectsAndKeys:@"Title", @"title", @"Abstract", @"abstract", nil];
         self.placeholderText = @"Search sessions";
         self.groupBy = @"startTime";
     }

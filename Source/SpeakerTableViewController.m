@@ -16,7 +16,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Speakers";
-        self.scopes = [NSArray arrayWithObjects:@"lastName", @"firstName", nil];
+        self.scopes = [NSDictionary dictionaryWithObjectsAndKeys:@"First Name", @"firstName", @"Last Name", @"lastName", @"Company", @"affiliation", nil];
         self.groupBy = @"lastName";
     }
     return self;

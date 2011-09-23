@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString *resourcePath;
 
 #pragma mark - Search bar
-@property (nonatomic, retain) NSArray *scopes;
+@property (nonatomic, retain) NSDictionary *scopes;
 @property (nonatomic, retain) NSString *placeholderText;
 
 @property (nonatomic, copy) NSString *savedSearchTerm;
