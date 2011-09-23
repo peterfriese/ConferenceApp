@@ -28,6 +28,11 @@
     return @"/speakers.json";
 }
 
+-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+{
+    return [[self fetchedResultsControllerForTableView:tableView] sectionIndexTitles];
+}
+
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     NSArray *sections = [[self fetchedResultsControllerForTableView:tableView] sections];
