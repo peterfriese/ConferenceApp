@@ -20,7 +20,10 @@
 @property (nonatomic, retain) NSString * affiliation;
 @property (nonatomic, retain) NSString * bio;
 @property (nonatomic, retain) NSString * role;
+@property (nonatomic, retain) NSString * initial;
 @property (nonatomic, retain) NSSet *sessions;
+
+- (NSString *)initial;
 @end
 
 @interface Speaker (CoreDataGeneratedAccessors)

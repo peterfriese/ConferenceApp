@@ -26,6 +26,7 @@
 
 #pragma mark - 
 @property (nonatomic, retain) NSString *groupBy;
+@property (nonatomic, retain) NSString *sortBy;
 
 - (Class)managedObject;
 - (void)loadData;

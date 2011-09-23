@@ -18,5 +18,16 @@
 @dynamic bio;
 @dynamic role;
 @dynamic sessions;
+@dynamic initial;
+
+- (NSString *)initial {
+	if ([[self lastName] length] > 0  && [self lastName] != nil) {
+        NSString *initial = [[self lastName] substringToIndex:1];
+        NSLog(@"%@ %@ ==> %@", [self firstName], [self lastName], initial);
+		return initial;
+        
+	}
+	return @" ";
+}
 
 @end

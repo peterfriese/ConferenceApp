@@ -17,7 +17,8 @@
     if (self) {
         self.title = @"Speakers";
         self.scopes = [NSDictionary dictionaryWithObjectsAndKeys:@"First Name", @"firstName", @"Last Name", @"lastName", @"Company", @"affiliation", nil];
-        self.groupBy = @"lastName";
+        self.groupBy = @"initial";
+        self.sortBy = @"lastName";
     }
     return self;
 }
@@ -25,6 +26,16 @@
 -(NSString *)resourcePath
 {
     return @"/speakers.json";
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSArray *sections = [[self fetchedResultsControllerForTableView:tableView] sections];
+    if ([sections count]) {
+        id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
+        return [sectionInfo name];
+    }
+    return @"";    
 }
 
 -(void)configureCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject atIndexPath:(NSIndexPath *)indexPath

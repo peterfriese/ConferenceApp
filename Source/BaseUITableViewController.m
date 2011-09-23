@@ -187,12 +187,13 @@
 @synthesize fetchedResultsController = _fetchedResultsController;
 @synthesize filteredFetchedResultsController = _filteredFetchedResultsController;
 @synthesize groupBy = _groupBy;
+@synthesize sortBy = _sortBy;
 
 - (NSFetchedResultsController *)createFetchedResultsController
 {
     return [[self managedObjectClass] fetchRequestAllGroupedBy:self.groupBy 
                                             withPredicate:nil
-                                                 sortedBy:self.groupBy
+                                                 sortedBy:self.sortBy
                                                 ascending:YES];
 }
 
@@ -200,7 +201,7 @@
 {
     return [[self managedObjectClass] fetchRequestAllGroupedBy:self.groupBy 
                                                  withPredicate:predicate
-                                                      sortedBy:self.groupBy
+                                                      sortedBy:self.sortBy
                                                      ascending:YES];
 }
 

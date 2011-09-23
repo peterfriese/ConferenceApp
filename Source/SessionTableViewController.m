@@ -19,6 +19,7 @@
         self.scopes = [NSDictionary dictionaryWithObjectsAndKeys:@"Title", @"title", @"Abstract", @"abstract", nil];
         self.placeholderText = @"Search sessions";
         self.groupBy = @"startTime";
+        self.sortBy = @"startTime";
     }
     return self;
 }
