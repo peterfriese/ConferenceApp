@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RestKit/CoreData/CoreData.h>
 
-@interface ConferenceAppAppDelegate : NSObject <UIApplicationDelegate>
+@interface ConferenceAppAppDelegate : NSObject <UIApplicationDelegate, RKManagedObjectStoreDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) UITabBarController *tabBarController;

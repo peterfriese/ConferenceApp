@@ -24,7 +24,7 @@
     objectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
 
     NSString *databaseName = @"ConferenceData.sqlite";
-    objectManager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:databaseName];
+    objectManager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:databaseName inDirectory:nil usingSeedDatabaseName:nil managedObjectModel:nil delegate:self];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -51,6 +51,14 @@
     
     [objectManager.mappingProvider setMapping:sessionMapping forKeyPath:@"session"];
 
+}
+
+-(void)managedObjectStore:(RKManagedObjectStore *)objectStore didFailToCreatePersistentStoreCoordinatorWithError:(NSError *)error
+{
+    NSLog(@"Error: %@", error);
+    [objectStore deletePersistantStore];
+    [objectStore save];    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"DATA_STORE_RELOAD" object:nil];
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions

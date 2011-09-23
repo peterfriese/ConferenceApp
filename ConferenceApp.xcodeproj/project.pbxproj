@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		882025BA1429D704003BA1F5 /* ConferenceApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 882025B81429D704003BA1F5 /* ConferenceApp.xcdatamodeld */; };
-		882025BD1429D85F003BA1F5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 882025BC1429D85F003BA1F5 /* Session.m */; };
 		88202633142B21A5003BA1F5 /* BaseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202632142B21A5003BA1F5 /* BaseUITableViewController.m */; };
 		88202641142B35AD003BA1F5 /* SessionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202640142B35AD003BA1F5 /* SessionTableViewController.m */; };
+		8820264A142C5CCF003BA1F5 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202649142C5CCF003BA1F5 /* Speaker.m */; };
+		8820264D142C5CEC003BA1F5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820264C142C5CEC003BA1F5 /* Session.m */; };
 		88675A851429B713003A42E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A841429B713003A42E1 /* UIKit.framework */; };
 		88675A871429B713003A42E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A861429B713003A42E1 /* Foundation.framework */; };
 		88675A891429B713003A42E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A881429B713003A42E1 /* CoreGraphics.framework */; };
@@ -119,12 +120,14 @@
 
 /* Begin PBXFileReference section */
 		882025B91429D704003BA1F5 /* ConferenceApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConferenceApp.xcdatamodel; sourceTree = "<group>"; };
-		882025BB1429D85F003BA1F5 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
-		882025BC1429D85F003BA1F5 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		88202631142B21A5003BA1F5 /* BaseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUITableViewController.h; sourceTree = "<group>"; };
 		88202632142B21A5003BA1F5 /* BaseUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUITableViewController.m; sourceTree = "<group>"; };
 		8820263F142B35AD003BA1F5 /* SessionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionTableViewController.h; sourceTree = "<group>"; };
 		88202640142B35AD003BA1F5 /* SessionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionTableViewController.m; sourceTree = "<group>"; };
+		88202648142C5CCF003BA1F5 /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speaker.h; sourceTree = "<group>"; };
+		88202649142C5CCF003BA1F5 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
+		8820264B142C5CEC003BA1F5 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		8820264C142C5CEC003BA1F5 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		88675A801429B713003A42E1 /* ConferenceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConferenceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88675A841429B713003A42E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88675A861429B713003A42E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -172,8 +175,10 @@
 			isa = PBXGroup;
 			children = (
 				882025B81429D704003BA1F5 /* ConferenceApp.xcdatamodeld */,
-				882025BB1429D85F003BA1F5 /* Session.h */,
-				882025BC1429D85F003BA1F5 /* Session.m */,
+				8820264B142C5CEC003BA1F5 /* Session.h */,
+				8820264C142C5CEC003BA1F5 /* Session.m */,
+				88202648142C5CCF003BA1F5 /* Speaker.h */,
+				88202649142C5CCF003BA1F5 /* Speaker.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -408,9 +413,10 @@
 				88BDF1BC1429C936008E2774 /* ConferenceAppAppDelegate.m in Sources */,
 				88BDF1BF1429C936008E2774 /* main.m in Sources */,
 				882025BA1429D704003BA1F5 /* ConferenceApp.xcdatamodeld in Sources */,
-				882025BD1429D85F003BA1F5 /* Session.m in Sources */,
 				88202633142B21A5003BA1F5 /* BaseUITableViewController.m in Sources */,
 				88202641142B35AD003BA1F5 /* SessionTableViewController.m in Sources */,
+				8820264A142C5CCF003BA1F5 /* Speaker.m in Sources */,
+				8820264D142C5CEC003BA1F5 /* Session.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
