@@ -18,6 +18,7 @@
         self.title = @"Sessions";
         self.scopes = [NSArray arrayWithObjects:@"Title", @"Speaker", nil];
         self.placeholderText = @"Search sessions";
+        self.groupBy = @"startTime";
     }
     return self;
 }

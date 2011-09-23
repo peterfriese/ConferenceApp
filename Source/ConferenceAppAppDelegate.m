@@ -11,6 +11,8 @@
 #import <RestKit/CoreData/CoreData.h>
 #import "SessionTableViewController.h"
 #import "Session.h"
+#import "SpeakerTableViewController.h"
+#import "Speaker.h"
 
 @implementation ConferenceAppAppDelegate
 
@@ -26,6 +28,8 @@
     NSString *databaseName = @"ConferenceData.sqlite";
     objectManager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:databaseName inDirectory:nil usingSeedDatabaseName:nil managedObjectModel:nil delegate:self];
     
+    
+    // Set up date and time parsers
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
@@ -34,6 +38,8 @@
     [RKObjectMapping setDefaultDateFormatters:[NSArray arrayWithObjects:dateFormatter, timeFormatter, nil]];
     [dateFormatter release];
     [timeFormatter release];
+    
+    // Session Mapping
     RKManagedObjectMapping *sessionMapping = [RKManagedObjectMapping mappingForClass:[Session class]];
     sessionMapping.primaryKeyAttribute = @"sessionId";
     [sessionMapping mapKeyPathsToAttributes:
@@ -47,15 +53,27 @@
         @"startTime", @"startTime",
         @"endTime", @"endTime",
         @"createdAt", @"createdAt", 
-        @"category", @"category", nil];
-    
+        @"category", @"category", 
+        nil];
     [objectManager.mappingProvider setMapping:sessionMapping forKeyPath:@"session"];
-
+    
+    // Speaker Mapping
+    RKManagedObjectMapping *speakerMapping = [RKManagedObjectMapping mappingForClass:[Speaker class]];
+    speakerMapping.primaryKeyAttribute = @"speakerId";
+    [speakerMapping mapKeyPathsToAttributes:
+        @"id", @"speakerId", 
+        @"firstName", @"firstName",
+        @"lastName", @"lastName",
+        @"affiliation", @"affiliation",
+        @"bio", @"bio",
+        @"role", @"role",
+        nil];
+    [objectManager.mappingProvider setMapping:speakerMapping forKeyPath:@"speaker"];
 }
 
 -(void)managedObjectStore:(RKManagedObjectStore *)objectStore didFailToCreatePersistentStoreCoordinatorWithError:(NSError *)error
 {
-    NSLog(@"Error: %@", error);
+    NSLog(@"An error occurred, we'll reset the data store. Error: %@", error);
     [objectStore deletePersistantStore];
     [objectStore save];    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"DATA_STORE_RELOAD" object:nil];
@@ -75,6 +93,13 @@
     [sessionsViewController release];
     [tabBarControllers addObject:sessionsNavigationController];
     [sessionsNavigationController release];
+    
+    // Speaker View Controller and NavigationController
+    SpeakerTableViewController *speakerViewController = [[SpeakerTableViewController alloc] init];
+    UINavigationController *speakerNavigationController = [[UINavigationController alloc] initWithRootViewController:speakerViewController];
+    [speakerViewController release];
+    [tabBarControllers addObject:speakerNavigationController];
+    [speakerNavigationController release];
     
     // Produce Tab Bar Controller
     self.tabBarController = [[[UITabBarController alloc] init] autorelease];

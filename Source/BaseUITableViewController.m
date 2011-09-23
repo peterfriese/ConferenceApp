@@ -186,20 +186,21 @@
 
 @synthesize fetchedResultsController = _fetchedResultsController;
 @synthesize filteredFetchedResultsController = _filteredFetchedResultsController;
+@synthesize groupBy = _groupBy;
 
 - (NSFetchedResultsController *)createFetchedResultsController
 {
-    return [[self managedObjectClass] fetchRequestAllGroupedBy:@"startTime" 
+    return [[self managedObjectClass] fetchRequestAllGroupedBy:self.groupBy 
                                             withPredicate:nil
-                                                 sortedBy:@"startTime" 
+                                                 sortedBy:self.groupBy
                                                 ascending:YES];
 }
 
 - (NSFetchedResultsController *)createFetchedResultsControllerWithSearchPredicate:(NSPredicate *)predicate
 {
-    return [[self managedObjectClass] fetchRequestAllGroupedBy:@"startTime" 
+    return [[self managedObjectClass] fetchRequestAllGroupedBy:self.groupBy 
                                                  withPredicate:predicate
-                                                      sortedBy:@"startTime" 
+                                                      sortedBy:self.groupBy
                                                      ascending:YES];
 }
 
@@ -223,13 +224,14 @@
 
 - (NSPredicate *)predicateForSearchString:(NSString *)searchString scope:(NSString *)scope {
     // TODO: make sure this also works when we do not have a scopes bar (need to search SELF then)
-	return [NSPredicate predicateWithFormat:@"%K CONTAINS[cd] %@", [scope lowercaseString], searchString];
+	//return [NSPredicate predicateWithFormat:@"%K CONTAINS[cd] %@", [scope lowercaseString], searchString];
+    return [NSPredicate predicateWithFormat:@"%K CONTAINS[cd] %@", scope, searchString];
 }
 
 - (NSFetchedResultsController *)filteredFetchedResultsController
 {
     if (_filteredFetchedResultsController == nil) {
-        NSPredicate *searchPredicate = [self predicateForSearchString:_savedSearchTerm scope:@"title"];
+        NSPredicate *searchPredicate = [self predicateForSearchString:_savedSearchTerm scope:self.savedSearchScope];
         self.filteredFetchedResultsController = [self createFetchedResultsControllerWithSearchPredicate:searchPredicate];
         NSError *error;
         [[self filteredFetchedResultsController] performFetch:&error];
@@ -344,6 +346,7 @@
 #pragma mark - Memory management
 -(void)dealloc
 {
+    [_groupBy release];
     [_scopes release];
     [_placeholderText release];
     [_fetchedResultsController release];

@@ -12,6 +12,7 @@
 		88202641142B35AD003BA1F5 /* SessionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202640142B35AD003BA1F5 /* SessionTableViewController.m */; };
 		8820264A142C5CCF003BA1F5 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202649142C5CCF003BA1F5 /* Speaker.m */; };
 		8820264D142C5CEC003BA1F5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820264C142C5CEC003BA1F5 /* Session.m */; };
+		88202650142C6696003BA1F5 /* SpeakerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820264F142C6696003BA1F5 /* SpeakerTableViewController.m */; };
 		88675A851429B713003A42E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A841429B713003A42E1 /* UIKit.framework */; };
 		88675A871429B713003A42E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A861429B713003A42E1 /* Foundation.framework */; };
 		88675A891429B713003A42E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A881429B713003A42E1 /* CoreGraphics.framework */; };
@@ -128,6 +129,8 @@
 		88202649142C5CCF003BA1F5 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
 		8820264B142C5CEC003BA1F5 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		8820264C142C5CEC003BA1F5 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		8820264E142C6696003BA1F5 /* SpeakerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerTableViewController.h; sourceTree = "<group>"; };
+		8820264F142C6696003BA1F5 /* SpeakerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerTableViewController.m; sourceTree = "<group>"; };
 		88675A801429B713003A42E1 /* ConferenceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConferenceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88675A841429B713003A42E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88675A861429B713003A42E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -249,6 +252,8 @@
 				88202632142B21A5003BA1F5 /* BaseUITableViewController.m */,
 				8820263F142B35AD003BA1F5 /* SessionTableViewController.h */,
 				88202640142B35AD003BA1F5 /* SessionTableViewController.m */,
+				8820264E142C6696003BA1F5 /* SpeakerTableViewController.h */,
+				8820264F142C6696003BA1F5 /* SpeakerTableViewController.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				88202641142B35AD003BA1F5 /* SessionTableViewController.m in Sources */,
 				8820264A142C5CCF003BA1F5 /* Speaker.m in Sources */,
 				8820264D142C5CEC003BA1F5 /* Session.m in Sources */,
+				88202650142C6696003BA1F5 /* SpeakerTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

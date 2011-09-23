@@ -11,8 +11,11 @@
 
 @interface BaseUITableViewController : UITableViewController<NSFetchedResultsControllerDelegate, RKObjectLoaderDelegate, UISearchDisplayDelegate> {
 }
+
+#pragma mark - Data interface
 @property (nonatomic, retain) NSString *resourcePath;
 
+#pragma mark - Search bar
 @property (nonatomic, retain) NSArray *scopes;
 @property (nonatomic, retain) NSString *placeholderText;
 
@@ -20,6 +23,9 @@
 @property (nonatomic) NSInteger savedSearchScopeIndex;
 @property (nonatomic, copy) NSString *savedSearchScope;
 @property (nonatomic) BOOL searchWasActive;
+
+#pragma mark - 
+@property (nonatomic, retain) NSString *groupBy;
 
 - (Class)managedObject;
 - (void)loadData;
