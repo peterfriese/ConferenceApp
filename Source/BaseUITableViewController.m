@@ -15,6 +15,9 @@
 @interface BaseUITableViewController()
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSFetchedResultsController *filteredFetchedResultsController;
+@property (nonatomic, retain) UISearchDisplayController *searchDisplayController;
+
+- (void)setupSearchBar;
 @end
 
 @implementation BaseUITableViewController
@@ -23,8 +26,79 @@
 
 -(void)viewDidLoad
 {
+    [self setupSearchBar];
     [super viewDidLoad];
     [self loadData];
+}
+
+#pragma mark - Search bar
+
+@synthesize scopes = _scopes;
+@synthesize placeholderText = _placeholderText;
+@synthesize searchDisplayController;
+@synthesize searchWasActive = _searchWasActive;
+@synthesize savedSearchTerm = _savedSearchTerm;
+@synthesize savedSearchScopeIndex = _savedSearchScopeIndex;
+@synthesize savedSearchScope = _savedSearchScope;
+
+- (void)setupSearchBar
+{
+    UISearchBar *searchBar = [[[UISearchBar alloc] init] autorelease];
+	searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+	searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
+	[searchBar sizeToFit];
+	if (self.scopes != nil) {
+		searchBar.scopeButtonTitles = self.scopes;
+	}
+	if (self.placeholderText != nil) {
+		searchBar.placeholder = self.placeholderText;
+	}
+	self.tableView.tableHeaderView = searchBar;	
+    
+	// create search display controller (CAVE: requires iOS 4.x)
+	self.searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+	self.searchDisplayController.delegate = self;	
+	self.searchDisplayController.searchResultsDataSource = self;
+	self.searchDisplayController.searchResultsDelegate = self;    
+}
+
+
+-(void) searchDisplayController:(UISearchDisplayController *)controller willUnloadSearchResultsTableView:(UITableView *)tableView {
+	self.searchWasActive = NO;
+	self.savedSearchTerm = nil;
+	self.savedSearchScope = nil;
+	self.savedSearchScopeIndex = -1;
+	self.filteredFetchedResultsController.delegate = nil;
+	self.filteredFetchedResultsController = nil;
+}
+
+-(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
+	self.searchWasActive = YES;
+	self.savedSearchTerm = searchString;
+	self.savedSearchScopeIndex = self.searchDisplayController.searchBar.selectedScopeButtonIndex;
+    if ([self.searchDisplayController.searchBar.scopeButtonTitles count]) {
+        self.savedSearchScope = [self.searchDisplayController.searchBar.scopeButtonTitles objectAtIndex:self.savedSearchScopeIndex];
+    }
+	self.filteredFetchedResultsController.delegate = nil;
+	self.filteredFetchedResultsController = nil;	
+    
+	// by returning YES, we make sure the table view gets reloaded:
+	return YES;
+}
+
+-(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption {
+	self.searchWasActive = YES;
+	self.savedSearchTerm = self.searchDisplayController.searchBar.text;
+	self.savedSearchScopeIndex = searchOption;
+    if ([self.searchDisplayController.searchBar.scopeButtonTitles count]) {
+        self.savedSearchScope = [self.searchDisplayController.searchBar.scopeButtonTitles objectAtIndex:searchOption];
+    }
+	self.filteredFetchedResultsController.delegate = nil;
+	self.filteredFetchedResultsController = nil;
+    
+    
+	// by returning YES, we make sure the table view gets reloaded:	
+	return YES;	
 }
 
 #pragma mark - Entity
@@ -58,13 +132,16 @@
     NSString *name = [self entityName];
     return 
         (name != nil) 
-            ? [[NSClassFromString(name) alloc] init] 
+            ? [[[NSClassFromString(name) alloc] init] autorelease]
             : nil;
 }
 
 - (Class)managedObjectClass
 {
-    return [[self managedObject] class];
+    NSString *name = [self entityName];
+    return (name != nil)
+        ? NSClassFromString(name)
+        : nil;
 }
 
 #pragma mark - Data handling
@@ -77,7 +154,7 @@
     [objectManager loadObjectsAtResourcePath:[self resourcePath] delegate:self block:^(RKObjectLoader* loader) {
         // Twitter returns statuses as a naked array in JSON, so we instruct the loader
         // to user the appropriate object mapping
-        loader.objectMapping = [objectManager.mappingProvider objectMappingForClass:[self managedObjectClass]];
+        loader.objectMapping = [objectManager.mappingProvider objectMappingForClass:[[self managedObjectClass] class]];
     }];
 }
 
@@ -89,7 +166,7 @@
      }
 }
 
-#pragma mark RKObjectLoaderDelegate methods
+#pragma mark - RKObjectLoaderDelegate methods
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
 	[self loadObjectsFromDataStore];
@@ -118,6 +195,14 @@
                                                 ascending:YES];
 }
 
+- (NSFetchedResultsController *)createFetchedResultsControllerWithSearchPredicate:(NSPredicate *)predicate
+{
+    return [[self managedObjectClass] fetchRequestAllGroupedBy:@"startTime" 
+                                                 withPredicate:predicate
+                                                      sortedBy:@"startTime" 
+                                                     ascending:YES];
+}
+
 - (NSFetchedResultsController *)fetchedResultsControllerForTableView:(UITableView *)tableView
 {
     if (tableView == self.tableView) {
@@ -136,10 +221,18 @@
     return _fetchedResultsController;
 }
 
+- (NSPredicate *)predicateForSearchString:(NSString *)searchString scope:(NSString *)scope {
+    // TODO: make sure this also works when we do not have a scopes bar (need to search SELF then)
+	return [NSPredicate predicateWithFormat:@"%K CONTAINS[cd] %@", [scope lowercaseString], searchString];
+}
+
 - (NSFetchedResultsController *)filteredFetchedResultsController
 {
     if (_filteredFetchedResultsController == nil) {
-        self.filteredFetchedResultsController = [self createFetchedResultsController];
+        NSPredicate *searchPredicate = [self predicateForSearchString:_savedSearchTerm scope:@"title"];
+        self.filteredFetchedResultsController = [self createFetchedResultsControllerWithSearchPredicate:searchPredicate];
+        NSError *error;
+        [[self filteredFetchedResultsController] performFetch:&error];
     }
     return _filteredFetchedResultsController;
 }
@@ -247,5 +340,18 @@
     [self tableView:tableView configureCell:cell atIndexPath:indexPath];
     return cell;
 }
+
+#pragma mark - Memory management
+-(void)dealloc
+{
+    [_scopes release];
+    [_placeholderText release];
+    [_fetchedResultsController release];
+    [_filteredFetchedResultsController release];
+    [searchDisplayController release];
+    [super dealloc];
+}
+
+
 
 @end

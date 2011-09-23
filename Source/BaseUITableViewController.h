@@ -9,9 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <RestKit/CoreData/CoreData.h>
 
-@interface BaseUITableViewController : UITableViewController<NSFetchedResultsControllerDelegate, RKObjectLoaderDelegate> {
+@interface BaseUITableViewController : UITableViewController<NSFetchedResultsControllerDelegate, RKObjectLoaderDelegate, UISearchDisplayDelegate> {
 }
 @property (nonatomic, retain) NSString *resourcePath;
+
+@property (nonatomic, retain) NSArray *scopes;
+@property (nonatomic, retain) NSString *placeholderText;
+
+@property (nonatomic, copy) NSString *savedSearchTerm;
+@property (nonatomic) NSInteger savedSearchScopeIndex;
+@property (nonatomic, copy) NSString *savedSearchScope;
+@property (nonatomic) BOOL searchWasActive;
 
 - (Class)managedObject;
 - (void)loadData;
