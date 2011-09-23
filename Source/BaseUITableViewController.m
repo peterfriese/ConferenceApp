@@ -48,7 +48,7 @@
 	searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
 	[searchBar sizeToFit];
 	if (self.scopes != nil) {
-		searchBar.scopeButtonTitles = self.scopes;
+		searchBar.scopeButtonTitles = [self.scopes allValues];
 	}
 	if (self.placeholderText != nil) {
 		searchBar.placeholder = self.placeholderText;
@@ -77,7 +77,7 @@
 	self.savedSearchTerm = searchString;
 	self.savedSearchScopeIndex = self.searchDisplayController.searchBar.selectedScopeButtonIndex;
     if ([self.searchDisplayController.searchBar.scopeButtonTitles count]) {
-        self.savedSearchScope = [self.searchDisplayController.searchBar.scopeButtonTitles objectAtIndex:self.savedSearchScopeIndex];
+        self.savedSearchScope = [[self.scopes allKeys] objectAtIndex:[self savedSearchScopeIndex]];
     }
 	self.filteredFetchedResultsController.delegate = nil;
 	self.filteredFetchedResultsController = nil;	
@@ -91,7 +91,7 @@
 	self.savedSearchTerm = self.searchDisplayController.searchBar.text;
 	self.savedSearchScopeIndex = searchOption;
     if ([self.searchDisplayController.searchBar.scopeButtonTitles count]) {
-        self.savedSearchScope = [self.searchDisplayController.searchBar.scopeButtonTitles objectAtIndex:searchOption];
+        self.savedSearchScope = [[self.scopes allKeys] objectAtIndex:[self savedSearchScopeIndex]];
     }
 	self.filteredFetchedResultsController.delegate = nil;
 	self.filteredFetchedResultsController = nil;
