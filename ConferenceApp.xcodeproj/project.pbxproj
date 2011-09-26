@@ -13,6 +13,10 @@
 		8820264A142C5CCF003BA1F5 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202649142C5CCF003BA1F5 /* Speaker.m */; };
 		8820264D142C5CEC003BA1F5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820264C142C5CEC003BA1F5 /* Session.m */; };
 		88202650142C6696003BA1F5 /* SpeakerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820264F142C6696003BA1F5 /* SpeakerTableViewController.m */; };
+		8820265A142CC2EA003BA1F5 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 88202656142CC2EA003BA1F5 /* Star.png */; };
+		8820265B142CC2EA003BA1F5 /* Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88202657142CC2EA003BA1F5 /* Star@2x.png */; };
+		8820265C142CC2EA003BA1F5 /* StarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 88202658142CC2EA003BA1F5 /* StarSelected.png */; };
+		8820265D142CC2EA003BA1F5 /* StarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88202659142CC2EA003BA1F5 /* StarSelected@2x.png */; };
 		88675A851429B713003A42E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A841429B713003A42E1 /* UIKit.framework */; };
 		88675A871429B713003A42E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A861429B713003A42E1 /* Foundation.framework */; };
 		88675A891429B713003A42E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A881429B713003A42E1 /* CoreGraphics.framework */; };
@@ -131,6 +135,10 @@
 		8820264C142C5CEC003BA1F5 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		8820264E142C6696003BA1F5 /* SpeakerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerTableViewController.h; sourceTree = "<group>"; };
 		8820264F142C6696003BA1F5 /* SpeakerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerTableViewController.m; sourceTree = "<group>"; };
+		88202656142CC2EA003BA1F5 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
+		88202657142CC2EA003BA1F5 /* Star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star@2x.png"; sourceTree = "<group>"; };
+		88202658142CC2EA003BA1F5 /* StarSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarSelected.png; sourceTree = "<group>"; };
+		88202659142CC2EA003BA1F5 /* StarSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarSelected@2x.png"; sourceTree = "<group>"; };
 		88675A801429B713003A42E1 /* ConferenceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConferenceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88675A841429B713003A42E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88675A861429B713003A42E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -184,6 +192,17 @@
 				88202649142C5CCF003BA1F5 /* Speaker.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		88202655142CC2EA003BA1F5 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				88202656142CC2EA003BA1F5 /* Star.png */,
+				88202657142CC2EA003BA1F5 /* Star@2x.png */,
+				88202658142CC2EA003BA1F5 /* StarSelected.png */,
+				88202659142CC2EA003BA1F5 /* StarSelected@2x.png */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 		88675A751429B713003A42E1 = {
@@ -261,6 +280,7 @@
 		88BDF1C01429CA34008E2774 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				88202655142CC2EA003BA1F5 /* Buttons */,
 				88BDF1C11429CA34008E2774 /* ConferenceApp-Info.plist */,
 			);
 			path = Resources;
@@ -405,6 +425,10 @@
 			files = (
 				88BDF1BD1429C936008E2774 /* InfoPlist.strings in Resources */,
 				88BDF1BE1429C936008E2774 /* MainWindow.xib in Resources */,
+				8820265A142CC2EA003BA1F5 /* Star.png in Resources */,
+				8820265B142CC2EA003BA1F5 /* Star@2x.png in Resources */,
+				8820265C142CC2EA003BA1F5 /* StarSelected.png in Resources */,
+				8820265D142CC2EA003BA1F5 /* StarSelected@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

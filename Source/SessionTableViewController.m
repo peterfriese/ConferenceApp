@@ -11,6 +11,9 @@
 
 @implementation SessionTableViewController
 
+@synthesize favoritesButton = _favoritesButton;
+@synthesize displayFavorites = _displayFavorites;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -20,8 +23,56 @@
         self.placeholderText = @"Search sessions";
         self.groupBy = @"startTime";
         self.sortBy = @"startTime";
+        
+        self.displayFavorites = NO;
+        self.favoritesButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Star"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleFavorites)];
+        self.navigationItem.rightBarButtonItem = self.favoritesButton;
+            
+        
+        /*
+        UIToolbar *toolbar = [UIToolbar new];
+        toolbar.barStyle = UIBarStyleDefault;
+        [toolbar sizeToFit];
+        
+        NSArray *segments = [NSArray arrayWithObjects:@"Schedule", @"Favorites", nil];
+        UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segments];
+        segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
+        [segmentedControl sizeToFit];
+        
+        UIBarButtonItem *segmentedToolbarItem = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
+        [segmentedControl release];
+        
+        UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        [toolbar setItems:[NSArray arrayWithObjects:flexSpace, segmentedToolbarItem, flexSpace, nil]];
+        [segmentedControl release];
+        
+        //Set the frame
+        CGFloat toolbarHeight = [toolbar frame].size.height;
+        CGRect mainViewBounds = self.view.bounds;
+        [toolbar setFrame:CGRectMake(CGRectGetMinX(mainViewBounds), toolbarHeight, CGRectGetWidth(mainViewBounds), toolbarHeight)];
+        
+        //Here we go
+        [self.view addSubview:toolbar];
+         */
     }
     return self;
+}
+
+-(void)dealloc
+{
+    [_favoritesButton release];
+    [super dealloc];
+}
+
+- (void)toggleFavorites {
+    self.displayFavorites = !self.displayFavorites;
+    if (self.displayFavorites) {
+        [self.favoritesButton setImage:[UIImage imageNamed:@"StarSelected"]];
+    }
+    else {
+        [self.favoritesButton setImage:[UIImage imageNamed:@"Star"]];
+    }
+    
 }
 
 - (NSString *)resourcePath

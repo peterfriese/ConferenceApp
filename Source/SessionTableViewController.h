@@ -10,4 +10,7 @@
 
 @interface SessionTableViewController : BaseUITableViewController
 
+@property (nonatomic, retain) UIBarButtonItem *favoritesButton;
+@property (nonatomic) BOOL displayFavorites;
+
 @end
