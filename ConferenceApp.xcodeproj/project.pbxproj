@@ -313,6 +313,7 @@
 		88675A771429B713003A42E1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "http://peterfriese.de";
 			};
 			buildConfigurationList = 88675A7A1429B713003A42E1 /* Build configuration list for PBXProject "ConferenceApp" */;
