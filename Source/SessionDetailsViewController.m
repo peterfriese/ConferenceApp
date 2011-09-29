@@ -11,6 +11,17 @@
 #import "DTAttributedTextCell.h"
 #import "NSAttributedString+html.h"
 #import "DTAttributedTextContentView.h"
+#import <RestKit/RestKit.h>
+
+
+#pragma mark - Private Interface
+
+@interface SessionDetailsViewController()
+- (void)updateFavoriteButtonState;
+@property (nonatomic, retain) UIBarButtonItem *favoriteButton;
+@end
+
+#pragma mark - Implementation
 
 @implementation SessionDetailsViewController
 
@@ -18,6 +29,8 @@
 @synthesize room;
 @synthesize sessionTitle;
 @synthesize time;
+
+@synthesize favoriteButton = _favoriteButton;
 
 typedef enum {
     SessionDetailsSectionKindSpeakers = 1,
@@ -30,7 +43,11 @@ typedef enum {
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _favoriteButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Star"] 
+                                                           style:UIBarButtonItemStylePlain 
+                                                          target:self 
+                                                          action:@selector(toggleFavorite)];
+        self.navigationItem.rightBarButtonItem = _favoriteButton;
     }
     return self;
 }
@@ -43,6 +60,32 @@ typedef enum {
     // Release any cached data, images, etc that aren't in use.
 }
 
+-(void)dealloc
+{
+    [_favoriteButton release];
+    [super dealloc];
+}
+
+#pragma mark - Favorites
+
+- (void)updateFavoriteButtonState
+{
+    if ([session.attending boolValue]) {
+        [_favoriteButton setImage:[UIImage imageNamed:@"StarSelected"]];
+    }
+    else {
+        [_favoriteButton setImage:[UIImage imageNamed:@"Star"]];
+    }    
+}
+
+- (void)toggleFavorite {
+    session.attending = [NSNumber numberWithBool:![session.attending boolValue]];
+    [[[RKObjectManager sharedManager] objectStore] save];
+    
+    [self updateFavoriteButtonState];
+}
+
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -52,6 +95,7 @@ typedef enum {
     room.text = session.room;
     track.text = session.type;
     time.text = [NSString stringWithFormat:@"%@, %@", session.day, session.timeSlot];
+    [self updateFavoriteButtonState];    
 }
 
 - (void)viewDidUnload
