@@ -20,7 +20,16 @@
 @dynamic sessions;
 @dynamic initial;
 
-- (NSString *)initial {
+- (NSString *)fullName 
+{
+    return [NSString stringWithFormat:@"%@%@%@", 
+                [self firstName], 
+                ([[self firstName] length] > 0) ? @" " : @"", 
+                [self lastName]];
+}
+
+- (NSString *)initial 
+{
 	if ([[self lastName] length] > 0  && [self lastName] != nil) {
         NSString *initial = [[self lastName] substringToIndex:1];
 		return initial;

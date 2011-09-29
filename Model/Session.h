@@ -26,6 +26,9 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) NSSet *speakers;
+
+@property (nonatomic, retain) NSString *day;
+@property (nonatomic, retain) NSString *timeSlot;
 @end
 
 @interface Session (CoreDataGeneratedAccessors)

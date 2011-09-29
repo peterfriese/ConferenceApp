@@ -39,6 +39,18 @@
     [dateFormatter release];
     [timeFormatter release];
     
+    // Speaker Mapping
+    RKManagedObjectMapping *speakerMapping = [RKManagedObjectMapping mappingForClass:[Speaker class]];
+    speakerMapping.primaryKeyAttribute = @"speakerId";
+    [speakerMapping mapKeyPathsToAttributes:
+     @"id", @"speakerId", 
+     @"firstName", @"firstName",
+     @"lastName", @"lastName",
+     @"affiliation", @"affiliation",
+     @"bio", @"bio",
+     @"role", @"role",
+     nil];    
+    
     // Session Mapping
     RKManagedObjectMapping *sessionMapping = [RKManagedObjectMapping mappingForClass:[Session class]];
     sessionMapping.primaryKeyAttribute = @"sessionId";
@@ -55,20 +67,11 @@
         @"createdAt", @"createdAt", 
         @"category", @"category", 
         nil];
-    [objectManager.mappingProvider setMapping:sessionMapping forKeyPath:@"session"];
+    [sessionMapping mapKeyPath:@"presenters" toRelationship:@"speakers" withMapping:speakerMapping];
     
-    // Speaker Mapping
-    RKManagedObjectMapping *speakerMapping = [RKManagedObjectMapping mappingForClass:[Speaker class]];
-    speakerMapping.primaryKeyAttribute = @"speakerId";
-    [speakerMapping mapKeyPathsToAttributes:
-        @"id", @"speakerId", 
-        @"firstName", @"firstName",
-        @"lastName", @"lastName",
-        @"affiliation", @"affiliation",
-        @"bio", @"bio",
-        @"role", @"role",
-        nil];
-    [objectManager.mappingProvider setMapping:speakerMapping forKeyPath:@"speaker"];
+    // Add mappings to mapping manager:
+    [objectManager.mappingProvider setMapping:sessionMapping forKeyPath:@"session"];
+    [objectManager.mappingProvider setMapping:speakerMapping forKeyPath:@"presenters"];
 }
 
 -(void)managedObjectStore:(RKManagedObjectStore *)objectStore didFailToCreatePersistentStoreCoordinatorWithError:(NSError *)error
@@ -90,6 +93,7 @@
     // Sessions View Controller and NavigationController
     SessionTableViewController *sessionsViewController = [[SessionTableViewController alloc] init];
     UINavigationController *sessionsNavigationController = [[UINavigationController alloc] initWithRootViewController:sessionsViewController];
+    [sessionsNavigationController.navigationBar setTintColor:[UIColor blackColor]];
     [sessionsViewController release];
     [tabBarControllers addObject:sessionsNavigationController];
     [sessionsNavigationController release];

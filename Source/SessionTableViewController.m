@@ -8,6 +8,7 @@
 
 #import "SessionTableViewController.h"
 #import "Session.h"
+#import "SessionDetailsViewController.h"
 
 @implementation SessionTableViewController
 
@@ -85,7 +86,8 @@
     NSArray *sections = [[self fetchedResultsControllerForTableView:tableView] sections];
     if ([sections count]) {
         id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
-        return [sectionInfo name];
+        Session *session = (Session *)[[sectionInfo objects] objectAtIndex:0];
+        return [session timeSlot];
     }
     return @"";
 }
@@ -101,7 +103,17 @@
     NSString *endTime = [timeFormatter stringFromDate:[session endTime]];
     [timeFormatter release];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", startTime, endTime];
+}
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    SessionDetailsViewController *sessionDetailsViewController = [[SessionDetailsViewController alloc] init];
+    
+    Session *session = (Session *)[[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];    
+    sessionDetailsViewController.session = session;
+                                            
+    [self.navigationController pushViewController:sessionDetailsViewController animated:YES];
+    [sessionDetailsViewController release];
 }
 
 @end

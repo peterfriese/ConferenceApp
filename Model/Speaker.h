@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSString * initial;
 @property (nonatomic, retain) NSSet *sessions;
 
+- (NSString *)fullName;
 - (NSString *)initial;
 @end
 
