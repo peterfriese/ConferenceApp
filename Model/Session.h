@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData/CoreData.h>
+
+#import <RestKit/RestKit.h>
+#import <RestKit/CoreData/CoreData.h>
 
 @class Speaker;
 
@@ -26,6 +30,7 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) NSSet *speakers;
+@property (nonatomic, retain) NSNumber * attending;
 
 @property (nonatomic, retain) NSString *day;
 @property (nonatomic, retain) NSString *timeSlot;

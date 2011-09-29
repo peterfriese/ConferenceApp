@@ -2,6 +2,7 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Session" representedClassName="Session">
         <attribute name="abstract" optional="YES" attributeType="String"/>
+        <attribute name="attending" optional="YES" attributeType="Boolean" defaultValueString="NO"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="createdAt" optional="YES" attributeType="Date"/>
         <attribute name="date" optional="YES" attributeType="Date"/>

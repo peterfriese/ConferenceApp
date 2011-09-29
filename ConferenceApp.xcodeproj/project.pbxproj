@@ -11,7 +11,6 @@
 		88202633142B21A5003BA1F5 /* BaseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202632142B21A5003BA1F5 /* BaseUITableViewController.m */; };
 		88202641142B35AD003BA1F5 /* SessionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202640142B35AD003BA1F5 /* SessionTableViewController.m */; };
 		8820264A142C5CCF003BA1F5 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202649142C5CCF003BA1F5 /* Speaker.m */; };
-		8820264D142C5CEC003BA1F5 /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820264C142C5CEC003BA1F5 /* Session.m */; };
 		88202650142C6696003BA1F5 /* SpeakerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820264F142C6696003BA1F5 /* SpeakerTableViewController.m */; };
 		8820265A142CC2EA003BA1F5 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 88202656142CC2EA003BA1F5 /* Star.png */; };
 		8820265B142CC2EA003BA1F5 /* Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88202657142CC2EA003BA1F5 /* Star@2x.png */; };
@@ -41,6 +40,7 @@
 		88C848BB143479A800C500EB /* 66-microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C848B7143479A800C500EB /* 66-microphone@2x.png */; };
 		88C848BC143479A800C500EB /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C848B8143479A800C500EB /* 83-calendar.png */; };
 		88C848BD143479A800C500EB /* 83-calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C848B9143479A800C500EB /* 83-calendar@2x.png */; };
+		88C848C014347C3200C500EB /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C848BF14347C3200C500EB /* Session.m */; };
 		88F34865143056B200F06F1F /* SessionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F34863143056B200F06F1F /* SessionDetailsViewController.m */; };
 		88F34866143056B200F06F1F /* SessionDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88F34864143056B200F06F1F /* SessionDetailsViewController.xib */; };
 		88F348BB1430737300F06F1F /* Zigzag.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BA1430737300F06F1F /* Zigzag.png */; };
@@ -178,8 +178,6 @@
 		88202640142B35AD003BA1F5 /* SessionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionTableViewController.m; sourceTree = "<group>"; };
 		88202648142C5CCF003BA1F5 /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speaker.h; sourceTree = "<group>"; };
 		88202649142C5CCF003BA1F5 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
-		8820264B142C5CEC003BA1F5 /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
-		8820264C142C5CEC003BA1F5 /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		8820264E142C6696003BA1F5 /* SpeakerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerTableViewController.h; sourceTree = "<group>"; };
 		8820264F142C6696003BA1F5 /* SpeakerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerTableViewController.m; sourceTree = "<group>"; };
 		88202656142CC2EA003BA1F5 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Star.png; sourceTree = "<group>"; };
@@ -215,6 +213,8 @@
 		88C848B7143479A800C500EB /* 66-microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "66-microphone@2x.png"; sourceTree = "<group>"; };
 		88C848B8143479A800C500EB /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
 		88C848B9143479A800C500EB /* 83-calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar@2x.png"; sourceTree = "<group>"; };
+		88C848BE14347C3200C500EB /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
+		88C848BF14347C3200C500EB /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		88F34862143056B200F06F1F /* SessionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailsViewController.h; sourceTree = "<group>"; };
 		88F34863143056B200F06F1F /* SessionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailsViewController.m; sourceTree = "<group>"; };
 		88F34864143056B200F06F1F /* SessionDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetailsViewController.xib; sourceTree = "<group>"; };
@@ -319,9 +319,9 @@
 		882025B71429D6D4003BA1F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				88C848BE14347C3200C500EB /* Session.h */,
+				88C848BF14347C3200C500EB /* Session.m */,
 				882025B81429D704003BA1F5 /* ConferenceApp.xcdatamodeld */,
-				8820264B142C5CEC003BA1F5 /* Session.h */,
-				8820264C142C5CEC003BA1F5 /* Session.m */,
 				88202648142C5CCF003BA1F5 /* Speaker.h */,
 				88202649142C5CCF003BA1F5 /* Speaker.m */,
 			);
@@ -687,7 +687,6 @@
 				88202633142B21A5003BA1F5 /* BaseUITableViewController.m in Sources */,
 				88202641142B35AD003BA1F5 /* SessionTableViewController.m in Sources */,
 				8820264A142C5CCF003BA1F5 /* Speaker.m in Sources */,
-				8820264D142C5CEC003BA1F5 /* Session.m in Sources */,
 				88202650142C6696003BA1F5 /* SpeakerTableViewController.m in Sources */,
 				88F34865143056B200F06F1F /* SessionDetailsViewController.m in Sources */,
 				88F3496914330A1700F06F1F /* CGUtils.m in Sources */,
@@ -726,6 +725,7 @@
 				88C8486014334A9800C500EB /* DTWebResource.m in Sources */,
 				88C8486114334A9800C500EB /* NSDictionary+Data.m in Sources */,
 				88C8486214334A9800C500EB /* UIPasteboard+DTWebArchive.m in Sources */,
+				88C848C014347C3200C500EB /* Session.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

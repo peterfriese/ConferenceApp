@@ -28,6 +28,7 @@
 @dynamic title;
 @dynamic type;
 @dynamic speakers;
+@dynamic attending;
 
 @synthesize day = _day;
 @synthesize timeSlot = _timeSlot;
