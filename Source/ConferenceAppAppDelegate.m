@@ -21,7 +21,7 @@
 
 - (void)setupRestKit
 {
-    RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://peterfriese.local/~peterfriese/ece2011-data"];
+    RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://ece2011.peterfriese.de/"];
     
     objectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
 

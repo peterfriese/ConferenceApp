@@ -18,17 +18,40 @@
 @property (nonatomic, retain) UISearchDisplayController *searchDisplayController;
 
 - (void)setupSearchBar;
+- (void)loadObjectsFromDataStore;
 @end
 
 @implementation BaseUITableViewController
 
 #pragma mark - View lifecycle
 
+- (id)init 
+{
+    if ((self = [super init])) {
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(reachabilityChanged:)
+                                                     name:RKReachabilityStateChangedNotification
+                                                   object:nil];
+    }
+    
+    return self;
+}
+
+- (void)reachabilityChanged:(NSNotification*)notification {
+    RKReachabilityObserver* observer = (RKReachabilityObserver*)[notification object];
+    
+    if ([observer isNetworkReachable]) {
+        [self loadData];
+    } 
+    else {
+    }
+}
+
 -(void)viewDidLoad
 {
     [self setupSearchBar];
     [super viewDidLoad];
-    [self loadData];
+    [self loadObjectsFromDataStore];
 }
 
 #pragma mark - Search bar
@@ -149,13 +172,20 @@
 @synthesize resourcePath = _resourcePath;
 
 - (void)loadData {
-    // Load the object model via RestKit	
+    // Load the object model via RestKit
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
-    [objectManager loadObjectsAtResourcePath:[self resourcePath] delegate:self block:^(RKObjectLoader* loader) {
-        // Twitter returns statuses as a naked array in JSON, so we instruct the loader
-        // to user the appropriate object mapping
-        loader.objectMapping = [objectManager.mappingProvider objectMappingForClass:[[self managedObjectClass] class]];
-    }];
+    
+    if ([objectManager isOnline]) {
+        [objectManager loadObjectsAtResourcePath:[self resourcePath] delegate:self block:^(RKObjectLoader* loader) {
+            // Twitter returns statuses as a naked array in JSON, so we instruct the loader
+            // to user the appropriate object mapping
+            loader.objectMapping = [objectManager.mappingProvider objectMappingForClass:[[self managedObjectClass] class]];
+        }];
+    }
+    else {
+        [self loadObjectsFromDataStore];
+    }
+    
 }
 
 - (void)loadObjectsFromDataStore 
