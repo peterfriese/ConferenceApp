@@ -37,11 +37,14 @@
 		88C8486014334A9800C500EB /* DTWebResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C8485A14334A9800C500EB /* DTWebResource.m */; };
 		88C8486114334A9800C500EB /* NSDictionary+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C8485C14334A9800C500EB /* NSDictionary+Data.m */; };
 		88C8486214334A9800C500EB /* UIPasteboard+DTWebArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C8485E14334A9800C500EB /* UIPasteboard+DTWebArchive.m */; };
+		88C848BA143479A800C500EB /* 66-microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C848B6143479A800C500EB /* 66-microphone.png */; };
+		88C848BB143479A800C500EB /* 66-microphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C848B7143479A800C500EB /* 66-microphone@2x.png */; };
+		88C848BC143479A800C500EB /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C848B8143479A800C500EB /* 83-calendar.png */; };
+		88C848BD143479A800C500EB /* 83-calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C848B9143479A800C500EB /* 83-calendar@2x.png */; };
 		88F34865143056B200F06F1F /* SessionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F34863143056B200F06F1F /* SessionDetailsViewController.m */; };
 		88F34866143056B200F06F1F /* SessionDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88F34864143056B200F06F1F /* SessionDetailsViewController.xib */; };
 		88F348BB1430737300F06F1F /* Zigzag.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BA1430737300F06F1F /* Zigzag.png */; };
 		88F348BD14307A9400F06F1F /* Zickzack.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BC14307A9400F06F1F /* Zickzack.png */; };
-		88F348CB1431D79C00F06F1F /* HTMLTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F348CA1431D79C00F06F1F /* HTMLTableViewCell.m */; };
 		88F3496914330A1700F06F1F /* CGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F3491C14330A1700F06F1F /* CGUtils.m */; };
 		88F3496D14330A1700F06F1F /* DTAttributedTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F3492414330A1700F06F1F /* DTAttributedTextCell.m */; };
 		88F3496E14330A1700F06F1F /* DTAttributedTextContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F3492614330A1700F06F1F /* DTAttributedTextContentView.m */; };
@@ -208,13 +211,15 @@
 		88C8485C14334A9800C500EB /* NSDictionary+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Data.m"; sourceTree = "<group>"; };
 		88C8485D14334A9800C500EB /* UIPasteboard+DTWebArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPasteboard+DTWebArchive.h"; sourceTree = "<group>"; };
 		88C8485E14334A9800C500EB /* UIPasteboard+DTWebArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPasteboard+DTWebArchive.m"; sourceTree = "<group>"; };
+		88C848B6143479A800C500EB /* 66-microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "66-microphone.png"; sourceTree = "<group>"; };
+		88C848B7143479A800C500EB /* 66-microphone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "66-microphone@2x.png"; sourceTree = "<group>"; };
+		88C848B8143479A800C500EB /* 83-calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar.png"; sourceTree = "<group>"; };
+		88C848B9143479A800C500EB /* 83-calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar@2x.png"; sourceTree = "<group>"; };
 		88F34862143056B200F06F1F /* SessionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailsViewController.h; sourceTree = "<group>"; };
 		88F34863143056B200F06F1F /* SessionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailsViewController.m; sourceTree = "<group>"; };
 		88F34864143056B200F06F1F /* SessionDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetailsViewController.xib; sourceTree = "<group>"; };
 		88F348BA1430737300F06F1F /* Zigzag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zigzag.png; sourceTree = "<group>"; };
 		88F348BC14307A9400F06F1F /* Zickzack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zickzack.png; sourceTree = "<group>"; };
-		88F348C91431D79C00F06F1F /* HTMLTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTMLTableViewCell.h; sourceTree = "<group>"; };
-		88F348CA1431D79C00F06F1F /* HTMLTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTMLTableViewCell.m; sourceTree = "<group>"; };
 		88F3491B14330A1700F06F1F /* CGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGUtils.h; sourceTree = "<group>"; };
 		88F3491C14330A1700F06F1F /* CGUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGUtils.m; sourceTree = "<group>"; };
 		88F3492314330A1700F06F1F /* DTAttributedTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTAttributedTextCell.h; sourceTree = "<group>"; };
@@ -326,6 +331,10 @@
 		88202655142CC2EA003BA1F5 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				88C848B6143479A800C500EB /* 66-microphone.png */,
+				88C848B7143479A800C500EB /* 66-microphone@2x.png */,
+				88C848B8143479A800C500EB /* 83-calendar.png */,
+				88C848B9143479A800C500EB /* 83-calendar@2x.png */,
 				88202656142CC2EA003BA1F5 /* Star.png */,
 				88202657142CC2EA003BA1F5 /* Star@2x.png */,
 				88202658142CC2EA003BA1F5 /* StarSelected.png */,
@@ -410,8 +419,6 @@
 				88F34862143056B200F06F1F /* SessionDetailsViewController.h */,
 				88F34863143056B200F06F1F /* SessionDetailsViewController.m */,
 				88F34864143056B200F06F1F /* SessionDetailsViewController.xib */,
-				88F348C91431D79C00F06F1F /* HTMLTableViewCell.h */,
-				88F348CA1431D79C00F06F1F /* HTMLTableViewCell.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -660,6 +667,10 @@
 				88F34866143056B200F06F1F /* SessionDetailsViewController.xib in Resources */,
 				88F348BB1430737300F06F1F /* Zigzag.png in Resources */,
 				88F348BD14307A9400F06F1F /* Zickzack.png in Resources */,
+				88C848BA143479A800C500EB /* 66-microphone.png in Resources */,
+				88C848BB143479A800C500EB /* 66-microphone@2x.png in Resources */,
+				88C848BC143479A800C500EB /* 83-calendar.png in Resources */,
+				88C848BD143479A800C500EB /* 83-calendar@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,7 +690,6 @@
 				8820264D142C5CEC003BA1F5 /* Session.m in Sources */,
 				88202650142C6696003BA1F5 /* SpeakerTableViewController.m in Sources */,
 				88F34865143056B200F06F1F /* SessionDetailsViewController.m in Sources */,
-				88F348CB1431D79C00F06F1F /* HTMLTableViewCell.m in Sources */,
 				88F3496914330A1700F06F1F /* CGUtils.m in Sources */,
 				88F3496D14330A1700F06F1F /* DTAttributedTextCell.m in Sources */,
 				88F3496E14330A1700F06F1F /* DTAttributedTextContentView.m in Sources */,

@@ -92,6 +92,7 @@
     
     // Sessions View Controller and NavigationController
     SessionTableViewController *sessionsViewController = [[SessionTableViewController alloc] init];
+    sessionsViewController.tabBarItem.image = [UIImage imageNamed:@"83-calendar"];
     UINavigationController *sessionsNavigationController = [[UINavigationController alloc] initWithRootViewController:sessionsViewController];
     [sessionsNavigationController.navigationBar setTintColor:[UIColor blackColor]];
     [sessionsViewController release];
@@ -100,6 +101,7 @@
     
     // Speaker View Controller and NavigationController
     SpeakerTableViewController *speakerViewController = [[SpeakerTableViewController alloc] init];
+    speakerViewController.tabBarItem.image = [UIImage imageNamed:@"66-microphone"];
     UINavigationController *speakerNavigationController = [[UINavigationController alloc] initWithRootViewController:speakerViewController];
     [speakerViewController release];
     [tabBarControllers addObject:speakerNavigationController];
