@@ -17,13 +17,13 @@
 @property (nonatomic, retain) NSString * speakerId;
 @property (nonatomic, retain) NSString * firstName;
 @property (nonatomic, retain) NSString * lastName;
+@property (nonatomic, retain) NSString * fullName;
 @property (nonatomic, retain) NSString * affiliation;
 @property (nonatomic, retain) NSString * bio;
 @property (nonatomic, retain) NSString * role;
 @property (nonatomic, retain) NSString * initial;
 @property (nonatomic, retain) NSSet *sessions;
 
-- (NSString *)fullName;
 - (NSString *)initial;
 @end
 

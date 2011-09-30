@@ -21,8 +21,7 @@
 
 - (void)setupRestKit
 {
-    NSString *baseURL = @"http://www.eclipsecon.org/europe2011/json/sessions";
-    // NSString *baseURL = @"http://ece2011.peterfriese.de/";
+    NSString *baseURL = @"http://www.eclipsecon.org/europe2011/json";
     RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:baseURL];
     
     objectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
@@ -46,7 +45,7 @@
     speakerMapping.primaryKeyAttribute = @"speakerId";
     [speakerMapping mapKeyPathsToAttributes:
      @"id", @"speakerId", 
-     @"fullName", @"fullName",
+     @"fullname", @"fullName",
      @"organization", @"affiliation",
      @"bio", @"bio",
      nil];    

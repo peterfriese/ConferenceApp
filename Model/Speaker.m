@@ -19,7 +19,9 @@
 @dynamic role;
 @dynamic sessions;
 @dynamic initial;
+@dynamic fullName;
 
+/*
 - (NSString *)fullName 
 {
     return [NSString stringWithFormat:@"%@%@%@", 
@@ -27,6 +29,7 @@
                 ([[self firstName] length] > 0) ? @" " : @"", 
                 [self lastName]];
 }
+ */
 
 - (NSString *)initial 
 {

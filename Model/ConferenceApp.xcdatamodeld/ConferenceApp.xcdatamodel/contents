@@ -19,6 +19,7 @@
         <attribute name="affiliation" optional="YES" attributeType="String"/>
         <attribute name="bio" optional="YES" attributeType="String"/>
         <attribute name="firstName" optional="YES" attributeType="String"/>
+        <attribute name="fullName" optional="YES" attributeType="String"/>
         <attribute name="initial" optional="YES" transient="YES" attributeType="String"/>
         <attribute name="lastName" optional="YES" attributeType="String"/>
         <attribute name="role" optional="YES" attributeType="String"/>
@@ -27,6 +28,6 @@
     </entity>
     <elements>
         <element name="Session" positionX="-4365" positionY="-4365" width="128" height="210"/>
-        <element name="Speaker" positionX="-4086" positionY="-4158" width="128" height="165"/>
+        <element name="Speaker" positionX="-4086" positionY="-4158" width="128" height="180"/>
     </elements>
 </model>

@@ -176,6 +176,7 @@
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
     
     if ([objectManager isOnline]) {
+//        [objectManager loadObjectsAtResourcePath:[self resourcePath] delegate:self];
         [objectManager loadObjectsAtResourcePath:[self resourcePath] delegate:self block:^(RKObjectLoader* loader) {
             // Twitter returns statuses as a naked array in JSON, so we instruct the loader
             // to user the appropriate object mapping
@@ -199,6 +200,7 @@
 #pragma mark - RKObjectLoaderDelegate methods
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
+    NSLog(@"Loaded %d objects: %@", [objects count], objects);
 	[self loadObjectsFromDataStore];
 	[self.tableView reloadData];
 }

@@ -25,7 +25,7 @@
 
 -(NSString *)resourcePath
 {
-    return @"/speakers.json";
+    return @"/speakers";
 }
 
 -(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
@@ -46,7 +46,7 @@
 -(void)configureCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject atIndexPath:(NSIndexPath *)indexPath
 {
     Speaker *speaker = (Speaker *)managedObject;
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", [speaker firstName], [speaker lastName]];
+    cell.textLabel.text = speaker.fullName;
     cell.detailTextLabel.text = speaker.affiliation;
 }
 
