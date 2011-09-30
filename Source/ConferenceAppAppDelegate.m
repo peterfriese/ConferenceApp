@@ -21,7 +21,9 @@
 
 - (void)setupRestKit
 {
-    RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:@"http://ece2011.peterfriese.de/"];
+    NSString *baseURL = @"http://www.eclipsecon.org/europe2011/json/sessions";
+    // NSString *baseURL = @"http://ece2011.peterfriese.de/";
+    RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:baseURL];
     
     objectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
 
@@ -44,11 +46,9 @@
     speakerMapping.primaryKeyAttribute = @"speakerId";
     [speakerMapping mapKeyPathsToAttributes:
      @"id", @"speakerId", 
-     @"firstName", @"firstName",
-     @"lastName", @"lastName",
-     @"affiliation", @"affiliation",
+     @"fullName", @"fullName",
+     @"organization", @"affiliation",
      @"bio", @"bio",
-     @"role", @"role",
      nil];    
     
     // Session Mapping
@@ -60,18 +60,16 @@
         @"abstract", @"abstract",
         @"type", @"type",
         @"room", @"room",
-        @"status", @"status",
         @"date", @"date",
-        @"startTime", @"startTime",
-        @"endTime", @"endTime",
-        @"createdAt", @"createdAt", 
+        @"start", @"startTime",
+        @"end", @"endTime",
         @"category", @"category", 
         nil];
-    [sessionMapping mapKeyPath:@"presenters" toRelationship:@"speakers" withMapping:speakerMapping];
+    [sessionMapping mapKeyPath:@"presenter" toRelationship:@"speakers" withMapping:speakerMapping];
     
     // Add mappings to mapping manager:
     [objectManager.mappingProvider setMapping:sessionMapping forKeyPath:@"session"];
-    [objectManager.mappingProvider setMapping:speakerMapping forKeyPath:@"presenters"];
+    [objectManager.mappingProvider setMapping:speakerMapping forKeyPath:@"presenter"];
 }
 
 -(void)managedObjectStore:(RKManagedObjectStore *)objectStore didFailToCreatePersistentStoreCoordinatorWithError:(NSError *)error
