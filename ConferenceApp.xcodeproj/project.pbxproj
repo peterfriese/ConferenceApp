@@ -41,6 +41,7 @@
 		88C848BC143479A800C500EB /* 83-calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C848B8143479A800C500EB /* 83-calendar.png */; };
 		88C848BD143479A800C500EB /* 83-calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C848B9143479A800C500EB /* 83-calendar@2x.png */; };
 		88C848C014347C3200C500EB /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C848BF14347C3200C500EB /* Session.m */; };
+		88C849631438FE5C00C500EB /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C849621438FE5C00C500EB /* NSDate+Additions.m */; };
 		88F34865143056B200F06F1F /* SessionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F34863143056B200F06F1F /* SessionDetailsViewController.m */; };
 		88F34866143056B200F06F1F /* SessionDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88F34864143056B200F06F1F /* SessionDetailsViewController.xib */; };
 		88F348BB1430737300F06F1F /* Zigzag.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BA1430737300F06F1F /* Zigzag.png */; };
@@ -215,6 +216,8 @@
 		88C848B9143479A800C500EB /* 83-calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "83-calendar@2x.png"; sourceTree = "<group>"; };
 		88C848BE14347C3200C500EB /* Session.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Session.h; sourceTree = "<group>"; };
 		88C848BF14347C3200C500EB /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
+		88C849611438FE5B00C500EB /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
+		88C849621438FE5C00C500EB /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
 		88F34862143056B200F06F1F /* SessionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailsViewController.h; sourceTree = "<group>"; };
 		88F34863143056B200F06F1F /* SessionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailsViewController.m; sourceTree = "<group>"; };
 		88F34864143056B200F06F1F /* SessionDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetailsViewController.xib; sourceTree = "<group>"; };
@@ -419,6 +422,8 @@
 				88F34862143056B200F06F1F /* SessionDetailsViewController.h */,
 				88F34863143056B200F06F1F /* SessionDetailsViewController.m */,
 				88F34864143056B200F06F1F /* SessionDetailsViewController.xib */,
+				88C849611438FE5B00C500EB /* NSDate+Additions.h */,
+				88C849621438FE5C00C500EB /* NSDate+Additions.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -726,6 +731,7 @@
 				88C8486114334A9800C500EB /* NSDictionary+Data.m in Sources */,
 				88C8486214334A9800C500EB /* UIPasteboard+DTWebArchive.m in Sources */,
 				88C848C014347C3200C500EB /* Session.m in Sources */,
+				88C849631438FE5C00C500EB /* NSDate+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

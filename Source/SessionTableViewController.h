@@ -12,5 +12,6 @@
 
 @property (nonatomic, retain) UIBarButtonItem *favoritesButton;
 @property (nonatomic) BOOL displayFavorites;
+@property (nonatomic, retain) NSDate *date;
 
 @end

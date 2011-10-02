@@ -13,6 +13,7 @@
 #import "Session.h"
 #import "SpeakerTableViewController.h"
 #import "Speaker.h"
+#import "NSDate+Additions.h"
 
 @implementation ConferenceAppAppDelegate
 
@@ -89,6 +90,7 @@
     
     // Sessions View Controller and NavigationController
     SessionTableViewController *sessionsViewController = [[SessionTableViewController alloc] init];
+    sessionsViewController.date = [NSDate dateFromString:@"2011-11-03"];
     sessionsViewController.tabBarItem.image = [UIImage imageNamed:@"83-calendar"];
     UINavigationController *sessionsNavigationController = [[UINavigationController alloc] initWithRootViewController:sessionsViewController];
     [sessionsNavigationController.navigationBar setTintColor:[UIColor blackColor]];

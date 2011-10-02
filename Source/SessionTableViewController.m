@@ -12,6 +12,7 @@
 
 @interface SessionTableViewController()
 @property (nonatomic, retain) NSPredicate *favoritesPredicate;
+@property (nonatomic, retain) NSPredicate *datePredicate;
 @end
 
 @implementation SessionTableViewController
@@ -19,6 +20,9 @@
 @synthesize favoritesButton = _favoritesButton;
 @synthesize displayFavorites = _displayFavorites;
 @synthesize favoritesPredicate = _favoritesPredicate;
+
+@synthesize date = _date;
+@synthesize datePredicate = _datePredicate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,7 +37,6 @@
         self.displayFavorites = NO;
         self.favoritesButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Star"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleFavorites)];
         self.navigationItem.rightBarButtonItem = self.favoritesButton;
-            
         
         /*
         UIToolbar *toolbar = [UIToolbar new];
@@ -64,6 +67,14 @@
     return self;
 }
 
+-(void)viewDidLoad
+{
+    if (self.date != nil) {
+        self.datePredicate = [NSPredicate predicateWithFormat:@"date == %@", self.date];
+    }
+    [super viewDidLoad];
+}
+
 -(void)dealloc
 {
     [_favoritesButton release];
@@ -92,6 +103,9 @@
     }
     if (self.favoritesPredicate != nil) {
         [predicates addObject:self.favoritesPredicate];
+    }
+    if (self.datePredicate != nil) {
+        [predicates addObject:self.datePredicate];
     }
     NSCompoundPredicate *compoundPredicates = [[[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:predicates] autorelease];
     [predicates release];
