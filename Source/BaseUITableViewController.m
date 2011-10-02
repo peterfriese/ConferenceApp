@@ -142,7 +142,6 @@
 	if (match.location != NSNotFound) {
 		[className deleteCharactersInRange:match];
         // TODO: check if class available AND subclass of NSManagedObject. If not, depluralize and try again
-		NSLog(@"Entity name: %@", className);
 		return className;
 	}
 	[NSException raise:@"EntityNameException" 
@@ -176,7 +175,6 @@
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
     
     if ([objectManager isOnline]) {
-//        [objectManager loadObjectsAtResourcePath:[self resourcePath] delegate:self];
         [objectManager loadObjectsAtResourcePath:[self resourcePath] delegate:self block:^(RKObjectLoader* loader) {
             // Twitter returns statuses as a naked array in JSON, so we instruct the loader
             // to user the appropriate object mapping
@@ -200,7 +198,6 @@
 #pragma mark - RKObjectLoaderDelegate methods
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects {
-    NSLog(@"Loaded %d objects: %@", [objects count], objects);
 	[self loadObjectsFromDataStore];
 	[self.tableView reloadData];
 }
@@ -221,20 +218,18 @@
 @synthesize groupBy = _groupBy;
 @synthesize sortBy = _sortBy;
 
-- (NSFetchedResultsController *)createFetchedResultsController
+// TODO: better name!
+- (void)updatePredicates
 {
-    return [[self managedObjectClass] fetchRequestAllGroupedBy:self.groupBy 
-                                            withPredicate:nil
-                                                 sortedBy:self.sortBy
-                                                ascending:YES];
-}
+    if (self.searchWasActive) {
+        _filteredFetchedResultsController = nil;
+        // how can we find the search controller's tableview? or how can we force the fetched results controller to update the table?
+    }
+    else {
+        _fetchedResultsController = nil;
+        [self.tableView reloadData];
+    }
 
-- (NSFetchedResultsController *)createFetchedResultsControllerWithSearchPredicate:(NSPredicate *)predicate
-{
-    return [[self managedObjectClass] fetchRequestAllGroupedBy:self.groupBy 
-                                                 withPredicate:predicate
-                                                      sortedBy:self.sortBy
-                                                     ascending:YES];
 }
 
 - (NSFetchedResultsController *)fetchedResultsControllerForTableView:(UITableView *)tableView
@@ -247,10 +242,22 @@
     }
 }
 
+- (NSPredicate *)composePredicates:(NSPredicate *)searchStringPredicate
+{
+    // subclasses can override this method, building a compound predicate as they see fit.
+    return searchStringPredicate;
+}
+
 - (NSFetchedResultsController *)fetchedResultsController
 {
     if (_fetchedResultsController == nil) {
-        self.fetchedResultsController = [self createFetchedResultsController];
+        NSPredicate *predicate = [self composePredicates:nil];
+        self.fetchedResultsController = [[self managedObjectClass] fetchRequestAllGroupedBy:self.groupBy 
+                                                                              withPredicate:predicate
+                                                                                   sortedBy:self.sortBy
+                                                                                  ascending:YES];
+        NSError *error;
+        [self.fetchedResultsController performFetch:&error];
     }
     return _fetchedResultsController;
 }
@@ -265,7 +272,13 @@
 {
     if (_filteredFetchedResultsController == nil) {
         NSPredicate *searchPredicate = [self predicateForSearchString:_savedSearchTerm scope:self.savedSearchScope];
-        self.filteredFetchedResultsController = [self createFetchedResultsControllerWithSearchPredicate:searchPredicate];
+        NSPredicate *predicate = [self composePredicates:searchPredicate];
+        
+        self.filteredFetchedResultsController = [[self managedObjectClass] fetchRequestAllGroupedBy:self.groupBy 
+                                                                                      withPredicate:predicate
+                                                                                           sortedBy:self.sortBy
+                                                                                          ascending:YES];
+        
         NSError *error;
         [[self filteredFetchedResultsController] performFetch:&error];
     }

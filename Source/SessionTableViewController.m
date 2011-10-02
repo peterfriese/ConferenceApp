@@ -10,10 +10,15 @@
 #import "Session.h"
 #import "SessionDetailsViewController.h"
 
+@interface SessionTableViewController()
+@property (nonatomic, retain) NSPredicate *favoritesPredicate;
+@end
+
 @implementation SessionTableViewController
 
 @synthesize favoritesButton = _favoritesButton;
 @synthesize displayFavorites = _displayFavorites;
+@synthesize favoritesPredicate = _favoritesPredicate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -69,11 +74,28 @@
     self.displayFavorites = !self.displayFavorites;
     if (self.displayFavorites) {
         [self.favoritesButton setImage:[UIImage imageNamed:@"StarSelected"]];
+        self.favoritesPredicate = [NSPredicate predicateWithFormat:@"attending == YES"];
+        [self updatePredicates];
     }
     else {
         [self.favoritesButton setImage:[UIImage imageNamed:@"Star"]];
+        self.favoritesPredicate = nil;
+        [self updatePredicates];
     }
-    
+}
+
+- (NSPredicate *)composePredicates:(NSPredicate *)searchStringPredicate
+{
+    NSMutableArray *predicates = [[NSMutableArray alloc] init];
+    if (searchStringPredicate != nil) {
+        [predicates addObject:searchStringPredicate];
+    }
+    if (self.favoritesPredicate != nil) {
+        [predicates addObject:self.favoritesPredicate];
+    }
+    NSCompoundPredicate *compoundPredicates = [[[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:predicates] autorelease];
+    [predicates release];
+    return compoundPredicates;
 }
 
 - (NSString *)resourcePath

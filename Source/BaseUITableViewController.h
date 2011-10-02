@@ -33,5 +33,7 @@
 
 - (void)configureCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject atIndexPath:(NSIndexPath *)indexPath;
 - (NSFetchedResultsController *)fetchedResultsControllerForTableView:(UITableView *)tableView;
+- (NSPredicate *)composePredicates:(NSPredicate *)searchStringPredicate;
+- (void)updatePredicates;
 
 @end
