@@ -67,6 +67,7 @@
 - (void)setupSearchBar
 {
     UISearchBar *searchBar = [[[UISearchBar alloc] init] autorelease];
+    searchBar.barStyle = UIBarStyleBlack;
 	searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
 	searchBar.autocorrectionType = UITextAutocorrectionTypeNo;
 	[searchBar sizeToFit];
@@ -79,7 +80,7 @@
 	self.tableView.tableHeaderView = searchBar;	
     
 	// create search display controller (CAVE: requires iOS 4.x)
-	self.searchDisplayController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+	self.searchDisplayController = [[[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self] autorelease];
 	self.searchDisplayController.delegate = self;	
 	self.searchDisplayController.searchResultsDataSource = self;
 	self.searchDisplayController.searchResultsDelegate = self;    

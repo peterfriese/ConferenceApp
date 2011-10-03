@@ -20,6 +20,7 @@
 @property (nonatomic, retain) UIButton *previousDayButton;
 @property (nonatomic, retain) UIButton *nextDayButton;
 @property (nonatomic, retain) SessionTableViewController *sessionsViewController;
+@property (nonatomic, retain) UIBarButtonItem *searchButton;
 @end
 
 
@@ -27,6 +28,7 @@
 
 @synthesize dates = _dates;
 @synthesize favoritesButton = _favoritesButton;
+@synthesize searchButton = _searchButton;
 
 @synthesize dateNavigationBar = _dateNavigationBar;
 @synthesize dateLabel = _dateLabel;
@@ -47,8 +49,11 @@
         [self.view addSubview:self.nextDayButton];
         [self.view addSubview:self.sessionsViewController.view];
         
-        self.favoritesButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Star"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleFavorites)];
-        self.navigationItem.rightBarButtonItem = self.favoritesButton;        
+        self.favoritesButton = [[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Star"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleFavorites)] autorelease];
+        self.navigationItem.rightBarButtonItem = self.favoritesButton;
+        
+        self.searchButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(toggleSearchBar)] autorelease];
+        self.navigationItem.leftBarButtonItem = self.searchButton;
     }
     return self;
 }
@@ -69,6 +74,13 @@
 {
     [super viewDidAppear:animated];
     [self updateNavigationUI];    
+}
+
+#pragma mark - Search button
+
+- (void)toggleSearchBar
+{
+    [self.sessionsViewController toggleSearchBar];
 }
 
 #pragma mark - Favorites
@@ -129,7 +141,7 @@
 - (UIView *)dateNavigationBar
 {
     if (_dateNavigationBar == nil) {
-        self.dateNavigationBar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topbar"]];
+        self.dateNavigationBar = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navbar_grained"]] autorelease];
     }
     return _dateNavigationBar;
 }
@@ -137,12 +149,12 @@
 - (UILabel *)dateLabel
 {
     if (_dateLabel == nil) {
-        self.dateLabel = [[UILabel alloc] init];
+        self.dateLabel = [[[UILabel alloc] init] autorelease];
         self.dateLabel.frame = CGRectMake(50, 5, 220, 38);
         self.dateLabel.textAlignment = UITextAlignmentCenter;
         self.dateLabel.backgroundColor = [UIColor clearColor];
         self.dateLabel.font = [UIFont boldSystemFontOfSize:22];
-        self.dateLabel.textColor = [UIColor colorWithRed:59/255.0 green:73/255.0 blue:88/255.0 alpha:1];
+        self.dateLabel.textColor = [UIColor whiteColor];// [UIColor colorWithRed:59/255.0 green:73/255.0 blue:88/255.0 alpha:1];
     }
     return _dateLabel;
 }
@@ -174,8 +186,8 @@
 - (SessionTableViewController *)sessionsViewController
 {
     if(_sessionsViewController == nil) {
-        self.sessionsViewController = [[SessionTableViewController alloc] init];
-        self.sessionsViewController.view.frame = CGRectMake(0, 44, 320, 480-44);
+        self.sessionsViewController = [[[SessionTableViewController alloc] init] autorelease];
+        self.sessionsViewController.view.frame = CGRectMake(0, 44, 320, 480-64);
         self.sessionsViewController.date = [NSDate dateFromString:@"2011-11-03"];
         self.sessionsViewController.delegate = self;
     }

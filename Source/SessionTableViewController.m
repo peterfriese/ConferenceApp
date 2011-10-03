@@ -34,35 +34,26 @@
         self.groupBy = @"startTime";
         self.sortBy = @"startTime";
         
-        self.displayFavorites = NO;
-        
-        /*
-        UIToolbar *toolbar = [UIToolbar new];
-        toolbar.barStyle = UIBarStyleDefault;
-        [toolbar sizeToFit];
-        
-        NSArray *segments = [NSArray arrayWithObjects:@"Schedule", @"Favorites", nil];
-        UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:segments];
-        segmentedControl.segmentedControlStyle = UISegmentedControlStyleBar;
-        [segmentedControl sizeToFit];
-        
-        UIBarButtonItem *segmentedToolbarItem = [[UIBarButtonItem alloc] initWithCustomView:segmentedControl];
-        [segmentedControl release];
-        
-        UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-        [toolbar setItems:[NSArray arrayWithObjects:flexSpace, segmentedToolbarItem, flexSpace, nil]];
-        [segmentedControl release];
-        
-        //Set the frame
-        CGFloat toolbarHeight = [toolbar frame].size.height;
-        CGRect mainViewBounds = self.view.bounds;
-        [toolbar setFrame:CGRectMake(CGRectGetMinX(mainViewBounds), toolbarHeight, CGRectGetWidth(mainViewBounds), toolbarHeight)];
-        
-        //Here we go
-        [self.view addSubview:toolbar];
-         */
+        self.displayFavorites = NO;        
     }
     return self;
+}
+
+-(void)viewDidLoad
+{
+    [self performSelector:@selector(toggleSearchBar) withObject:nil afterDelay:2.0];
+    [super viewDidLoad];
+}
+
+- (void)toggleSearchBar
+{
+    CGPoint offset = [self.tableView contentOffset];
+    if (offset.y == 0) {
+        [self.tableView setContentOffset:CGPointMake(0, 44) animated:YES];
+    }
+    else {
+        [self.tableView setContentOffset:CGPointMake(0, 0) animated:YES];
+    }
 }
 
 - (NSPredicate *)composePredicates:(NSPredicate *)searchStringPredicate
@@ -85,6 +76,34 @@
 - (NSString *)resourcePath
 {
     return @"/sessions";
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSString *label = @"";
+    NSArray *sections = [[self fetchedResultsControllerForTableView:tableView] sections];
+    if ([sections count]) {
+        id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
+        Session *session = (Session *)[[sectionInfo objects] objectAtIndex:0];
+        label = [session timeSlot];
+    }
+    
+    
+    UIView* customView = [[[UIView alloc] initWithFrame:CGRectMake(10.0, 0.0, 300.0, 44.0)] autorelease];
+    customView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"section_grained_opa90"]];
+    
+    UILabel * headerLabel = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
+    headerLabel.backgroundColor = [UIColor clearColor];
+    headerLabel.opaque = NO;
+    headerLabel.textColor = [UIColor whiteColor];
+    headerLabel.font = [UIFont boldSystemFontOfSize:18];
+    headerLabel.shadowOffset = CGSizeMake(0.0f, 1.0f);
+    headerLabel.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.5];
+    headerLabel.frame = CGRectMake(11,-11, 320.0, 44.0);
+    headerLabel.textAlignment = UITextAlignmentLeft;
+    headerLabel.text = label;
+    [customView addSubview:headerLabel];
+    return customView;    
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section

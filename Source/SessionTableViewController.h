@@ -17,4 +17,5 @@
 @property (nonatomic) BOOL displayFavorites;
 @property (nonatomic, retain) NSDate *date;
 @property (nonatomic, assign) id<SessionNavigationDelegate>delegate;
+- (void)toggleSearchBar;
 @end
