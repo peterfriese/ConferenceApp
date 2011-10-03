@@ -10,7 +10,8 @@
 
 @implementation NSDate (Additions)
 
-+ (NSDate *) dateFromString:(NSString *)string {
++ (NSDate *) dateFromString:(NSString *)string 
+{
 	NSDateFormatter *df = [[NSDateFormatter alloc] init];
 	[df setDateFormat:@"yyyy-MM-dd"];
 	NSDate *myDate = [df dateFromString:string];

@@ -14,6 +14,7 @@
 #import "SpeakerTableViewController.h"
 #import "Speaker.h"
 #import "NSDate+Additions.h"
+#import "ScheduleViewController.h"
 
 @implementation ConferenceAppAppDelegate
 
@@ -89,14 +90,31 @@
     NSMutableArray *tabBarControllers = [[NSMutableArray alloc] init];
     
     // Sessions View Controller and NavigationController
+    /*
     SessionTableViewController *sessionsViewController = [[SessionTableViewController alloc] init];
     sessionsViewController.date = [NSDate dateFromString:@"2011-11-03"];
     sessionsViewController.tabBarItem.image = [UIImage imageNamed:@"83-calendar"];
     UINavigationController *sessionsNavigationController = [[UINavigationController alloc] initWithRootViewController:sessionsViewController];
     [sessionsNavigationController.navigationBar setTintColor:[UIColor blackColor]];
-    [sessionsViewController release];
+    [sessionsViewController release];    
     [tabBarControllers addObject:sessionsNavigationController];
     [sessionsNavigationController release];
+    */
+    
+    NSArray *dates = [NSArray arrayWithObjects:
+                      [NSDate dateFromString:@"2011-11-02"], 
+                      [NSDate dateFromString:@"2011-11-03"], 
+                      [NSDate dateFromString:@"2011-11-04"], 
+                      nil];
+    
+    ScheduleViewController *scheduleViewController = [[ScheduleViewController alloc] init];
+    [scheduleViewController setDates:dates];
+    scheduleViewController.tabBarItem.image = [UIImage imageNamed:@"83-calendar"];
+    UINavigationController *scheduleNavigationController = [[UINavigationController alloc] initWithRootViewController:scheduleViewController];
+    [scheduleNavigationController.navigationBar setTintColor:[UIColor blackColor]];
+    [scheduleViewController release];
+    [tabBarControllers addObject:scheduleNavigationController];
+    [scheduleNavigationController release];
     
     // Speaker View Controller and NavigationController
     SpeakerTableViewController *speakerViewController = [[SpeakerTableViewController alloc] init];

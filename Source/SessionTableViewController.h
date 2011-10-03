@@ -7,11 +7,14 @@
 //
 
 #import "BaseUITableViewController.h"
+#import "Session.h"
+
+@protocol SessionNavigationDelegate <NSObject>
+- (void)navigateToSession:(Session *)session;
+@end
 
 @interface SessionTableViewController : BaseUITableViewController
-
-@property (nonatomic, retain) UIBarButtonItem *favoritesButton;
 @property (nonatomic) BOOL displayFavorites;
 @property (nonatomic, retain) NSDate *date;
-
+@property (nonatomic, assign) id<SessionNavigationDelegate>delegate;
 @end

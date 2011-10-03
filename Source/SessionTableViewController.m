@@ -17,9 +17,9 @@
 
 @implementation SessionTableViewController
 
-@synthesize favoritesButton = _favoritesButton;
 @synthesize displayFavorites = _displayFavorites;
 @synthesize favoritesPredicate = _favoritesPredicate;
+@synthesize delegate = _delegate;
 
 @synthesize date = _date;
 @synthesize datePredicate = _datePredicate;
@@ -35,8 +35,6 @@
         self.sortBy = @"startTime";
         
         self.displayFavorites = NO;
-        self.favoritesButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Star"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleFavorites)];
-        self.navigationItem.rightBarButtonItem = self.favoritesButton;
         
         /*
         UIToolbar *toolbar = [UIToolbar new];
@@ -65,34 +63,6 @@
          */
     }
     return self;
-}
-
--(void)viewDidLoad
-{
-    if (self.date != nil) {
-        self.datePredicate = [NSPredicate predicateWithFormat:@"date == %@", self.date];
-    }
-    [super viewDidLoad];
-}
-
--(void)dealloc
-{
-    [_favoritesButton release];
-    [super dealloc];
-}
-
-- (void)toggleFavorites {
-    self.displayFavorites = !self.displayFavorites;
-    if (self.displayFavorites) {
-        [self.favoritesButton setImage:[UIImage imageNamed:@"StarSelected"]];
-        self.favoritesPredicate = [NSPredicate predicateWithFormat:@"attending == YES"];
-        [self updatePredicates];
-    }
-    else {
-        [self.favoritesButton setImage:[UIImage imageNamed:@"Star"]];
-        self.favoritesPredicate = nil;
-        [self updatePredicates];
-    }
 }
 
 - (NSPredicate *)composePredicates:(NSPredicate *)searchStringPredicate
@@ -143,13 +113,34 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SessionDetailsViewController *sessionDetailsViewController = [[SessionDetailsViewController alloc] init];
-    
-    Session *session = (Session *)[[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];    
-    sessionDetailsViewController.session = session;
-                                            
-    [self.navigationController pushViewController:sessionDetailsViewController animated:YES];
-    [sessionDetailsViewController release];
+    Session *session = (Session *)[[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
+    if ([_delegate conformsToProtocol:@protocol(SessionNavigationDelegate)]) {
+        [_delegate navigateToSession:session];
+    }
+}
+
+#pragma mark - Properties
+
+- (void)setDisplayFavorites:(BOOL)displayFavorites
+{
+    _displayFavorites = displayFavorites;
+    if (_displayFavorites == YES) {
+        self.favoritesPredicate = [NSPredicate predicateWithFormat:@"attending == YES"];
+    }
+    else {
+        self.favoritesPredicate = nil;
+    }
+    [self updatePredicates];    
+}
+
+- (void)setDate:(NSDate *)date
+{
+    if (_date != date) {
+        [_date release];
+        _date = [date retain];
+        self.datePredicate = [NSPredicate predicateWithFormat:@"date == %@", _date];
+        [self updatePredicates];
+    }
 }
 
 @end

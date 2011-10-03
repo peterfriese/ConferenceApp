@@ -42,6 +42,16 @@
 		88C848BD143479A800C500EB /* 83-calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C848B9143479A800C500EB /* 83-calendar@2x.png */; };
 		88C848C014347C3200C500EB /* Session.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C848BF14347C3200C500EB /* Session.m */; };
 		88C849631438FE5C00C500EB /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C849621438FE5C00C500EB /* NSDate+Additions.m */; };
+		88C849661439051200C500EB /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C849651439051100C500EB /* ScheduleViewController.m */; };
+		88C8497D143981ED00C500EB /* nextDayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C84978143981ED00C500EB /* nextDayButton.png */; };
+		88C8497E143981ED00C500EB /* nextDayButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C84979143981ED00C500EB /* nextDayButton@2x.png */; };
+		88C8497F143981ED00C500EB /* previousDayButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C8497A143981ED00C500EB /* previousDayButton.png */; };
+		88C84980143981ED00C500EB /* previousDayButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C8497B143981ED00C500EB /* previousDayButton@2x.png */; };
+		88C84981143981ED00C500EB /* topbar.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C8497C143981ED00C500EB /* topbar.png */; };
+		88C849861439830E00C500EB /* leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C849821439830E00C500EB /* leftArrow.png */; };
+		88C849871439830E00C500EB /* leftArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C849831439830E00C500EB /* leftArrow@2x.png */; };
+		88C849881439830E00C500EB /* rightArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C849841439830E00C500EB /* rightArrow.png */; };
+		88C849891439830E00C500EB /* rightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C849851439830E00C500EB /* rightArrow@2x.png */; };
 		88F34865143056B200F06F1F /* SessionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F34863143056B200F06F1F /* SessionDetailsViewController.m */; };
 		88F34866143056B200F06F1F /* SessionDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88F34864143056B200F06F1F /* SessionDetailsViewController.xib */; };
 		88F348BB1430737300F06F1F /* Zigzag.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BA1430737300F06F1F /* Zigzag.png */; };
@@ -218,6 +228,17 @@
 		88C848BF14347C3200C500EB /* Session.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Session.m; sourceTree = "<group>"; };
 		88C849611438FE5B00C500EB /* NSDate+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Additions.h"; sourceTree = "<group>"; };
 		88C849621438FE5C00C500EB /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
+		88C849641439051100C500EB /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
+		88C849651439051100C500EB /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
+		88C84978143981ED00C500EB /* nextDayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextDayButton.png; sourceTree = "<group>"; };
+		88C84979143981ED00C500EB /* nextDayButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nextDayButton@2x.png"; sourceTree = "<group>"; };
+		88C8497A143981ED00C500EB /* previousDayButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = previousDayButton.png; sourceTree = "<group>"; };
+		88C8497B143981ED00C500EB /* previousDayButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "previousDayButton@2x.png"; sourceTree = "<group>"; };
+		88C8497C143981ED00C500EB /* topbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topbar.png; sourceTree = "<group>"; };
+		88C849821439830E00C500EB /* leftArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftArrow.png; sourceTree = "<group>"; };
+		88C849831439830E00C500EB /* leftArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leftArrow@2x.png"; sourceTree = "<group>"; };
+		88C849841439830E00C500EB /* rightArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightArrow.png; sourceTree = "<group>"; };
+		88C849851439830E00C500EB /* rightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightArrow@2x.png"; sourceTree = "<group>"; };
 		88F34862143056B200F06F1F /* SessionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailsViewController.h; sourceTree = "<group>"; };
 		88F34863143056B200F06F1F /* SessionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailsViewController.m; sourceTree = "<group>"; };
 		88F34864143056B200F06F1F /* SessionDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetailsViewController.xib; sourceTree = "<group>"; };
@@ -424,6 +445,8 @@
 				88F34864143056B200F06F1F /* SessionDetailsViewController.xib */,
 				88C849611438FE5B00C500EB /* NSDate+Additions.h */,
 				88C849621438FE5C00C500EB /* NSDate+Additions.m */,
+				88C849641439051100C500EB /* ScheduleViewController.h */,
+				88C849651439051100C500EB /* ScheduleViewController.m */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -431,6 +454,7 @@
 		88BDF1C01429CA34008E2774 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				88C84977143981ED00C500EB /* DateNavigator */,
 				88F348BC14307A9400F06F1F /* Zickzack.png */,
 				88F348BA1430737300F06F1F /* Zigzag.png */,
 				88202655142CC2EA003BA1F5 /* Buttons */,
@@ -452,6 +476,22 @@
 				88C8485E14334A9800C500EB /* UIPasteboard+DTWebArchive.m */,
 			);
 			path = WebArchive;
+			sourceTree = "<group>";
+		};
+		88C84977143981ED00C500EB /* DateNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				88C849821439830E00C500EB /* leftArrow.png */,
+				88C849831439830E00C500EB /* leftArrow@2x.png */,
+				88C849841439830E00C500EB /* rightArrow.png */,
+				88C849851439830E00C500EB /* rightArrow@2x.png */,
+				88C84978143981ED00C500EB /* nextDayButton.png */,
+				88C84979143981ED00C500EB /* nextDayButton@2x.png */,
+				88C8497A143981ED00C500EB /* previousDayButton.png */,
+				88C8497B143981ED00C500EB /* previousDayButton@2x.png */,
+				88C8497C143981ED00C500EB /* topbar.png */,
+			);
+			path = DateNavigator;
 			sourceTree = "<group>";
 		};
 		88F3491A14330A1700F06F1F /* NSAttributedStrings */ = {
@@ -676,6 +716,15 @@
 				88C848BB143479A800C500EB /* 66-microphone@2x.png in Resources */,
 				88C848BC143479A800C500EB /* 83-calendar.png in Resources */,
 				88C848BD143479A800C500EB /* 83-calendar@2x.png in Resources */,
+				88C8497D143981ED00C500EB /* nextDayButton.png in Resources */,
+				88C8497E143981ED00C500EB /* nextDayButton@2x.png in Resources */,
+				88C8497F143981ED00C500EB /* previousDayButton.png in Resources */,
+				88C84980143981ED00C500EB /* previousDayButton@2x.png in Resources */,
+				88C84981143981ED00C500EB /* topbar.png in Resources */,
+				88C849861439830E00C500EB /* leftArrow.png in Resources */,
+				88C849871439830E00C500EB /* leftArrow@2x.png in Resources */,
+				88C849881439830E00C500EB /* rightArrow.png in Resources */,
+				88C849891439830E00C500EB /* rightArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,6 +781,7 @@
 				88C8486214334A9800C500EB /* UIPasteboard+DTWebArchive.m in Sources */,
 				88C848C014347C3200C500EB /* Session.m in Sources */,
 				88C849631438FE5C00C500EB /* NSDate+Additions.m in Sources */,
+				88C849661439051200C500EB /* ScheduleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
