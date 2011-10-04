@@ -9,6 +9,8 @@
 #import "SessionTableViewController.h"
 #import "Session.h"
 #import "SessionDetailsViewController.h"
+#import "UIViewController+NibCells.h"
+#import "SessionTableViewCell.h"
 
 @interface SessionTableViewController()
 @property (nonatomic, retain) NSPredicate *favoritesPredicate;
@@ -117,9 +119,20 @@
     return @"";
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView instantiateCellForRowAtIndexPath:(NSIndexPath *)indexPath withReuseIdentifier:(NSString *)cellIdentifier
+{
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SessionTableViewCell"];
+	if (cell == nil) {
+		cell = [self loadReusableTableViewCellFromNibNamed:@"SessionTableViewCell"];
+	}
+    return cell;
+}
+
 - (void)configureCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject atIndexPath:(NSIndexPath *)indexPath
 {
     Session *session = (Session*)managedObject;
+    
+    /*
     cell.textLabel.text = session.title;
 
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
@@ -128,6 +141,37 @@
     NSString *endTime = [timeFormatter stringFromDate:[session endTime]];
     [timeFormatter release];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", startTime, endTime];
+     */
+    
+    
+	if ([cell isKindOfClass:[SessionTableViewCell class]]) {
+		SessionTableViewCell *sessionCell = (SessionTableViewCell *)cell;
+        
+		sessionCell.trackLabel.text = [session category];
+        
+		// sessionCell.trackIndicator.backgroundColor = [session sessionColor];
+		
+		sessionCell.roomLabel.text = [session room];
+		[sessionCell setSessionTitle:session.title];
+		
+		NSArray *speakerNames = [[session.speakers valueForKey:@"fullName"] allObjects];
+		NSString *joinedNames = [speakerNames componentsJoinedByString:@", "];
+		[sessionCell setSpeakers:joinedNames];
+		
+		sessionCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+		[sessionCell prepare];
+	}
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+	if ([cell isKindOfClass:[SessionTableViewCell class]]) {
+		return [[(SessionTableViewCell*)cell height] floatValue];
+	}    
+    else {
+        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

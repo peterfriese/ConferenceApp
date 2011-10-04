@@ -99,6 +99,9 @@
 		88C84A51143AEE0200C500EB /* DTWebResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A2A143AEE0200C500EB /* DTWebResource.m */; };
 		88C84A52143AEE0200C500EB /* NSDictionary+Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A2C143AEE0200C500EB /* NSDictionary+Data.m */; };
 		88C84A53143AEE0200C500EB /* UIPasteboard+DTWebArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A2E143AEE0200C500EB /* UIPasteboard+DTWebArchive.m */; };
+		88C84A5C143AF23500C500EB /* SessionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A5A143AF23500C500EB /* SessionTableViewCell.m */; };
+		88C84A5D143AF23500C500EB /* SessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C84A5B143AF23500C500EB /* SessionTableViewCell.xib */; };
+		88C84A60143AF41600C500EB /* UIViewController+NibCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A5F143AF41600C500EB /* UIViewController+NibCells.m */; };
 		88F348BB1430737300F06F1F /* Zigzag.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BA1430737300F06F1F /* Zigzag.png */; };
 		88F348BD14307A9400F06F1F /* Zickzack.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BC14307A9400F06F1F /* Zickzack.png */; };
 		88F3499114330B7800F06F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F3499014330B7700F06F1F /* QuartzCore.framework */; };
@@ -333,6 +336,11 @@
 		88C84A2C143AEE0200C500EB /* NSDictionary+Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Data.m"; sourceTree = "<group>"; };
 		88C84A2D143AEE0200C500EB /* UIPasteboard+DTWebArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIPasteboard+DTWebArchive.h"; sourceTree = "<group>"; };
 		88C84A2E143AEE0200C500EB /* UIPasteboard+DTWebArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIPasteboard+DTWebArchive.m"; sourceTree = "<group>"; };
+		88C84A59143AF23400C500EB /* SessionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionTableViewCell.h; sourceTree = "<group>"; };
+		88C84A5A143AF23500C500EB /* SessionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionTableViewCell.m; sourceTree = "<group>"; };
+		88C84A5B143AF23500C500EB /* SessionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionTableViewCell.xib; sourceTree = "<group>"; };
+		88C84A5E143AF41600C500EB /* UIViewController+NibCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NibCells.h"; sourceTree = "<group>"; };
+		88C84A5F143AF41600C500EB /* UIViewController+NibCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NibCells.m"; sourceTree = "<group>"; };
 		88F348BA1430737300F06F1F /* Zigzag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zigzag.png; sourceTree = "<group>"; };
 		88F348BC14307A9400F06F1F /* Zickzack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zickzack.png; sourceTree = "<group>"; };
 		88F3499014330B7700F06F1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -511,6 +519,8 @@
 		88C849CA143AEDEA00C500EB /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				88C84A5E143AF41600C500EB /* UIViewController+NibCells.h */,
+				88C84A5F143AF41600C500EB /* UIViewController+NibCells.m */,
 				88C849CB143AEDEA00C500EB /* NSDate+Additions.h */,
 				88C849CC143AEDEA00C500EB /* NSDate+Additions.m */,
 			);
@@ -536,6 +546,9 @@
 				88C849D5143AEDEA00C500EB /* SessionDetailsViewController.xib */,
 				88C849D6143AEDEA00C500EB /* SessionTableViewController.h */,
 				88C849D7143AEDEA00C500EB /* SessionTableViewController.m */,
+				88C84A59143AF23400C500EB /* SessionTableViewCell.h */,
+				88C84A5A143AF23500C500EB /* SessionTableViewCell.m */,
+				88C84A5B143AF23500C500EB /* SessionTableViewCell.xib */,
 			);
 			path = Sessions;
 			sourceTree = "<group>";
@@ -818,6 +831,7 @@
 				88C849C8143A616F00C500EB /* navbar_grained2.png in Resources */,
 				88C849C9143A616F00C500EB /* navbar_grained2@2x.png in Resources */,
 				88C849DF143AEDEA00C500EB /* SessionDetailsViewController.xib in Resources */,
+				88C84A5D143AF23500C500EB /* SessionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -876,6 +890,8 @@
 				88C84A51143AEE0200C500EB /* DTWebResource.m in Sources */,
 				88C84A52143AEE0200C500EB /* NSDictionary+Data.m in Sources */,
 				88C84A53143AEE0200C500EB /* UIPasteboard+DTWebArchive.m in Sources */,
+				88C84A5C143AF23500C500EB /* SessionTableViewCell.m in Sources */,
+				88C84A60143AF41600C500EB /* UIViewController+NibCells.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
