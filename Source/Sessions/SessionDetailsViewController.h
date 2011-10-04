@@ -9,13 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "Session.h"
 
-@interface SessionDetailsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface SessionDetailsViewController : UIViewController<UITableViewDataSource, UITableViewDelegate> {
+    float height;
+}
 
-@property (nonatomic, retain) IBOutlet UILabel *track;
-@property (nonatomic, retain) IBOutlet UILabel *room;
-@property (nonatomic, retain) IBOutlet UILabel *sessionTitle;
-@property (nonatomic, retain) IBOutlet UILabel *time;
+@property (nonatomic, retain) IBOutlet UIView *headerView;
+@property (nonatomic, retain) IBOutlet UILabel *trackLabel;
+@property (nonatomic, retain) IBOutlet UILabel *roomLabel;
+@property (nonatomic, retain) IBOutlet UILabel *sessionTitleLabel;
+@property (nonatomic, retain) IBOutlet UILabel *timeLabel;
 @property (nonatomic, retain) IBOutlet UIView *trackIndicator;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UIImageView *zigzagView;
 
 @property (nonatomic, retain) Session *session;
 

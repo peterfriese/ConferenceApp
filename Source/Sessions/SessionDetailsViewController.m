@@ -14,6 +14,9 @@
 #import <RestKit/RestKit.h>
 #import "Session+Color.h"
 
+static int const kMargin = 5;
+static int const kBottomMargin = 10;
+
 #pragma mark - Private Interface
 
 @interface SessionDetailsViewController()
@@ -25,11 +28,14 @@
 
 @implementation SessionDetailsViewController
 
-@synthesize track = _track;
-@synthesize room = _room;
-@synthesize sessionTitle = _sessionTitle;
-@synthesize time = _time;
+@synthesize headerView = _headerView;
+@synthesize trackLabel = _trackLabel;
+@synthesize roomLabel = _roomLabel;
+@synthesize sessionTitleLabel = _sessionTitleLabel;
+@synthesize timeLabel = _timeLabel;
 @synthesize trackIndicator = _trackIndicator;
+@synthesize tableView = _tableView;
+@synthesize zigzagView = _zigzagView;
 
 @synthesize favoriteButton = _favoriteButton;
 
@@ -51,14 +57,6 @@ typedef enum {
         self.navigationItem.rightBarButtonItem = _favoriteButton;
     }
     return self;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
 }
 
 -(void)dealloc
@@ -92,25 +90,76 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.sessionTitle.text = session.title;
-    self.room.text = session.room;
-    self.track.text = session.type;
-    self.time.text = [NSString stringWithFormat:@"%@, %@", session.day, session.timeSlot];
+    self.sessionTitleLabel.text = session.title;
+    self.roomLabel.text = session.room;
+    self.trackLabel.text = session.type;
+    self.timeLabel.text = [NSString stringWithFormat:@"%@, %@", session.day, session.timeSlot];
     self.trackIndicator.backgroundColor = session.sessionColor;
-    [self updateFavoriteButtonState];    
+    [self updateFavoriteButtonState];
+    [self updateHeaderDimensions];
 }
 
-- (void)viewDidUnload
+#pragma mark - Header
+
+- (CGSize) dimensionsForLabel:(UILabel *)label 
 {
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
+	float boundsWidth = self.headerView.bounds.size.width - label.frame.origin.x - kMargin;
+    /*
+	if (self.accessoryView != nil)
+		boundsWidth -= self.accessoryView.bounds.size.width;
+	if (self.accessoryType != UITableViewCellAccessoryNone)
+		boundsWidth -= 50.0;
+     */
+	CGSize size = [label.text sizeWithFont:label.font
+						 constrainedToSize:CGSizeMake(boundsWidth, 1000.0)
+							 lineBreakMode:UILineBreakModeWordWrap];
+	
+	
+	return size;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+- (void) updateHeaderDimensions 
 {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+	CGSize sessionDimensions = [self dimensionsForLabel:self.sessionTitleLabel];
+	self.sessionTitleLabel.frame = CGRectMake(self.sessionTitleLabel.frame.origin.x, 
+										 self.trackLabel.frame.origin.y + self.trackLabel.frame.size.height + kMargin, 
+										 sessionDimensions.width,
+										 sessionDimensions.height);
+	self.timeLabel.frame = CGRectMake(self.timeLabel.frame.origin.x, 
+								 self.sessionTitleLabel.frame.origin.y + self.sessionTitleLabel.frame.size.height + kMargin,
+								 self.timeLabel.frame.size.width, 
+								 self.timeLabel.frame.size.height);
+	
+	height = self.timeLabel.frame.size.height + self.timeLabel.frame.origin.y + kBottomMargin;
+    
+    [self.headerView setFrame:CGRectMake(0, 0, 320, height)];
+//    [self.headerView setBackgroundColor:[UIColor redColor]];
+    
+    [self.tableView setFrame:CGRectMake(0, height, 320, 480 - height)];
+    [self.zigzagView setFrame:CGRectMake(0, 
+                                         height - self.zigzagView.frame.size.height + 10, 
+                                         self.zigzagView.frame.size.width, 
+                                         self.zigzagView.frame.size.height)];
+}
+
+- (NSNumber*) height 
+{
+	return [NSNumber numberWithFloat:height];
+}
+
+- (NSUInteger) numberOfLines:(NSString *)value 
+{
+	NSString *countString = @"";
+	NSScanner *scanner = [NSScanner scannerWithString:value];
+	[scanner scanCharactersFromSet:[NSCharacterSet characterSetWithCharactersInString:@"\n"] intoString:&countString];
+	return [countString length];
+}
+
+- (void) setSessionTitle:(NSString *)value 
+{
+	self.sessionTitleLabel.lineBreakMode = UILineBreakModeWordWrap;
+	self.sessionTitleLabel.text = value;		
+	self.sessionTitleLabel.numberOfLines = [self numberOfLines:value];
 }
 
 #pragma mark - Table View Datasource
