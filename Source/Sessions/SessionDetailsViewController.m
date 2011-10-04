@@ -133,7 +133,6 @@ typedef enum {
 	height = self.timeLabel.frame.size.height + self.timeLabel.frame.origin.y + kBottomMargin;
     
     [self.headerView setFrame:CGRectMake(0, 0, 320, height)];
-//    [self.headerView setBackgroundColor:[UIColor redColor]];
     
     [self.tableView setFrame:CGRectMake(0, height, 320, 480 - height)];
     [self.zigzagView setFrame:CGRectMake(0, 
