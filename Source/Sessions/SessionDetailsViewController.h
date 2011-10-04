@@ -15,6 +15,7 @@
 @property (nonatomic, retain) IBOutlet UILabel *room;
 @property (nonatomic, retain) IBOutlet UILabel *sessionTitle;
 @property (nonatomic, retain) IBOutlet UILabel *time;
+@property (nonatomic, retain) IBOutlet UIView *trackIndicator;
 
 @property (nonatomic, retain) Session *session;
 

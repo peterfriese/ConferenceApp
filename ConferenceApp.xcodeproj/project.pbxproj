@@ -102,6 +102,8 @@
 		88C84A5C143AF23500C500EB /* SessionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A5A143AF23500C500EB /* SessionTableViewCell.m */; };
 		88C84A5D143AF23500C500EB /* SessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C84A5B143AF23500C500EB /* SessionTableViewCell.xib */; };
 		88C84A60143AF41600C500EB /* UIViewController+NibCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A5F143AF41600C500EB /* UIViewController+NibCells.m */; };
+		88C84A63143B713D00C500EB /* Session+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A62143B713B00C500EB /* Session+Color.m */; };
+		88C84A66143B719200C500EB /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A65143B719200C500EB /* UIColor+Additions.m */; };
 		88F348BB1430737300F06F1F /* Zigzag.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BA1430737300F06F1F /* Zigzag.png */; };
 		88F348BD14307A9400F06F1F /* Zickzack.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BC14307A9400F06F1F /* Zickzack.png */; };
 		88F3499114330B7800F06F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F3499014330B7700F06F1F /* QuartzCore.framework */; };
@@ -341,6 +343,10 @@
 		88C84A5B143AF23500C500EB /* SessionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionTableViewCell.xib; sourceTree = "<group>"; };
 		88C84A5E143AF41600C500EB /* UIViewController+NibCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+NibCells.h"; sourceTree = "<group>"; };
 		88C84A5F143AF41600C500EB /* UIViewController+NibCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NibCells.m"; sourceTree = "<group>"; };
+		88C84A61143B713B00C500EB /* Session+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Session+Color.h"; sourceTree = "<group>"; };
+		88C84A62143B713B00C500EB /* Session+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Session+Color.m"; sourceTree = "<group>"; };
+		88C84A64143B719100C500EB /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		88C84A65143B719200C500EB /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		88F348BA1430737300F06F1F /* Zigzag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zigzag.png; sourceTree = "<group>"; };
 		88F348BC14307A9400F06F1F /* Zickzack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zickzack.png; sourceTree = "<group>"; };
 		88F3499014330B7700F06F1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -519,6 +525,8 @@
 		88C849CA143AEDEA00C500EB /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				88C84A64143B719100C500EB /* UIColor+Additions.h */,
+				88C84A65143B719200C500EB /* UIColor+Additions.m */,
 				88C84A5E143AF41600C500EB /* UIViewController+NibCells.h */,
 				88C84A5F143AF41600C500EB /* UIViewController+NibCells.m */,
 				88C849CB143AEDEA00C500EB /* NSDate+Additions.h */,
@@ -549,6 +557,8 @@
 				88C84A59143AF23400C500EB /* SessionTableViewCell.h */,
 				88C84A5A143AF23500C500EB /* SessionTableViewCell.m */,
 				88C84A5B143AF23500C500EB /* SessionTableViewCell.xib */,
+				88C84A61143B713B00C500EB /* Session+Color.h */,
+				88C84A62143B713B00C500EB /* Session+Color.m */,
 			);
 			path = Sessions;
 			sourceTree = "<group>";
@@ -892,6 +902,8 @@
 				88C84A53143AEE0200C500EB /* UIPasteboard+DTWebArchive.m in Sources */,
 				88C84A5C143AF23500C500EB /* SessionTableViewCell.m in Sources */,
 				88C84A60143AF41600C500EB /* UIViewController+NibCells.m in Sources */,
+				88C84A63143B713D00C500EB /* Session+Color.m in Sources */,
+				88C84A66143B719200C500EB /* UIColor+Additions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

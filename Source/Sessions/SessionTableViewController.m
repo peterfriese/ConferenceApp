@@ -11,6 +11,7 @@
 #import "SessionDetailsViewController.h"
 #import "UIViewController+NibCells.h"
 #import "SessionTableViewCell.h"
+#import "Session+Color.h"
 
 @interface SessionTableViewController()
 @property (nonatomic, retain) NSPredicate *favoritesPredicate;
@@ -149,7 +150,7 @@
         
 		sessionCell.trackLabel.text = [session category];
         
-		// sessionCell.trackIndicator.backgroundColor = [session sessionColor];
+		sessionCell.trackIndicator.backgroundColor = [session sessionColor];
 		
 		sessionCell.roomLabel.text = [session room];
 		[sessionCell setSessionTitle:session.title];

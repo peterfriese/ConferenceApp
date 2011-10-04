@@ -12,7 +12,7 @@
 #import "NSAttributedString+html.h"
 #import "DTAttributedTextContentView.h"
 #import <RestKit/RestKit.h>
-
+#import "Session+Color.h"
 
 #pragma mark - Private Interface
 
@@ -25,10 +25,11 @@
 
 @implementation SessionDetailsViewController
 
-@synthesize track;
-@synthesize room;
-@synthesize sessionTitle;
-@synthesize time;
+@synthesize track = _track;
+@synthesize room = _room;
+@synthesize sessionTitle = _sessionTitle;
+@synthesize time = _time;
+@synthesize trackIndicator = _trackIndicator;
 
 @synthesize favoriteButton = _favoriteButton;
 
@@ -91,10 +92,11 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    sessionTitle.text = session.title;
-    room.text = session.room;
-    track.text = session.type;
-    time.text = [NSString stringWithFormat:@"%@, %@", session.day, session.timeSlot];
+    self.sessionTitle.text = session.title;
+    self.room.text = session.room;
+    self.track.text = session.type;
+    self.time.text = [NSString stringWithFormat:@"%@, %@", session.day, session.timeSlot];
+    self.trackIndicator.backgroundColor = session.sessionColor;
     [self updateFavoriteButtonState];    
 }
 
