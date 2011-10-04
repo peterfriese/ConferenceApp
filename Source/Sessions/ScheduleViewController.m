@@ -141,7 +141,7 @@
 - (UIView *)dateNavigationBar
 {
     if (_dateNavigationBar == nil) {
-        self.dateNavigationBar = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navbar_grained"]] autorelease];
+        self.dateNavigationBar = [[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"topbar"]] autorelease];
     }
     return _dateNavigationBar;
 }
@@ -154,7 +154,7 @@
         self.dateLabel.textAlignment = UITextAlignmentCenter;
         self.dateLabel.backgroundColor = [UIColor clearColor];
         self.dateLabel.font = [UIFont boldSystemFontOfSize:22];
-        self.dateLabel.textColor = [UIColor whiteColor];// [UIColor colorWithRed:59/255.0 green:73/255.0 blue:88/255.0 alpha:1];
+        self.dateLabel.textColor = [UIColor colorWithRed:59/255.0 green:73/255.0 blue:88/255.0 alpha:1];
     }
     return _dateLabel;
 }

@@ -128,7 +128,7 @@ typedef enum {
             return @"Presenters";
             
         default:
-            break;
+            return @"";
     }
 }
 
@@ -145,7 +145,7 @@ typedef enum {
         }
             
         default:
-            break;
+            return 1;
     }
 }
 
