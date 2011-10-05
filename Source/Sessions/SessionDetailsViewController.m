@@ -135,7 +135,7 @@ typedef enum {
     
     [self.headerView setFrame:CGRectMake(0, 0, 320, height)];
     
-    [self.tableView setFrame:CGRectMake(0, height, 320, 480 - height)];
+    [self.tableView setFrame:CGRectMake(0, height, 320, 460 - height)];
     [self.zigzagView setFrame:CGRectMake(0, 
                                          height - self.zigzagView.frame.size.height + 10, 
                                          self.zigzagView.frame.size.width, 

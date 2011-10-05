@@ -345,7 +345,7 @@
 		88C84A5F143AF41600C500EB /* UIViewController+NibCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+NibCells.m"; sourceTree = "<group>"; };
 		88C84A61143B713B00C500EB /* Session+Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Session+Color.h"; sourceTree = "<group>"; };
 		88C84A62143B713B00C500EB /* Session+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Session+Color.m"; sourceTree = "<group>"; };
-		88C84A64143B719100C500EB /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
+		88C84A64143B719100C500EB /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		88C84A65143B719200C500EB /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
 		88F348BA1430737300F06F1F /* Zigzag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zigzag.png; sourceTree = "<group>"; };
 		88F348BC14307A9400F06F1F /* Zickzack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zickzack.png; sourceTree = "<group>"; };
