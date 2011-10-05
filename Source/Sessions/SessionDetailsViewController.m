@@ -209,7 +209,6 @@ typedef enum {
             cell = [[[DTAttributedTextCell alloc] initWithReuseIdentifier:cellIdentifier accessoryType:UITableViewCellAccessoryNone] autorelease];
             DTAttributedTextCell *attributedCell = (DTAttributedTextCell *)cell;
             attributedCell.selectionStyle = UITableViewCellSelectionStyleNone;            
-
             break;
             
         case SessionDetailsSectionKindSpeakers:

@@ -34,9 +34,12 @@
 				break;
 		}
 		
-		// cannot use autoresizing because this would cause more re-layouting than necessary		
-		CGRect contentFrame = UIEdgeInsetsInsetRect(self.contentView.bounds, UIEdgeInsetsMake(0, 0, 0, rightInset));
-		
+		// cannot use autoresizing because this would cause more re-layouting than necessary
+        // CGRect contentFrame = UIEdgeInsetsInsetRect(self.contentView.bounds, UIEdgeInsetsMake(0, 0, 0, rightInset));
+        
+        // insets for grouped table:
+		CGRect contentFrame = UIEdgeInsetsInsetRect(self.contentView.bounds, UIEdgeInsetsMake(0, 10, 0, 10));
+        
 		_attributedTextContextView = [[DTAttributedTextContentView alloc] initWithFrame:contentFrame];
 		_attributedTextContextView.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
 		[self.contentView addSubview:_attributedTextContextView];

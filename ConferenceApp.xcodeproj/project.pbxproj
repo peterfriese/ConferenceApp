@@ -381,6 +381,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8803DCDD143C6B6700AE93F8 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				88C849D1143AEDEA00C500EB /* ScheduleViewController.h */,
+				88C849D2143AEDEA00C500EB /* ScheduleViewController.m */,
+				88C849D6143AEDEA00C500EB /* SessionTableViewController.h */,
+				88C849D7143AEDEA00C500EB /* SessionTableViewController.m */,
+				88C84A59143AF23400C500EB /* SessionTableViewCell.h */,
+				88C84A5A143AF23500C500EB /* SessionTableViewCell.m */,
+				88C84A5B143AF23500C500EB /* SessionTableViewCell.xib */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		8803DCDE143C6B7500AE93F8 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				88C849D3143AEDEA00C500EB /* SessionDetailsViewController.h */,
+				88C849D4143AEDEA00C500EB /* SessionDetailsViewController.m */,
+				88C849D5143AEDEA00C500EB /* SessionDetailsViewController.xib */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
 		882025B71429D6D4003BA1F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,16 +571,8 @@
 		88C849D0143AEDEA00C500EB /* Sessions */ = {
 			isa = PBXGroup;
 			children = (
-				88C849D1143AEDEA00C500EB /* ScheduleViewController.h */,
-				88C849D2143AEDEA00C500EB /* ScheduleViewController.m */,
-				88C849D3143AEDEA00C500EB /* SessionDetailsViewController.h */,
-				88C849D4143AEDEA00C500EB /* SessionDetailsViewController.m */,
-				88C849D5143AEDEA00C500EB /* SessionDetailsViewController.xib */,
-				88C849D6143AEDEA00C500EB /* SessionTableViewController.h */,
-				88C849D7143AEDEA00C500EB /* SessionTableViewController.m */,
-				88C84A59143AF23400C500EB /* SessionTableViewCell.h */,
-				88C84A5A143AF23500C500EB /* SessionTableViewCell.m */,
-				88C84A5B143AF23500C500EB /* SessionTableViewCell.xib */,
+				8803DCDD143C6B6700AE93F8 /* List */,
+				8803DCDE143C6B7500AE93F8 /* Details */,
 				88C84A61143B713B00C500EB /* Session+Color.h */,
 				88C84A62143B713B00C500EB /* Session+Color.m */,
 			);
