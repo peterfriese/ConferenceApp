@@ -21,6 +21,7 @@ static int const kBottomMargin = 10;
 
 @interface SessionDetailsViewController()
 - (void)updateFavoriteButtonState;
+- (void) updateHeaderDimensions ;
 @property (nonatomic, retain) UIBarButtonItem *favoriteButton;
 @end
 
@@ -99,7 +100,7 @@ typedef enum {
     [self updateHeaderDimensions];
 }
 
-#pragma mark - Header
+#pragma mark - View Header
 
 - (CGSize) dimensionsForLabel:(UILabel *)label 
 {
