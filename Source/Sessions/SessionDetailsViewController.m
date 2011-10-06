@@ -41,8 +41,8 @@ static int const kBottomMargin = 10;
 @synthesize favoriteButton = _favoriteButton;
 
 typedef enum {
-    SessionDetailsSectionKindSpeakers = 1,
-    SessionDetailsSectionKindAbstract = 0
+    SessionDetailsSectionKindAbstract = 0,    
+    SessionDetailsSectionKindSpeakers = 1
 } SessionDetailsSectionKind;
 
 @synthesize session;
@@ -223,19 +223,20 @@ typedef enum {
     switch ([indexPath section]) {
         case SessionDetailsSectionKindAbstract:
         {
-
-            DTAttributedTextCell *attributedCell = (DTAttributedTextCell *)cell;
-            
-            NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
-                                     [NSNumber numberWithFloat:1.2], NSTextSizeMultiplierDocumentOption, 
-                                     @"Helvetica", DTDefaultFontFamily,  
-                                     // @"purple", DTDefaultLinkColor, 
-                                     @"http://www.peterfriese.de", NSBaseURLDocumentOption, 
-                                     nil]; 
-            NSData *data = [session.abstract dataUsingEncoding:NSUTF8StringEncoding];            
-            NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:options documentAttributes:NULL];
-            [attributedCell setAttributedString:string];
-            [string release];
+            if ([cell isKindOfClass:[DTAttributedTextCell class]]) {
+                DTAttributedTextCell *attributedCell = (DTAttributedTextCell *)cell;
+                
+                NSDictionary *options = [NSDictionary dictionaryWithObjectsAndKeys:
+                                         [NSNumber numberWithFloat:1.2], NSTextSizeMultiplierDocumentOption, 
+                                         @"Helvetica", DTDefaultFontFamily,  
+                                         // @"purple", DTDefaultLinkColor, 
+                                         // @"http://www.peterfriese.de", NSBaseURLDocumentOption, 
+                                         nil]; 
+                NSData *data = [session.abstract dataUsingEncoding:NSUTF8StringEncoding];            
+                NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:options documentAttributes:NULL];
+                [attributedCell setAttributedString:string];
+                [string release];
+            }
             break;
         }
             
@@ -268,11 +269,23 @@ typedef enum {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell"; // TODO: derive cellidentifier from classname
+    NSString *cellIdentifier = nil;
+    switch ([indexPath section]) {
+        case SessionDetailsSectionKindAbstract:
+            cellIdentifier = @"SessionDetailsCellAbstract";
+            break;
+            
+        case SessionDetailsSectionKindSpeakers:
+            cellIdentifier = @"SessionDetailsCellSpeaker";
+            break;
+            
+        default:
+            break;
+    }
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [self tableView:tableView instantiateCellForRowAtIndexPath:indexPath withReuseIdentifier:CellIdentifier];
+        cell = [self tableView:tableView instantiateCellForRowAtIndexPath:indexPath withReuseIdentifier:cellIdentifier];
     }
     
     [self tableView:tableView configureCell:cell atIndexPath:indexPath];
