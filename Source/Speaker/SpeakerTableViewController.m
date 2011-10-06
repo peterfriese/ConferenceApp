@@ -25,7 +25,7 @@
 
 -(NSString *)resourcePath
 {
-    return @"/speakers";
+    return @"/speakers.json";
 }
 
 -(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView

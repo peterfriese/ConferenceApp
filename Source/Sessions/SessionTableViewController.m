@@ -78,7 +78,7 @@
 
 - (NSString *)resourcePath
 {
-    return @"/sessions";
+    return @"/sessions.json";
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
