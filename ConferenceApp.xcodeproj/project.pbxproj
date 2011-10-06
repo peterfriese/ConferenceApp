@@ -405,6 +405,22 @@
 			name = Details;
 			sourceTree = "<group>";
 		};
+		8803DCDF143CDAFC00AE93F8 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				88C849D9143AEDEA00C500EB /* SpeakerTableViewController.h */,
+				88C849DA143AEDEA00C500EB /* SpeakerTableViewController.m */,
+			);
+			name = List;
+			sourceTree = "<group>";
+		};
+		8803DCE0143CDB0C00AE93F8 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
 		882025B71429D6D4003BA1F5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,8 +598,8 @@
 		88C849D8143AEDEA00C500EB /* Speaker */ = {
 			isa = PBXGroup;
 			children = (
-				88C849D9143AEDEA00C500EB /* SpeakerTableViewController.h */,
-				88C849DA143AEDEA00C500EB /* SpeakerTableViewController.m */,
+				8803DCDF143CDAFC00AE93F8 /* List */,
+				8803DCE0143CDB0C00AE93F8 /* Details */,
 			);
 			path = Speaker;
 			sourceTree = "<group>";
