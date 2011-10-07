@@ -44,7 +44,6 @@
 		_attributedTextContextView.edgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
 		[self.contentView addSubview:_attributedTextContextView];
     }
-    NSLog(@"%@", self.backgroundView);
     return self;
 }
 
