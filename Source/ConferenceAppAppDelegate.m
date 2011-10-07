@@ -24,7 +24,7 @@
 - (void)setupRestKit
 {
     // NSString *baseURL = @"http://www.eclipsecon.org/europe2011/json";
-    // NSString *baseURL = @"http://peterfriese.fritz.box:3000";
+    // NSString *baseURL = @"http://peterfriese.local:3000";
     NSString *baseURL = @"http://conferenceapp-node.webbyapp.com";
     RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:baseURL];
     
@@ -54,6 +54,8 @@
     [speakerMapping mapKeyPathsToAttributes:
      @"id", @"speakerId", 
      @"fullname", @"fullName",
+     @"lastname", @"lastName",
+     @"firstname", @"firstName",
      @"organization", @"affiliation",
      @"bio", @"bio",
      nil];    

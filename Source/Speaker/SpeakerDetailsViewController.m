@@ -6,99 +6,73 @@
 //  Copyright 2011 http://peterfriese.de. All rights reserved.
 //
 
-#import "SessionDetailsViewController.h"
+#import "SpeakerDetailsViewController.h"
 #import "Speaker.h"
 #import "DTAttributedTextCell.h"
 #import "NSAttributedString+html.h"
 #import "DTAttributedTextContentView.h"
 #import <RestKit/RestKit.h>
 #import "Session+Color.h"
-#import "SpeakerDetailsViewController.h"
+#import <TapkuLibrary/TapkuLibrary.h>
+#import "UIImage+Blocks.h"
+#import "SessionDetailsViewController.h"
 
 static int const kMargin = 5;
 static int const kBottomMargin = 10;
 
 #pragma mark - Private Interface
 
-@interface SessionDetailsViewController()
-- (void)updateFavoriteButtonState;
-- (void) updateHeaderDimensions ;
-@property (nonatomic, retain) UIBarButtonItem *favoriteButton;
+@interface SpeakerDetailsViewController()
+- (void) updateHeaderDimensions;
 @end
 
 #pragma mark - Implementation
 
-@implementation SessionDetailsViewController
+@implementation SpeakerDetailsViewController
 
 @synthesize headerView = _headerView;
-@synthesize trackLabel = _trackLabel;
-@synthesize roomLabel = _roomLabel;
-@synthesize sessionTitleLabel = _sessionTitleLabel;
-@synthesize timeLabel = _timeLabel;
-@synthesize trackIndicator = _trackIndicator;
+@synthesize speakernameLabel = _speakernameLabel;
+@synthesize affiliationLabel = _affiliationLabel;
 @synthesize tableView = _tableView;
 @synthesize zigzagView = _zigzagView;
-
-@synthesize favoriteButton = _favoriteButton;
+@synthesize photoView = _photoView;
 
 typedef enum {
-    SessionDetailsSectionKindAbstract = 0,    
-    SessionDetailsSectionKindSpeakers = 1
+    SessionDetailsSectionKindBio = 0,    
+    SessionDetailsSectionKindSessions = 1
 } SessionDetailsSectionKind;
 
-@synthesize session;
+@synthesize speaker;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Session";
-        _favoriteButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Star"] 
-                                                           style:UIBarButtonItemStylePlain 
-                                                          target:self 
-                                                          action:@selector(toggleFavorite)];
-        self.navigationItem.rightBarButtonItem = _favoriteButton;
+        self.title = @"Speaker";
     }
     return self;
 }
-
--(void)dealloc
-{
-    [_favoriteButton release];
-    [super dealloc];
-}
-
-#pragma mark - Favorites
-
-- (void)updateFavoriteButtonState
-{
-    if ([session.attending boolValue]) {
-        [_favoriteButton setImage:[UIImage imageNamed:@"StarSelected"]];
-    }
-    else {
-        [_favoriteButton setImage:[UIImage imageNamed:@"Star"]];
-    }    
-}
-
-- (void)toggleFavorite {
-    session.attending = [NSNumber numberWithBool:![session.attending boolValue]];
-    [[[RKObjectManager sharedManager] objectStore] save];
-    
-    [self updateFavoriteButtonState];
-}
-
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.sessionTitleLabel.text = session.title;
-    self.roomLabel.text = session.room;
-    self.trackLabel.text = session.type;
-    self.timeLabel.text = [NSString stringWithFormat:@"%@, %@", session.day, session.timeSlot];
-    self.trackIndicator.backgroundColor = session.sessionColor;
-    [self updateFavoriteButtonState];
+    self.speakernameLabel.text = speaker.fullName;
+    self.affiliationLabel.text = speaker.affiliation;
+    
+    /**
+     * TODO: enable image loading for M2. Take care of resizing images, caching them offline and ideally use
+     * nicer pictures than the ones we have got now! Maybe use the server to fetch / deliver appropriate images.
+    self.photoView.image = [UIImage imageNamed:@"111-user"];
+    NSString *imageURL =[NSString stringWithFormat:@"http://eclipsecon.org/sites/default/files/pictures/picture-%@.jpg", speaker.speakerId];
+    [UIImage imageFromURL:imageURL withResultHandler:^(UIImage *image) {
+        if (image != nil) {
+            self.photoView.image = image;
+        }
+    }];
+     */
+    
     [self updateHeaderDimensions];
 }
 
@@ -107,33 +81,25 @@ typedef enum {
 - (CGSize) dimensionsForLabel:(UILabel *)label 
 {
 	float boundsWidth = self.headerView.bounds.size.width - label.frame.origin.x - kMargin;
-    /*
-	if (self.accessoryView != nil)
-		boundsWidth -= self.accessoryView.bounds.size.width;
-	if (self.accessoryType != UITableViewCellAccessoryNone)
-		boundsWidth -= 50.0;
-     */
 	CGSize size = [label.text sizeWithFont:label.font
 						 constrainedToSize:CGSizeMake(boundsWidth, 1000.0)
 							 lineBreakMode:UILineBreakModeWordWrap];
-	
-	
 	return size;
 }
 
 - (void) updateHeaderDimensions 
 {
-	CGSize sessionDimensions = [self dimensionsForLabel:self.sessionTitleLabel];
-	self.sessionTitleLabel.frame = CGRectMake(self.sessionTitleLabel.frame.origin.x, 
-										 self.trackLabel.frame.origin.y + self.trackLabel.frame.size.height + kMargin, 
+	CGSize sessionDimensions = [self dimensionsForLabel:self.speakernameLabel];
+	self.speakernameLabel.frame = CGRectMake(self.speakernameLabel.frame.origin.x, 
+										 self.speakernameLabel.frame.origin.y, 
 										 sessionDimensions.width,
 										 sessionDimensions.height);
-	self.timeLabel.frame = CGRectMake(self.timeLabel.frame.origin.x, 
-								 self.sessionTitleLabel.frame.origin.y + self.sessionTitleLabel.frame.size.height + kMargin,
-								 self.timeLabel.frame.size.width, 
-								 self.timeLabel.frame.size.height);
+	self.affiliationLabel.frame = CGRectMake(self.affiliationLabel.frame.origin.x, 
+								 self.speakernameLabel.frame.origin.y + self.speakernameLabel.frame.size.height + kMargin,
+								 self.affiliationLabel.frame.size.width, 
+								 self.affiliationLabel.frame.size.height);
 	
-	height = self.timeLabel.frame.size.height + self.timeLabel.frame.origin.y + kBottomMargin;
+	height = self.affiliationLabel.frame.size.height + self.affiliationLabel.frame.origin.y + kBottomMargin;
     
     [self.headerView setFrame:CGRectMake(0, 0, 320, height)];
     
@@ -157,13 +123,6 @@ typedef enum {
 	return [countString length];
 }
 
-- (void) setSessionTitle:(NSString *)value 
-{
-	self.sessionTitleLabel.lineBreakMode = UILineBreakModeWordWrap;
-	self.sessionTitleLabel.text = value;		
-	self.sessionTitleLabel.numberOfLines = [self numberOfLines:value];
-}
-
 #pragma mark - Table View Datasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -174,11 +133,11 @@ typedef enum {
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     switch (section) {
-        case SessionDetailsSectionKindAbstract:
-            return @"Abstract";
+        case SessionDetailsSectionKindBio:
+            return @"Bio";
             
-        case SessionDetailsSectionKindSpeakers:
-            return @"Presenters";
+        case SessionDetailsSectionKindSessions:
+            return @"Sessions";
             
         default:
             return @"";
@@ -188,12 +147,12 @@ typedef enum {
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
-        case SessionDetailsSectionKindAbstract:
+        case SessionDetailsSectionKindBio:
             return 1;
             
-        case SessionDetailsSectionKindSpeakers:
+        case SessionDetailsSectionKindSessions:
         {
-            NSUInteger count = [session.speakers count];
+            NSUInteger count = [speaker.sessions count];
             return count;
         }
             
@@ -207,13 +166,13 @@ typedef enum {
     UITableViewCell *cell = nil;
     
     switch ([indexPath section]) {
-        case SessionDetailsSectionKindAbstract:
+        case SessionDetailsSectionKindBio:
             cell = [[[DTAttributedTextCell alloc] initWithReuseIdentifier:cellIdentifier accessoryType:UITableViewCellAccessoryNone] autorelease];
             DTAttributedTextCell *attributedCell = (DTAttributedTextCell *)cell;
             attributedCell.selectionStyle = UITableViewCellSelectionStyleNone;            
             break;
             
-        case SessionDetailsSectionKindSpeakers:
+        case SessionDetailsSectionKindSessions:
             cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier] autorelease];
             break;
     }
@@ -223,7 +182,7 @@ typedef enum {
 - (void)tableView:(UITableView *)tableView configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     switch ([indexPath section]) {
-        case SessionDetailsSectionKindAbstract:
+        case SessionDetailsSectionKindBio:
         {
             if ([cell isKindOfClass:[DTAttributedTextCell class]]) {
                 DTAttributedTextCell *attributedCell = (DTAttributedTextCell *)cell;
@@ -234,7 +193,7 @@ typedef enum {
                                          // @"purple", DTDefaultLinkColor, 
                                          // @"http://www.peterfriese.de", NSBaseURLDocumentOption, 
                                          nil]; 
-                NSData *data = [session.abstract dataUsingEncoding:NSUTF8StringEncoding];            
+                NSData *data = [speaker.bio dataUsingEncoding:NSUTF8StringEncoding];            
                 NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:options documentAttributes:NULL];
                 [attributedCell setAttributedString:string];
                 [string release];
@@ -242,12 +201,12 @@ typedef enum {
             break;
         }
             
-        case SessionDetailsSectionKindSpeakers:
+        case SessionDetailsSectionKindSessions:
         {
-            NSArray *speakers = [session.speakers allObjects];
-            Speaker *speaker = [speakers objectAtIndex:[indexPath row]];
-            cell.textLabel.text = [speaker fullName];
-            cell.detailTextLabel.text = [speaker affiliation];
+            NSArray *sessions = [speaker.sessions allObjects];
+            Session *session = [sessions objectAtIndex:[indexPath row]];
+            cell.textLabel.text = [session title];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@, %@", [session day], [session timeSlot]];
             break;
         }
             
@@ -273,12 +232,12 @@ typedef enum {
 {
     NSString *cellIdentifier = nil;
     switch ([indexPath section]) {
-        case SessionDetailsSectionKindAbstract:
-            cellIdentifier = @"SessionDetailsCellAbstract";
+        case SessionDetailsSectionKindBio:
+            cellIdentifier = @"SessionDetailsCellBio";
             break;
             
-        case SessionDetailsSectionKindSpeakers:
-            cellIdentifier = @"SessionDetailsCellSpeaker";
+        case SessionDetailsSectionKindSessions:
+            cellIdentifier = @"SessionDetailsCellSessions";
             break;
             
         default:
@@ -296,14 +255,11 @@ typedef enum {
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([indexPath section] == SessionDetailsSectionKindSpeakers) {
-        Speaker *speaker = [[[session speakers] allObjects] objectAtIndex:[indexPath row]];
-        SpeakerDetailsViewController *speakerDetailsViewController = [[SpeakerDetailsViewController alloc] init];
-        speakerDetailsViewController.speaker = speaker;
-        [self.navigationController pushViewController:speakerDetailsViewController animated:YES];
-        [speakerDetailsViewController release];
-    }
+    Session *session = (Session *)[[[self.speaker sessions] allObjects] objectAtIndex:[indexPath row]];
+    SessionDetailsViewController *sessionDetailsViewController = [[SessionDetailsViewController alloc] init];
+    sessionDetailsViewController.session = session;
+    [self.navigationController pushViewController:sessionDetailsViewController animated:YES];
+    [sessionDetailsViewController release];
 }
-
 
 @end
