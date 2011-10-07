@@ -104,6 +104,11 @@
 		88C84A60143AF41600C500EB /* UIViewController+NibCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A5F143AF41600C500EB /* UIViewController+NibCells.m */; };
 		88C84A63143B713D00C500EB /* Session+Color.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A62143B713B00C500EB /* Session+Color.m */; };
 		88C84A66143B719200C500EB /* UIColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A65143B719200C500EB /* UIColor+Additions.m */; };
+		88CABDB3143E3DB300D6008B /* SpeakerDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CABDB1143E3DB300D6008B /* SpeakerDetailsViewController.m */; };
+		88CABDB4143E3DB300D6008B /* SpeakerDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88CABDB2143E3DB300D6008B /* SpeakerDetailsViewController.xib */; };
+		88CABDD4143E626D00D6008B /* UIImage+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CABDD3143E626D00D6008B /* UIImage+Blocks.m */; };
+		88CABE2E143E716D00D6008B /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CABE2C143E716D00D6008B /* 111-user.png */; };
+		88CABE2F143E716D00D6008B /* 111-user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CABE2D143E716D00D6008B /* 111-user@2x.png */; };
 		88F348BB1430737300F06F1F /* Zigzag.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BA1430737300F06F1F /* Zigzag.png */; };
 		88F348BD14307A9400F06F1F /* Zickzack.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BC14307A9400F06F1F /* Zickzack.png */; };
 		88F3499114330B7800F06F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F3499014330B7700F06F1F /* QuartzCore.framework */; };
@@ -347,6 +352,13 @@
 		88C84A62143B713B00C500EB /* Session+Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Session+Color.m"; sourceTree = "<group>"; };
 		88C84A64143B719100C500EB /* UIColor+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Additions.h"; sourceTree = "<group>"; };
 		88C84A65143B719200C500EB /* UIColor+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Additions.m"; sourceTree = "<group>"; };
+		88CABDB0143E3DB300D6008B /* SpeakerDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerDetailsViewController.h; sourceTree = "<group>"; };
+		88CABDB1143E3DB300D6008B /* SpeakerDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerDetailsViewController.m; sourceTree = "<group>"; };
+		88CABDB2143E3DB300D6008B /* SpeakerDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerDetailsViewController.xib; sourceTree = "<group>"; };
+		88CABDD2143E626D00D6008B /* UIImage+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blocks.h"; sourceTree = "<group>"; };
+		88CABDD3143E626D00D6008B /* UIImage+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blocks.m"; sourceTree = "<group>"; };
+		88CABE2C143E716D00D6008B /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
+		88CABE2D143E716D00D6008B /* 111-user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user@2x.png"; sourceTree = "<group>"; };
 		88F348BA1430737300F06F1F /* Zigzag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zigzag.png; sourceTree = "<group>"; };
 		88F348BC14307A9400F06F1F /* Zickzack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zickzack.png; sourceTree = "<group>"; };
 		88F3499014330B7700F06F1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -417,6 +429,9 @@
 		8803DCE0143CDB0C00AE93F8 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				88CABDB0143E3DB300D6008B /* SpeakerDetailsViewController.h */,
+				88CABDB1143E3DB300D6008B /* SpeakerDetailsViewController.m */,
+				88CABDB2143E3DB300D6008B /* SpeakerDetailsViewController.xib */,
 			);
 			name = Details;
 			sourceTree = "<group>";
@@ -525,6 +540,8 @@
 		88BDF1C01429CA34008E2774 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				88CABE2C143E716D00D6008B /* 111-user.png */,
+				88CABE2D143E716D00D6008B /* 111-user@2x.png */,
 				88C849C6143A616F00C500EB /* navbar_grained2.png */,
 				88C849C7143A616F00C500EB /* navbar_grained2@2x.png */,
 				88C849C2143A571300C500EB /* section_grained_opa90.png */,
@@ -580,6 +597,8 @@
 			children = (
 				88C849CE143AEDEA00C500EB /* BaseUITableViewController.h */,
 				88C849CF143AEDEA00C500EB /* BaseUITableViewController.m */,
+				88CABDD2143E626D00D6008B /* UIImage+Blocks.h */,
+				88CABDD3143E626D00D6008B /* UIImage+Blocks.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -874,6 +893,9 @@
 				88C849C9143A616F00C500EB /* navbar_grained2@2x.png in Resources */,
 				88C849DF143AEDEA00C500EB /* SessionDetailsViewController.xib in Resources */,
 				88C84A5D143AF23500C500EB /* SessionTableViewCell.xib in Resources */,
+				88CABDB4143E3DB300D6008B /* SpeakerDetailsViewController.xib in Resources */,
+				88CABE2E143E716D00D6008B /* 111-user.png in Resources */,
+				88CABE2F143E716D00D6008B /* 111-user@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -936,6 +958,8 @@
 				88C84A60143AF41600C500EB /* UIViewController+NibCells.m in Sources */,
 				88C84A63143B713D00C500EB /* Session+Color.m in Sources */,
 				88C84A66143B719200C500EB /* UIColor+Additions.m in Sources */,
+				88CABDB3143E3DB300D6008B /* SpeakerDetailsViewController.m in Sources */,
+				88CABDD4143E626D00D6008B /* UIImage+Blocks.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

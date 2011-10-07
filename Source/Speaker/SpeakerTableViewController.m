@@ -8,6 +8,7 @@
 
 #import "SpeakerTableViewController.h"
 #import "Speaker.h"
+#import "SpeakerDetailsViewController.h"
 
 @implementation SpeakerTableViewController
 
@@ -76,6 +77,15 @@
     Speaker *speaker = (Speaker *)managedObject;
     cell.textLabel.text = speaker.fullName;
     cell.detailTextLabel.text = speaker.affiliation;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Speaker *speaker = (Speaker *)[[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
+    SpeakerDetailsViewController *speakerDetailsViewController = [[SpeakerDetailsViewController alloc] init];
+    [speakerDetailsViewController setSpeaker:speaker];
+    [self.navigationController pushViewController:speakerDetailsViewController animated:YES];
+    [speakerDetailsViewController release];
 }
 
 
