@@ -13,7 +13,6 @@
 #import "DTAttributedTextContentView.h"
 #import <RestKit/RestKit.h>
 #import "Session+Color.h"
-#import <TapkuLibrary/TapkuLibrary.h>
 #import "UIImage+Blocks.h"
 #import "SessionDetailsViewController.h"
 
@@ -255,11 +254,13 @@ typedef enum {
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Session *session = (Session *)[[[self.speaker sessions] allObjects] objectAtIndex:[indexPath row]];
-    SessionDetailsViewController *sessionDetailsViewController = [[SessionDetailsViewController alloc] init];
-    sessionDetailsViewController.session = session;
-    [self.navigationController pushViewController:sessionDetailsViewController animated:YES];
-    [sessionDetailsViewController release];
+    if ([indexPath section] == SessionDetailsSectionKindSessions) {
+        Session *session = (Session *)[[[self.speaker sessions] allObjects] objectAtIndex:[indexPath row]];
+        SessionDetailsViewController *sessionDetailsViewController = [[SessionDetailsViewController alloc] init];
+        sessionDetailsViewController.session = session;
+        [self.navigationController pushViewController:sessionDetailsViewController animated:YES];
+        [sessionDetailsViewController release];
+    }
 }
 
 @end
