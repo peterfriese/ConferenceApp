@@ -16,6 +16,8 @@
 #import "NSDate+Additions.h"
 #import "ScheduleViewController.h"
 
+#import "NSAttributedString+HTML.h"
+
 @implementation ConferenceAppAppDelegate
 
 @synthesize window = _window;
@@ -140,6 +142,12 @@
     
     [self.window addSubview:_tabBarController.view];
     [self.window makeKeyAndVisible];
+    
+    // HACK
+    NSData *data = [@"<html><body><b>Startup</b></body></html>" dataUsingEncoding:NSUTF8StringEncoding];
+    NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:nil documentAttributes:nil];
+    [string release];
+    
     return YES;
 }
 
