@@ -81,6 +81,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];    
     Speaker *speaker = (Speaker *)[[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
     SpeakerDetailsViewController *speakerDetailsViewController = [[SpeakerDetailsViewController alloc] init];
     [speakerDetailsViewController setSpeaker:speaker];

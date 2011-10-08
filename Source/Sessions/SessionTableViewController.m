@@ -177,6 +177,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     Session *session = (Session *)[[self fetchedResultsControllerForTableView:tableView] objectAtIndexPath:indexPath];
     if ([_delegate conformsToProtocol:@protocol(SessionNavigationDelegate)]) {
         [_delegate navigateToSession:session];
