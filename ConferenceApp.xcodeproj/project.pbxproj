@@ -29,6 +29,17 @@
 		88675AEC1429BA6A003A42E1 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AB31429B8E3003A42E1 /* libRestKitNetwork.a */; };
 		88675AED1429BA6A003A42E1 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AB51429B8E3003A42E1 /* libRestKitObjectMapping.a */; };
 		88675AEE1429BA6A003A42E1 /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AB71429B8E3003A42E1 /* libRestKitSupport.a */; };
+		889E20B9143FB07A008558F0 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20B7143FB07A008558F0 /* header.png */; };
+		889E20BA143FB07A008558F0 /* header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20B8143FB07A008558F0 /* header@2x.png */; };
+		889E20BD143FB135008558F0 /* header2.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20BB143FB135008558F0 /* header2.png */; };
+		889E20BE143FB135008558F0 /* header2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20BC143FB135008558F0 /* header2@2x.png */; };
+		889E20C1143FB2D3008558F0 /* header3.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20BF143FB2D3008558F0 /* header3.png */; };
+		889E20C2143FB2D3008558F0 /* header3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20C0143FB2D3008558F0 /* header3@2x.png */; };
+		889E20C5143FB39F008558F0 /* header4.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20C3143FB39F008558F0 /* header4.png */; };
+		889E20C6143FB39F008558F0 /* header4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20C4143FB39F008558F0 /* header4@2x.png */; };
+		889E20C9143FB61C008558F0 /* sectionheader.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20C7143FB61C008558F0 /* sectionheader.png */; };
+		889E20CA143FB61C008558F0 /* sectionheader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20C8143FB61C008558F0 /* sectionheader@2x.png */; };
+		889E211F144030B3008558F0 /* Entitlements.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 889E211E144030B3008558F0 /* Entitlements.entitlements */; };
 		88BDF1BC1429C936008E2774 /* ConferenceAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88BDF1B51429C936008E2774 /* ConferenceAppAppDelegate.m */; };
 		88BDF1BD1429C936008E2774 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 88BDF1B61429C936008E2774 /* InfoPlist.strings */; };
 		88BDF1BE1429C936008E2774 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88BDF1B81429C936008E2774 /* MainWindow.xib */; };
@@ -230,6 +241,17 @@
 		88675AE51429BA2A003A42E1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		88675AE71429BA33003A42E1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		88675AE91429BA41003A42E1 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		889E20B7143FB07A008558F0 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
+		889E20B8143FB07A008558F0 /* header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header@2x.png"; sourceTree = "<group>"; };
+		889E20BB143FB135008558F0 /* header2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header2.png; sourceTree = "<group>"; };
+		889E20BC143FB135008558F0 /* header2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header2@2x.png"; sourceTree = "<group>"; };
+		889E20BF143FB2D3008558F0 /* header3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header3.png; sourceTree = "<group>"; };
+		889E20C0143FB2D3008558F0 /* header3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header3@2x.png"; sourceTree = "<group>"; };
+		889E20C3143FB39F008558F0 /* header4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header4.png; sourceTree = "<group>"; };
+		889E20C4143FB39F008558F0 /* header4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header4@2x.png"; sourceTree = "<group>"; };
+		889E20C7143FB61C008558F0 /* sectionheader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sectionheader.png; sourceTree = "<group>"; };
+		889E20C8143FB61C008558F0 /* sectionheader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sectionheader@2x.png"; sourceTree = "<group>"; };
+		889E211E144030B3008558F0 /* Entitlements.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Entitlements.entitlements; sourceTree = "<group>"; };
 		88BDF1B31429C936008E2774 /* ConferenceApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ConferenceApp-Prefix.pch"; sourceTree = "<group>"; };
 		88BDF1B41429C936008E2774 /* ConferenceAppAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConferenceAppAppDelegate.h; sourceTree = "<group>"; };
 		88BDF1B51429C936008E2774 /* ConferenceAppAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConferenceAppAppDelegate.m; sourceTree = "<group>"; };
@@ -483,6 +505,7 @@
 		88675A751429B713003A42E1 = {
 			isa = PBXGroup;
 			children = (
+				889E211E144030B3008558F0 /* Entitlements.entitlements */,
 				88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */,
 				88BDF1B11429C936008E2774 /* Source */,
 				88BDF1C01429CA34008E2774 /* Resources */,
@@ -536,6 +559,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		889E20B6143FB07A008558F0 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				889E20C7143FB61C008558F0 /* sectionheader.png */,
+				889E20C8143FB61C008558F0 /* sectionheader@2x.png */,
+				889E20C3143FB39F008558F0 /* header4.png */,
+				889E20C4143FB39F008558F0 /* header4@2x.png */,
+				889E20BF143FB2D3008558F0 /* header3.png */,
+				889E20C0143FB2D3008558F0 /* header3@2x.png */,
+				889E20BB143FB135008558F0 /* header2.png */,
+				889E20BC143FB135008558F0 /* header2@2x.png */,
+				889E20B7143FB07A008558F0 /* header.png */,
+				889E20B8143FB07A008558F0 /* header@2x.png */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		88BDF1B11429C936008E2774 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -557,6 +597,7 @@
 		88BDF1C01429CA34008E2774 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				889E20B6143FB07A008558F0 /* Header */,
 				88467AF1143FA9E700EB413E /* Default.png */,
 				88467AF2143FA9E700EB413E /* Default@2x.png */,
 				88467AEC143FA0EB00EB413E /* Icons */,
@@ -920,6 +961,17 @@
 				88467AF0143FA0EB00EB413E /* Icon@2x.png in Resources */,
 				88467AF3143FA9E700EB413E /* Default.png in Resources */,
 				88467AF4143FA9E700EB413E /* Default@2x.png in Resources */,
+				889E20B9143FB07A008558F0 /* header.png in Resources */,
+				889E20BA143FB07A008558F0 /* header@2x.png in Resources */,
+				889E20BD143FB135008558F0 /* header2.png in Resources */,
+				889E20BE143FB135008558F0 /* header2@2x.png in Resources */,
+				889E20C1143FB2D3008558F0 /* header3.png in Resources */,
+				889E20C2143FB2D3008558F0 /* header3@2x.png in Resources */,
+				889E20C5143FB39F008558F0 /* header4.png in Resources */,
+				889E20C6143FB39F008558F0 /* header4@2x.png in Resources */,
+				889E20C9143FB61C008558F0 /* sectionheader.png in Resources */,
+				889E20CA143FB61C008558F0 /* sectionheader@2x.png in Resources */,
+				889E211F144030B3008558F0 /* Entitlements.entitlements in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1096,6 +1148,46 @@
 			};
 			name = Release;
 		};
+		889E2120144030F5008558F0 /* Ad hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "Ad hoc";
+		};
+		889E2121144030F5008558F0 /* Ad hoc */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Friese";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				INFOPLIST_FILE = "Resources/ConferenceApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C4F13A11-2568-48BB-8B79-0B44A859A097";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = "Ad hoc";
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1104,6 +1196,7 @@
 			buildConfigurations = (
 				88675A991429B713003A42E1 /* Debug */,
 				88675A9A1429B713003A42E1 /* Release */,
+				889E2120144030F5008558F0 /* Ad hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1113,6 +1206,7 @@
 			buildConfigurations = (
 				88675A9C1429B713003A42E1 /* Debug */,
 				88675A9D1429B713003A42E1 /* Release */,
+				889E2121144030F5008558F0 /* Ad hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

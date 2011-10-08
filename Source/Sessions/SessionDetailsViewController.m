@@ -234,10 +234,10 @@ typedef enum {
                                          // @"purple", DTDefaultLinkColor, 
                                          // @"http://www.peterfriese.de", NSBaseURLDocumentOption, 
                                          nil]; 
-                NSData *data = [session.abstract dataUsingEncoding:NSUTF8StringEncoding];            
+                NSData *data = [session.abstract dataUsingEncoding:NSUTF8StringEncoding];
                 NSAttributedString *string = [[NSAttributedString alloc] initWithHTML:data options:options documentAttributes:NULL];
                 [attributedCell setAttributedString:string];
-                [string release];
+                [string release];                
             }
             break;
         }
