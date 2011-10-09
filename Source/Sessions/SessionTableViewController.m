@@ -65,12 +65,16 @@
     if (searchStringPredicate != nil) {
         [predicates addObject:searchStringPredicate];
     }
+    else {
+        if (self.datePredicate != nil) {
+            [predicates addObject:self.datePredicate];
+        }        
+    }
+
     if (self.favoritesPredicate != nil) {
         [predicates addObject:self.favoritesPredicate];
     }
-    if (self.datePredicate != nil) {
-        [predicates addObject:self.datePredicate];
-    }
+    
     NSCompoundPredicate *compoundPredicates = [[[NSCompoundPredicate alloc] initWithType:NSAndPredicateType subpredicates:predicates] autorelease];
     [predicates release];
     return compoundPredicates;
@@ -88,7 +92,12 @@
     if ([sections count]) {
         id<NSFetchedResultsSectionInfo> sectionInfo = [sections objectAtIndex:section];
         Session *session = (Session *)[[sectionInfo objects] objectAtIndex:0];
-        label = [session timeSlot];
+        if (self.searchWasActive) {
+            label = [NSString stringWithFormat:@"%@ - %@", [session day], [session timeSlot]];
+        }
+        else {
+            label = [session timeSlot];
+        }
     }
     
     
