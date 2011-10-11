@@ -31,7 +31,7 @@
 @property (nonatomic, retain) NSString *groupBy;
 @property (nonatomic, retain) NSString *sortBy;
 
-- (Class)managedObject;
+- (NSManagedObject *)managedObject;
 - (void)loadData;
 
 - (void)configureCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject atIndexPath:(NSIndexPath *)indexPath;

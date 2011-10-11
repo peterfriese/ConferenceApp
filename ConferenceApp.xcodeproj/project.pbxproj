@@ -34,6 +34,8 @@
 		88675AEC1429BA6A003A42E1 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AB31429B8E3003A42E1 /* libRestKitNetwork.a */; };
 		88675AED1429BA6A003A42E1 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AB51429B8E3003A42E1 /* libRestKitObjectMapping.a */; };
 		88675AEE1429BA6A003A42E1 /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AB71429B8E3003A42E1 /* libRestKitSupport.a */; };
+		886E98F3144427FE00CD3386 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 886E98F0144427FE00CD3386 /* SVProgressHUD.bundle */; };
+		886E98F4144427FE00CD3386 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 886E98F2144427FE00CD3386 /* SVProgressHUD.m */; };
 		889E20B9143FB07A008558F0 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20B7143FB07A008558F0 /* header.png */; };
 		889E20BA143FB07A008558F0 /* header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20B8143FB07A008558F0 /* header@2x.png */; };
 		889E20BD143FB135008558F0 /* header2.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20BB143FB135008558F0 /* header2.png */; };
@@ -253,6 +255,9 @@
 		88675AE51429BA2A003A42E1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		88675AE71429BA33003A42E1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		88675AE91429BA41003A42E1 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		886E98F0144427FE00CD3386 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		886E98F1144427FE00CD3386 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		886E98F2144427FE00CD3386 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		889E20B7143FB07A008558F0 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
 		889E20B8143FB07A008558F0 /* header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header@2x.png"; sourceTree = "<group>"; };
 		889E20BB143FB135008558F0 /* header2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header2.png; sourceTree = "<group>"; };
@@ -570,6 +575,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		886E98EF144427FE00CD3386 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				886E98F0144427FE00CD3386 /* SVProgressHUD.bundle */,
+				886E98F1144427FE00CD3386 /* SVProgressHUD.h */,
+				886E98F2144427FE00CD3386 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		889E20B6143FB07A008558F0 /* Header */ = {
 			isa = PBXGroup;
 			children = (
@@ -700,6 +715,7 @@
 		88C849E2143AEE0200C500EB /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				886E98EF144427FE00CD3386 /* SVProgressHUD */,
 				88C849E3143AEE0200C500EB /* NSAttributedStrings */,
 				88C84A26143AEE0200C500EB /* WebArchive */,
 			);
@@ -986,6 +1002,7 @@
 				889E20CA143FB61C008558F0 /* sectionheader@2x.png in Resources */,
 				889E211F144030B3008558F0 /* Entitlements.entitlements in Resources */,
 				880DED191442E1F6007BE6F7 /* NewScheduleViewController.xib in Resources */,
+				886E98F3144427FE00CD3386 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1052,6 +1069,7 @@
 				880DED1C144338F9007BE6F7 /* ScheduleViewController2.m in Sources */,
 				880DED1F144339B0007BE6F7 /* DateNavigator.m in Sources */,
 				880DEA3A144393C900855964 /* BaseUIViewController.m in Sources */,
+				886E98F4144427FE00CD3386 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,8 @@
 
 #import <RestKit/RestKit.h>
 #import <RestKit/CoreData/CoreData.h>
+#import <RestKit/CoreData/NSManagedObject+ActiveRecord.h>
+#import "SVProgressHUD.h"
 
 @interface BaseUIViewController()
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -154,17 +156,17 @@
 {
     NSString *name = [self entityName];
     return 
-    (name != nil) 
-    ? [[[NSClassFromString(name) alloc] init] autorelease]
-    : nil;
+        (name != nil) 
+            ? [[[NSClassFromString(name) alloc] init] autorelease]
+            : nil;
 }
 
 - (Class)managedObjectClass
 {
     NSString *name = [self entityName];
     return (name != nil)
-    ? NSClassFromString(name)
-    : nil;
+        ? NSClassFromString(name)
+        : nil;
 }
 
 #pragma mark - Data handling
@@ -176,6 +178,15 @@
     RKObjectManager* objectManager = [RKObjectManager sharedManager];
     
     if ([objectManager isOnline]) {
+        NSError *error = nil;
+        NSUInteger count = [self.managedObjectClass count:&error];
+        if (count == 0) {
+            [SVProgressHUD showWithStatus:@"Fetching session data..." maskType:SVProgressHUDMaskTypeBlack networkIndicator:YES];
+        }
+        else {
+            // We *could* display a "refreshing..." message, but this would get into the user's way, so we're not doing it.
+            // [SVProgressHUD showWithStatus:@"Refreshing session data..." maskType:SVProgressHUDMaskTypeBlack networkIndicator:YES];
+        }
         [objectManager loadObjectsAtResourcePath:[self resourcePath] delegate:self block:^(RKObjectLoader* loader) {
             // Twitter returns statuses as a naked array in JSON, so we instruct the loader
             // to user the appropriate object mapping
@@ -192,7 +203,11 @@
 {
     NSError *error;
     if (![self.fetchedResultsController performFetch:&error]) {
-        NSLog(@"Failed to fetch data.");
+        [SVProgressHUD dismissWithError:@"Failed to fetch data." afterDelay:2.0];
+        // NSLog(@"Failed to fetch data.");
+    }
+    else {
+        [SVProgressHUD dismissWithSuccess:@"Success!" afterDelay:1.0];
     }
 }
 
@@ -204,12 +219,15 @@
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
+    [SVProgressHUD dismissWithError:[error localizedDescription] afterDelay:2.0];
+    /*
 	UIAlertView* alert = [[[UIAlertView alloc] initWithTitle:@"Error" 
                                                      message:[error localizedDescription] 
                                                     delegate:nil 
                                            cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
 	[alert show];
 	NSLog(@"Hit error: %@", error);
+     */
 }
 
 #pragma mark - NSFetchedResultsController

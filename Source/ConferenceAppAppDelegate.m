@@ -39,7 +39,6 @@
     NSString *databaseName = @"ConferenceData.sqlite";
     objectManager.objectStore = [RKManagedObjectStore objectStoreWithStoreFilename:databaseName inDirectory:nil usingSeedDatabaseName:nil managedObjectModel:nil delegate:self];
     
-    
     // Set up date and time parsers
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
