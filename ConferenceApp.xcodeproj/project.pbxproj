@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		880DEA3A144393C900855964 /* BaseUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880DEA39144393C900855964 /* BaseUIViewController.m */; };
+		880DED181442E1F6007BE6F7 /* NewScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880DED161442E1F6007BE6F7 /* NewScheduleViewController.m */; };
+		880DED191442E1F6007BE6F7 /* NewScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880DED171442E1F6007BE6F7 /* NewScheduleViewController.xib */; };
+		880DED1C144338F9007BE6F7 /* ScheduleViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 880DED1B144338F9007BE6F7 /* ScheduleViewController2.m */; };
+		880DED1F144339B0007BE6F7 /* DateNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 880DED1E144339B0007BE6F7 /* DateNavigator.m */; };
 		882025BA1429D704003BA1F5 /* ConferenceApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 882025B81429D704003BA1F5 /* ConferenceApp.xcdatamodeld */; };
 		8820264A142C5CCF003BA1F5 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202649142C5CCF003BA1F5 /* Speaker.m */; };
 		8820265A142CC2EA003BA1F5 /* Star.png in Resources */ = {isa = PBXBuildFile; fileRef = 88202656142CC2EA003BA1F5 /* Star.png */; };
@@ -72,10 +77,8 @@
 		88C849C9143A616F00C500EB /* navbar_grained2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88C849C7143A616F00C500EB /* navbar_grained2@2x.png */; };
 		88C849DB143AEDEA00C500EB /* NSDate+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C849CC143AEDEA00C500EB /* NSDate+Additions.m */; };
 		88C849DC143AEDEA00C500EB /* BaseUITableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C849CF143AEDEA00C500EB /* BaseUITableViewController.m */; };
-		88C849DD143AEDEA00C500EB /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C849D2143AEDEA00C500EB /* ScheduleViewController.m */; };
 		88C849DE143AEDEA00C500EB /* SessionDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C849D4143AEDEA00C500EB /* SessionDetailsViewController.m */; };
 		88C849DF143AEDEA00C500EB /* SessionDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88C849D5143AEDEA00C500EB /* SessionDetailsViewController.xib */; };
-		88C849E0143AEDEA00C500EB /* SessionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C849D7143AEDEA00C500EB /* SessionTableViewController.m */; };
 		88C849E1143AEDEA00C500EB /* SpeakerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C849DA143AEDEA00C500EB /* SpeakerTableViewController.m */; };
 		88C84A2F143AEE0200C500EB /* CGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C849E5143AEE0200C500EB /* CGUtils.m */; };
 		88C84A30143AEE0200C500EB /* DTAttributedTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C849E7143AEE0200C500EB /* DTAttributedTextCell.m */; };
@@ -220,6 +223,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		880DEA38144393C900855964 /* BaseUIViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUIViewController.h; sourceTree = "<group>"; };
+		880DEA39144393C900855964 /* BaseUIViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUIViewController.m; sourceTree = "<group>"; };
+		880DED151442E1F6007BE6F7 /* NewScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewScheduleViewController.h; sourceTree = "<group>"; };
+		880DED161442E1F6007BE6F7 /* NewScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewScheduleViewController.m; sourceTree = "<group>"; };
+		880DED171442E1F6007BE6F7 /* NewScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewScheduleViewController.xib; sourceTree = "<group>"; };
+		880DED1A144338F9007BE6F7 /* ScheduleViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController2.h; sourceTree = "<group>"; };
+		880DED1B144338F9007BE6F7 /* ScheduleViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController2.m; sourceTree = "<group>"; };
+		880DED1D144339B0007BE6F7 /* DateNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateNavigator.h; sourceTree = "<group>"; };
+		880DED1E144339B0007BE6F7 /* DateNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateNavigator.m; sourceTree = "<group>"; };
 		882025B91429D704003BA1F5 /* ConferenceApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConferenceApp.xcdatamodel; sourceTree = "<group>"; };
 		88202648142C5CCF003BA1F5 /* Speaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Speaker.h; sourceTree = "<group>"; };
 		88202649142C5CCF003BA1F5 /* Speaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Speaker.m; sourceTree = "<group>"; };
@@ -290,13 +302,9 @@
 		88C849CC143AEDEA00C500EB /* NSDate+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Additions.m"; sourceTree = "<group>"; };
 		88C849CE143AEDEA00C500EB /* BaseUITableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseUITableViewController.h; sourceTree = "<group>"; };
 		88C849CF143AEDEA00C500EB /* BaseUITableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseUITableViewController.m; sourceTree = "<group>"; };
-		88C849D1143AEDEA00C500EB /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
-		88C849D2143AEDEA00C500EB /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		88C849D3143AEDEA00C500EB /* SessionDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionDetailsViewController.h; sourceTree = "<group>"; };
 		88C849D4143AEDEA00C500EB /* SessionDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionDetailsViewController.m; sourceTree = "<group>"; };
 		88C849D5143AEDEA00C500EB /* SessionDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SessionDetailsViewController.xib; sourceTree = "<group>"; };
-		88C849D6143AEDEA00C500EB /* SessionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SessionTableViewController.h; sourceTree = "<group>"; };
-		88C849D7143AEDEA00C500EB /* SessionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SessionTableViewController.m; sourceTree = "<group>"; };
 		88C849D9143AEDEA00C500EB /* SpeakerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerTableViewController.h; sourceTree = "<group>"; };
 		88C849DA143AEDEA00C500EB /* SpeakerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerTableViewController.m; sourceTree = "<group>"; };
 		88C849E4143AEE0200C500EB /* CGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGUtils.h; sourceTree = "<group>"; };
@@ -426,13 +434,16 @@
 		8803DCDD143C6B6700AE93F8 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				88C849D1143AEDEA00C500EB /* ScheduleViewController.h */,
-				88C849D2143AEDEA00C500EB /* ScheduleViewController.m */,
-				88C849D6143AEDEA00C500EB /* SessionTableViewController.h */,
-				88C849D7143AEDEA00C500EB /* SessionTableViewController.m */,
 				88C84A59143AF23400C500EB /* SessionTableViewCell.h */,
 				88C84A5A143AF23500C500EB /* SessionTableViewCell.m */,
 				88C84A5B143AF23500C500EB /* SessionTableViewCell.xib */,
+				880DED151442E1F6007BE6F7 /* NewScheduleViewController.h */,
+				880DED161442E1F6007BE6F7 /* NewScheduleViewController.m */,
+				880DED171442E1F6007BE6F7 /* NewScheduleViewController.xib */,
+				880DED1A144338F9007BE6F7 /* ScheduleViewController2.h */,
+				880DED1B144338F9007BE6F7 /* ScheduleViewController2.m */,
+				880DED1D144339B0007BE6F7 /* DateNavigator.h */,
+				880DED1E144339B0007BE6F7 /* DateNavigator.m */,
 			);
 			name = List;
 			sourceTree = "<group>";
@@ -656,6 +667,8 @@
 		88C849CD143AEDEA00C500EB /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				880DEA38144393C900855964 /* BaseUIViewController.h */,
+				880DEA39144393C900855964 /* BaseUIViewController.m */,
 				88C849CE143AEDEA00C500EB /* BaseUITableViewController.h */,
 				88C849CF143AEDEA00C500EB /* BaseUITableViewController.m */,
 				88CABDD2143E626D00D6008B /* UIImage+Blocks.h */,
@@ -972,6 +985,7 @@
 				889E20C9143FB61C008558F0 /* sectionheader.png in Resources */,
 				889E20CA143FB61C008558F0 /* sectionheader@2x.png in Resources */,
 				889E211F144030B3008558F0 /* Entitlements.entitlements in Resources */,
+				880DED191442E1F6007BE6F7 /* NewScheduleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -989,9 +1003,7 @@
 				88C848C014347C3200C500EB /* Session.m in Sources */,
 				88C849DB143AEDEA00C500EB /* NSDate+Additions.m in Sources */,
 				88C849DC143AEDEA00C500EB /* BaseUITableViewController.m in Sources */,
-				88C849DD143AEDEA00C500EB /* ScheduleViewController.m in Sources */,
 				88C849DE143AEDEA00C500EB /* SessionDetailsViewController.m in Sources */,
-				88C849E0143AEDEA00C500EB /* SessionTableViewController.m in Sources */,
 				88C849E1143AEDEA00C500EB /* SpeakerTableViewController.m in Sources */,
 				88C84A2F143AEE0200C500EB /* CGUtils.m in Sources */,
 				88C84A30143AEE0200C500EB /* DTAttributedTextCell.m in Sources */,
@@ -1036,6 +1048,10 @@
 				88C84A66143B719200C500EB /* UIColor+Additions.m in Sources */,
 				88CABDB3143E3DB300D6008B /* SpeakerDetailsViewController.m in Sources */,
 				88CABDD4143E626D00D6008B /* UIImage+Blocks.m in Sources */,
+				880DED181442E1F6007BE6F7 /* NewScheduleViewController.m in Sources */,
+				880DED1C144338F9007BE6F7 /* ScheduleViewController2.m in Sources */,
+				880DED1F144339B0007BE6F7 /* DateNavigator.m in Sources */,
+				880DEA3A144393C900855964 /* BaseUIViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1182,7 +1198,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C4F13A11-2568-48BB-8B79-0B44A859A097";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A7D205B4-09B1-42C7-886D-89F423115DE0";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};

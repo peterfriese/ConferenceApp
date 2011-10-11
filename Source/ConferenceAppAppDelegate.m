@@ -9,12 +9,12 @@
 #import "ConferenceAppAppDelegate.h"
 #import <RestKit/RestKit.h>
 #import <RestKit/CoreData/CoreData.h>
-#import "SessionTableViewController.h"
 #import "Session.h"
 #import "SpeakerTableViewController.h"
 #import "Speaker.h"
 #import "NSDate+Additions.h"
-#import "ScheduleViewController.h"
+#import "NewScheduleViewController.h"
+#import "ScheduleViewController2.h"
 
 #import "NSAttributedString+HTML.h"
 
@@ -116,16 +116,24 @@
                       [NSDate dateFromString:@"2011-11-03"], 
                       [NSDate dateFromString:@"2011-11-04"], 
                       nil];
-    
-    ScheduleViewController *scheduleViewController = [[ScheduleViewController alloc] init];
-    [scheduleViewController setDates:dates];
-    scheduleViewController.tabBarItem.image = [UIImage imageNamed:@"83-calendar"];
-    UINavigationController *scheduleNavigationController = [[UINavigationController alloc] initWithRootViewController:scheduleViewController];
-    [scheduleNavigationController.navigationBar setTintColor:[UIColor blackColor]];
-    [scheduleViewController release];
-    [tabBarControllers addObject:scheduleNavigationController];
-    [scheduleNavigationController release];
-    
+
+    ScheduleViewController2 *scheduleViewController2 = [[ScheduleViewController2 alloc] init];
+    scheduleViewController2.dates = dates;
+    scheduleViewController2.tabBarItem.image = [UIImage imageNamed:@"83-calendar"];
+    UINavigationController *scheduleNavigationController2 = [[UINavigationController alloc] initWithRootViewController:scheduleViewController2];
+    [scheduleNavigationController2.navigationBar setTintColor:[UIColor blackColor]];    
+    [scheduleViewController2 release];
+    [tabBarControllers addObject:scheduleNavigationController2];
+    [scheduleNavigationController2 release];
+
+    // This class has been used to develop the extra animation of the search bar in conjunctioin with the date navigator. Leaving it in here for reference purposes.
+    NewScheduleViewController *newScheduleViewController = [[NewScheduleViewController alloc] init];
+    newScheduleViewController.tabBarItem.image = [UIImage imageNamed:@"83-calendar"];
+    UINavigationController *newScheduleNavigationController = [[UINavigationController alloc] initWithRootViewController:newScheduleViewController];
+    [newScheduleViewController release];
+    [tabBarControllers addObject:newScheduleNavigationController];
+    [newScheduleNavigationController release];
+
     // Speaker View Controller and NavigationController
     SpeakerTableViewController *speakerViewController = [[SpeakerTableViewController alloc] init];
     speakerViewController.tabBarItem.image = [UIImage imageNamed:@"66-microphone"];
