@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="562" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Session" representedClassName="Session">
-        <attribute name="abstract" optional="YES" attributeType="String"/>
+        <attribute name="abstract" optional="YES" attributeType="String" indexed="YES"/>
         <attribute name="attending" optional="YES" attributeType="Boolean" defaultValueString="NO"/>
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="createdAt" optional="YES" attributeType="Date"/>
@@ -11,23 +11,23 @@
         <attribute name="sessionId" optional="YES" attributeType="Integer 64" defaultValueString="0"/>
         <attribute name="startTime" optional="YES" attributeType="Date"/>
         <attribute name="status" optional="YES" attributeType="String"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String" indexed="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="speakers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Speaker" inverseName="sessions" inverseEntity="Speaker"/>
     </entity>
     <entity name="Speaker" representedClassName="Speaker">
-        <attribute name="affiliation" optional="YES" attributeType="String"/>
+        <attribute name="affiliation" optional="YES" attributeType="String" indexed="YES"/>
         <attribute name="bio" optional="YES" attributeType="String"/>
-        <attribute name="firstName" optional="YES" attributeType="String"/>
-        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="firstName" optional="YES" attributeType="String" indexed="YES"/>
+        <attribute name="fullName" optional="YES" attributeType="String" indexed="YES"/>
         <attribute name="initial" optional="YES" transient="YES" attributeType="String"/>
-        <attribute name="lastName" optional="YES" attributeType="String"/>
+        <attribute name="lastName" optional="YES" attributeType="String" indexed="YES"/>
         <attribute name="role" optional="YES" attributeType="String"/>
         <attribute name="speakerId" optional="YES" attributeType="String"/>
         <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="speakers" inverseEntity="Session"/>
     </entity>
     <elements>
-        <element name="Session" positionX="-4365" positionY="-4365" width="128" height="210"/>
+        <element name="Session" positionX="-4365" positionY="-4365" width="128" height="240"/>
         <element name="Speaker" positionX="-4086" positionY="-4158" width="128" height="180"/>
     </elements>
 </model>

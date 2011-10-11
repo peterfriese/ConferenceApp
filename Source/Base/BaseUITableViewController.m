@@ -24,8 +24,9 @@
 
 -(UITableView *)instantiateTableView
 {
-    CGRect frame = CGRectMake(0, 0, 320, 480);
-    return [[[UITableView alloc] initWithFrame:frame] autorelease];
+    UITableView *tableView = [[[UITableView alloc] initWithFrame:self.view.bounds] autorelease];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    return tableView;
 }
 
 @end

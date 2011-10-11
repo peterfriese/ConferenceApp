@@ -39,5 +39,6 @@
 - (NSPredicate *)composePredicates:(NSPredicate *)searchStringPredicate;
 - (void)updatePredicates;
 - (NSString *)entityName;
+- (NSString *)cellIdentifier;
 
 @end

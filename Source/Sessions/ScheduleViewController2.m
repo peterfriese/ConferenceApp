@@ -60,9 +60,12 @@
     CGRect tableViewFrame = CGRectMake(0, 
                                        dateNavigatorFrame.origin.y + dateNavigatorFrame.size.height, 
                                        320, 
-                                       self.view.frame.size.height - dateNavigatorFrame.size.height);
+                                       self.view.bounds.size.height - dateNavigatorFrame.size.height);
     
-    return [[[UITableView alloc] initWithFrame:tableViewFrame] autorelease];
+    UITableView *tableView = [[[UITableView alloc] initWithFrame:tableViewFrame] autorelease];
+    tableView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    
+    return tableView;
 }
 
 -(void)viewDidLoad
@@ -199,30 +202,29 @@
     return @"";
 }
 
+- (NSString *)cellIdentifier
+{
+    static NSString *kCellIdentifier = @"SessionTableViewCell";
+    return kCellIdentifier;
+}
+
+- (NSString *)cellIdentifierForSearch
+{
+    static NSString *kCellIdentifier = @"SessionTableViewCellForFiltering";
+    return kCellIdentifier;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView instantiateCellForRowAtIndexPath:(NSIndexPath *)indexPath withReuseIdentifier:(NSString *)cellIdentifier
 {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SessionTableViewCell"];
-	if (cell == nil) {
-		cell = [self loadReusableTableViewCellFromNibNamed:@"SessionTableViewCell"];
-	}
-    return cell;
+    if (self.searchWasActive) {
+        return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:self.cellIdentifierForSearch];
+    }
+    return [self loadReusableTableViewCellFromNibNamed:cellIdentifier];
 }
 
 - (void)configureCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject atIndexPath:(NSIndexPath *)indexPath
 {
     Session *session = (Session*)managedObject;
-    
-    /*
-     cell.textLabel.text = session.title;
-     
-     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-     [timeFormatter setDateFormat:@"HH:mm:ss"];
-     NSString *startTime = [timeFormatter stringFromDate:[session startTime]];
-     NSString *endTime = [timeFormatter stringFromDate:[session endTime]];
-     [timeFormatter release];
-     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@", startTime, endTime];
-     */
-    
     
 	if ([cell isKindOfClass:[SessionTableViewCell class]]) {
 		SessionTableViewCell *sessionCell = (SessionTableViewCell *)cell;
@@ -233,14 +235,22 @@
 
 		sessionCell.roomLabel.text = [session room];
 		[sessionCell setSessionTitle:session.title];
-		
+
 		NSArray *speakerNames = [[session.speakers valueForKey:@"fullName"] allObjects];
 		NSString *joinedNames = [speakerNames componentsJoinedByString:@", "];
 		[sessionCell setSpeakers:joinedNames];
-		
+
 		sessionCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 		[sessionCell prepare];
 	}
+    else {
+        cell.textLabel.text = [session title];
+
+		NSArray *speakerNames = [[session.speakers valueForKey:@"fullName"] allObjects];
+		NSString *joinedNames = [speakerNames componentsJoinedByString:@", "];
+        
+        cell.detailTextLabel.text = joinedNames;
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -250,7 +260,7 @@
 		return [[(SessionTableViewCell*)cell height] floatValue];
 	}    
     else {
-        return [super tableView:tableView heightForRowAtIndexPath:indexPath];
+        return [self.tableView rowHeight];
     }
 }
 
