@@ -298,8 +298,9 @@
                                                                                            sortedBy:self.sortBy
                                                                                           ascending:YES];
         
-        NSError *error;
+        NSError *error;            
         [[self filteredFetchedResultsController] performFetch:&error];
+
     }
     return _filteredFetchedResultsController;
 }
@@ -414,13 +415,36 @@
     // subclasses should implement this method
 }
 
+- (NSString *)cellIdentifier
+{
+    static NSString *kCellIdentifier = @"Cell";
+    return kCellIdentifier;
+}
+
+- (NSString *)cellIdentifierForSearch
+{
+    static NSString *kCellIdentifier = @"CellForSearch";
+    return kCellIdentifier;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell"; // TODO: derive cellidentifier from classname
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    //NSLog(@"Cell for row at index path [%d;%d]", [indexPath section], [indexPath row]);
+    NSString *cellIdentifier = nil;
+    if (self.searchWasActive) {
+        cellIdentifier = [self cellIdentifierForSearch];
+    }
+    else {
+        cellIdentifier = [self cellIdentifier]; 
+    }
+
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [self tableView:tableView instantiateCellForRowAtIndexPath:indexPath withReuseIdentifier:CellIdentifier];
+        //NSLog(@"Loading table view cell with reuse identifier %@", cellIdentifier);
+        cell = [self tableView:tableView instantiateCellForRowAtIndexPath:indexPath withReuseIdentifier:cellIdentifier];
+    }
+    else {
+        //NSLog(@"REUSING!");
     }
     
     [self tableView:tableView configureCell:cell atIndexPath:indexPath];
