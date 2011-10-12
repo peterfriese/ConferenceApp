@@ -14,7 +14,7 @@
 #import "Speaker.h"
 #import "NSDate+Additions.h"
 #import "NewScheduleViewController.h"
-#import "ScheduleViewController2.h"
+#import "ScheduleViewController.h"
 
 #import "NSAttributedString+HTML.h"
 
@@ -116,7 +116,7 @@
                       [NSDate dateFromString:@"2011-11-04"], 
                       nil];
 
-    ScheduleViewController2 *scheduleViewController2 = [[ScheduleViewController2 alloc] init];
+    ScheduleViewController *scheduleViewController2 = [[ScheduleViewController alloc] init];
     scheduleViewController2.dates = dates;
     scheduleViewController2.tabBarItem.image = [UIImage imageNamed:@"83-calendar"];
     UINavigationController *scheduleNavigationController2 = [[UINavigationController alloc] initWithRootViewController:scheduleViewController2];
@@ -126,13 +126,15 @@
     [scheduleNavigationController2 release];
 
     // This class has been used to develop the extra animation of the search bar in conjunctioin with the date navigator. Leaving it in here for reference purposes.
+    /*
     NewScheduleViewController *newScheduleViewController = [[NewScheduleViewController alloc] init];
     newScheduleViewController.tabBarItem.image = [UIImage imageNamed:@"83-calendar"];
     UINavigationController *newScheduleNavigationController = [[UINavigationController alloc] initWithRootViewController:newScheduleViewController];
     [newScheduleViewController release];
     [tabBarControllers addObject:newScheduleNavigationController];
     [newScheduleNavigationController release];
-
+     */
+    
     // Speaker View Controller and NavigationController
     SpeakerTableViewController *speakerViewController = [[SpeakerTableViewController alloc] init];
     speakerViewController.tabBarItem.image = [UIImage imageNamed:@"66-microphone"];
