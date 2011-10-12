@@ -10,7 +10,7 @@
 		880DEA3A144393C900855964 /* BaseUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880DEA39144393C900855964 /* BaseUIViewController.m */; };
 		880DED181442E1F6007BE6F7 /* NewScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880DED161442E1F6007BE6F7 /* NewScheduleViewController.m */; };
 		880DED191442E1F6007BE6F7 /* NewScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 880DED171442E1F6007BE6F7 /* NewScheduleViewController.xib */; };
-		880DED1C144338F9007BE6F7 /* ScheduleViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 880DED1B144338F9007BE6F7 /* ScheduleViewController2.m */; };
+		880DED1C144338F9007BE6F7 /* ScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 880DED1B144338F9007BE6F7 /* ScheduleViewController.m */; };
 		880DED1F144339B0007BE6F7 /* DateNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 880DED1E144339B0007BE6F7 /* DateNavigator.m */; };
 		882025BA1429D704003BA1F5 /* ConferenceApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 882025B81429D704003BA1F5 /* ConferenceApp.xcdatamodeld */; };
 		8820264A142C5CCF003BA1F5 /* Speaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 88202649142C5CCF003BA1F5 /* Speaker.m */; };
@@ -22,6 +22,8 @@
 		88467AF0143FA0EB00EB413E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88467AEE143FA0EB00EB413E /* Icon@2x.png */; };
 		88467AF3143FA9E700EB413E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 88467AF1143FA9E700EB413E /* Default.png */; };
 		88467AF4143FA9E700EB413E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88467AF2143FA9E700EB413E /* Default@2x.png */; };
+		885FB61C1445CC2D00FED297 /* EasterEgg.png in Resources */ = {isa = PBXBuildFile; fileRef = 885FB61A1445CC2D00FED297 /* EasterEgg.png */; };
+		885FB61D1445CC2D00FED297 /* EasterEgg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 885FB61B1445CC2D00FED297 /* EasterEgg@2x.png */; };
 		88675A851429B713003A42E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A841429B713003A42E1 /* UIKit.framework */; };
 		88675A871429B713003A42E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A861429B713003A42E1 /* Foundation.framework */; };
 		88675A891429B713003A42E1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A881429B713003A42E1 /* CoreGraphics.framework */; };
@@ -230,8 +232,8 @@
 		880DED151442E1F6007BE6F7 /* NewScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewScheduleViewController.h; sourceTree = "<group>"; };
 		880DED161442E1F6007BE6F7 /* NewScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewScheduleViewController.m; sourceTree = "<group>"; };
 		880DED171442E1F6007BE6F7 /* NewScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewScheduleViewController.xib; sourceTree = "<group>"; };
-		880DED1A144338F9007BE6F7 /* ScheduleViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController2.h; sourceTree = "<group>"; };
-		880DED1B144338F9007BE6F7 /* ScheduleViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController2.m; sourceTree = "<group>"; };
+		880DED1A144338F9007BE6F7 /* ScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScheduleViewController.h; sourceTree = "<group>"; };
+		880DED1B144338F9007BE6F7 /* ScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScheduleViewController.m; sourceTree = "<group>"; };
 		880DED1D144339B0007BE6F7 /* DateNavigator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DateNavigator.h; sourceTree = "<group>"; };
 		880DED1E144339B0007BE6F7 /* DateNavigator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DateNavigator.m; sourceTree = "<group>"; };
 		882025B91429D704003BA1F5 /* ConferenceApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ConferenceApp.xcdatamodel; sourceTree = "<group>"; };
@@ -245,6 +247,8 @@
 		88467AEE143FA0EB00EB413E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		88467AF1143FA9E700EB413E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		88467AF2143FA9E700EB413E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		885FB61A1445CC2D00FED297 /* EasterEgg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasterEgg.png; sourceTree = "<group>"; };
+		885FB61B1445CC2D00FED297 /* EasterEgg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EasterEgg@2x.png"; sourceTree = "<group>"; };
 		88675A801429B713003A42E1 /* ECE 2011.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECE 2011.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88675A841429B713003A42E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88675A861429B713003A42E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -445,8 +449,8 @@
 				880DED151442E1F6007BE6F7 /* NewScheduleViewController.h */,
 				880DED161442E1F6007BE6F7 /* NewScheduleViewController.m */,
 				880DED171442E1F6007BE6F7 /* NewScheduleViewController.xib */,
-				880DED1A144338F9007BE6F7 /* ScheduleViewController2.h */,
-				880DED1B144338F9007BE6F7 /* ScheduleViewController2.m */,
+				880DED1A144338F9007BE6F7 /* ScheduleViewController.h */,
+				880DED1B144338F9007BE6F7 /* ScheduleViewController.m */,
 				880DED1D144339B0007BE6F7 /* DateNavigator.h */,
 				880DED1E144339B0007BE6F7 /* DateNavigator.m */,
 			);
@@ -516,6 +520,15 @@
 				88467AEE143FA0EB00EB413E /* Icon@2x.png */,
 			);
 			path = Icons;
+			sourceTree = "<group>";
+		};
+		885FB6191445CC2D00FED297 /* EasterEgg */ = {
+			isa = PBXGroup;
+			children = (
+				885FB61A1445CC2D00FED297 /* EasterEgg.png */,
+				885FB61B1445CC2D00FED297 /* EasterEgg@2x.png */,
+			);
+			path = EasterEgg;
 			sourceTree = "<group>";
 		};
 		88675A751429B713003A42E1 = {
@@ -623,6 +636,7 @@
 		88BDF1C01429CA34008E2774 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				885FB6191445CC2D00FED297 /* EasterEgg */,
 				889E20B6143FB07A008558F0 /* Header */,
 				88467AF1143FA9E700EB413E /* Default.png */,
 				88467AF2143FA9E700EB413E /* Default@2x.png */,
@@ -1003,6 +1017,8 @@
 				889E211F144030B3008558F0 /* Entitlements.entitlements in Resources */,
 				880DED191442E1F6007BE6F7 /* NewScheduleViewController.xib in Resources */,
 				886E98F3144427FE00CD3386 /* SVProgressHUD.bundle in Resources */,
+				885FB61C1445CC2D00FED297 /* EasterEgg.png in Resources */,
+				885FB61D1445CC2D00FED297 /* EasterEgg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1066,7 +1082,7 @@
 				88CABDB3143E3DB300D6008B /* SpeakerDetailsViewController.m in Sources */,
 				88CABDD4143E626D00D6008B /* UIImage+Blocks.m in Sources */,
 				880DED181442E1F6007BE6F7 /* NewScheduleViewController.m in Sources */,
-				880DED1C144338F9007BE6F7 /* ScheduleViewController2.m in Sources */,
+				880DED1C144338F9007BE6F7 /* ScheduleViewController.m in Sources */,
 				880DED1F144339B0007BE6F7 /* DateNavigator.m in Sources */,
 				880DEA3A144393C900855964 /* BaseUIViewController.m in Sources */,
 				886E98F4144427FE00CD3386 /* SVProgressHUD.m in Sources */,
