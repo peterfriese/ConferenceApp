@@ -1119,6 +1119,45 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		885FB61E1445D62700FED297 /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = "App Store";
+		};
+		885FB61F1445D62700FED297 /* App Store */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Friese";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				INFOPLIST_FILE = "Resources/ConferenceApp-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "449C2F22-87D7-49B0-9E1E-E70945CF0E85";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = "App Store";
+		};
 		88675A991429B713003A42E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1246,6 +1285,7 @@
 			buildConfigurations = (
 				88675A991429B713003A42E1 /* Debug */,
 				88675A9A1429B713003A42E1 /* Release */,
+				885FB61E1445D62700FED297 /* App Store */,
 				889E2120144030F5008558F0 /* Ad hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1256,6 +1296,7 @@
 			buildConfigurations = (
 				88675A9C1429B713003A42E1 /* Debug */,
 				88675A9D1429B713003A42E1 /* Release */,
+				885FB61F1445D62700FED297 /* App Store */,
 				889E2121144030F5008558F0 /* Ad hoc */,
 			);
 			defaultConfigurationIsVisible = 0;
