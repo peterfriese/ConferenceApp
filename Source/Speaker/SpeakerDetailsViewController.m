@@ -255,6 +255,7 @@ typedef enum {
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([indexPath section] == SessionDetailsSectionKindSessions) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         Session *session = (Session *)[[[self.speaker sessions] allObjects] objectAtIndex:[indexPath row]];
         SessionDetailsViewController *sessionDetailsViewController = [[SessionDetailsViewController alloc] init];
         sessionDetailsViewController.session = session;
