@@ -1152,12 +1152,13 @@
 		885FB61F1445D62700FED297 /* App Store */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Friese";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
 				INFOPLIST_FILE = "Resources/ConferenceApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "449C2F22-87D7-49B0-9E1E-E70945CF0E85";
@@ -1218,11 +1219,12 @@
 		88675A9C1429B713003A42E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
 				INFOPLIST_FILE = "Resources/ConferenceApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "";
@@ -1233,13 +1235,16 @@
 		88675A9D1429B713003A42E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
 				INFOPLIST_FILE = "Resources/ConferenceApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1270,13 +1275,14 @@
 		889E2121144030F5008558F0 /* Ad hoc */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Friese";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
 				INFOPLIST_FILE = "Resources/ConferenceApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A7D205B4-09B1-42C7-886D-89F423115DE0";
