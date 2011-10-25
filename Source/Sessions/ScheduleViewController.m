@@ -33,6 +33,7 @@
 @synthesize datePredicate = _datePredicate;
 @synthesize displayFavorites = _displayFavorites;
 @synthesize favoritesPredicate = _favoritesPredicate;
+@synthesize showFavoritesButton = _showFavoritesButton;
 @synthesize favoritesButton = _favoritesButton;
 @synthesize searchButton = _searchButton;
 
@@ -51,8 +52,10 @@
         
         [self.tableView addSubview:self.easterEggHeaderView];
         
-        self.favoritesButton = [[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Star"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleFavorites)] autorelease];
-        self.navigationItem.rightBarButtonItem = self.favoritesButton;
+        if (self.showFavoritesButton) {
+            self.favoritesButton = [[[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"Star"] style:UIBarButtonItemStylePlain target:self action:@selector(toggleFavorites)] autorelease];
+            self.navigationItem.rightBarButtonItem = self.favoritesButton;
+        }
         
         self.searchButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(toggleSearchBar:)] autorelease];
         self.navigationItem.leftBarButtonItem = self.searchButton;        
@@ -82,6 +85,8 @@
 
 - (void)dealloc
 {
+    [_favoritesButton release];
+    [_searchButton release];
     [_dateNavigator release];
     [super dealloc];
 }
@@ -164,7 +169,7 @@
 -(UIView *)easterEggHeaderView
 {
     if (_easterEggHeaderView == nil) {
-        self.easterEggHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, -269, 320, 269)];
+        self.easterEggHeaderView = [[[UIView alloc] initWithFrame:CGRectMake(0, -269, 320, 269)] autorelease];
         self.easterEggHeaderView.backgroundColor = [UIColor clearColor];
         UIImageView *easterEggImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"EasterEgg.png"]];
         [self.easterEggHeaderView addSubview:easterEggImageView];
@@ -235,7 +240,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView instantiateCellForRowAtIndexPath:(NSIndexPath *)indexPath withReuseIdentifier:(NSString *)cellIdentifier
 {
     if (self.searchWasActive) {
-        return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:self.cellIdentifierForSearch];
+        return [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:self.cellIdentifierForSearch] autorelease];
     }
     return [self loadReusableTableViewCellFromNibNamed:cellIdentifier];
 }

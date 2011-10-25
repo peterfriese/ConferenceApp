@@ -56,6 +56,12 @@
     [self loadObjectsFromDataStore];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self updatePredicates];
+}
+
 #pragma mark - Search bar
 
 @synthesize scopes = _scopes;

@@ -14,6 +14,7 @@
 
 @property (nonatomic, retain) NSArray *dates;
 @property (nonatomic, retain) NSDate *date;
+@property (nonatomic) BOOL showFavoritesButton;
 @property (nonatomic) BOOL displayFavorites;
 - (void)toggleSearchBar:(id)sender;
 

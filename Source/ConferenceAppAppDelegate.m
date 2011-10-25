@@ -117,6 +117,8 @@
                       nil];
 
     ScheduleViewController *scheduleViewController2 = [[ScheduleViewController alloc] init];
+    scheduleViewController2.title = @"Sessions";
+    scheduleViewController2.showFavoritesButton = NO;
     scheduleViewController2.dates = dates;
     scheduleViewController2.tabBarItem.image = [UIImage imageNamed:@"83-calendar"];
     UINavigationController *scheduleNavigationController2 = [[UINavigationController alloc] initWithRootViewController:scheduleViewController2];
@@ -124,6 +126,18 @@
     [scheduleViewController2 release];
     [tabBarControllers addObject:scheduleNavigationController2];
     [scheduleNavigationController2 release];
+    
+    ScheduleViewController *favouritesViewController = [[ScheduleViewController alloc] init];
+    favouritesViewController.displayFavorites = YES;
+    favouritesViewController.showFavoritesButton = NO;
+    favouritesViewController.title = @"My Schedule";
+    favouritesViewController.dates = dates;
+    favouritesViewController.tabBarItem.image = [UIImage imageNamed:@"mySchedule"];
+    UINavigationController *favouritesNavigationController = [[UINavigationController alloc] initWithRootViewController:favouritesViewController];
+    [favouritesNavigationController.navigationBar setTintColor:[UIColor blackColor]];
+    [favouritesViewController release];
+    [tabBarControllers addObject:favouritesNavigationController];
+    [favouritesNavigationController release];
 
     // This class has been used to develop the extra animation of the search bar in conjunctioin with the date navigator. Leaving it in here for reference purposes.
     /*

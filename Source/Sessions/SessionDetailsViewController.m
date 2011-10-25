@@ -297,6 +297,7 @@ typedef enum {
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([indexPath section] == SessionDetailsSectionKindSpeakers) {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
         Speaker *speaker = [[[session speakers] allObjects] objectAtIndex:[indexPath row]];
         SpeakerDetailsViewController *speakerDetailsViewController = [[SpeakerDetailsViewController alloc] init];
         speakerDetailsViewController.speaker = speaker;
