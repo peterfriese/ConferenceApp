@@ -25,6 +25,8 @@
 
 @implementation BaseUIViewController
 
+@synthesize filteredFetchedResultsController = _filteredFetchedResultsController;
+
 #pragma mark - View lifecycle
 
 - (id)init 
@@ -100,8 +102,10 @@
 	self.savedSearchTerm = nil;
 	self.savedSearchScope = nil;
 	self.savedSearchScopeIndex = -1;
-	self.filteredFetchedResultsController.delegate = nil;
-	self.filteredFetchedResultsController = nil;
+    if (_filteredFetchedResultsController != nil) {
+        self.filteredFetchedResultsController.delegate = nil;
+        self.filteredFetchedResultsController = nil;        
+    }
 }
 
 -(BOOL) searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString {
@@ -111,8 +115,10 @@
     if ([self.searchDisplayController.searchBar.scopeButtonTitles count]) {
         self.savedSearchScope = [[self.scopes allKeys] objectAtIndex:[self savedSearchScopeIndex]];
     }
-	self.filteredFetchedResultsController.delegate = nil;
-	self.filteredFetchedResultsController = nil;	
+    if (_filteredFetchedResultsController != nil) {
+        self.filteredFetchedResultsController.delegate = nil;
+        self.filteredFetchedResultsController = nil;
+    }
     
 	// by returning YES, we make sure the table view gets reloaded:
 	return YES;
@@ -125,9 +131,10 @@
     if ([self.searchDisplayController.searchBar.scopeButtonTitles count]) {
         self.savedSearchScope = [[self.scopes allKeys] objectAtIndex:[self savedSearchScopeIndex]];
     }
-	self.filteredFetchedResultsController.delegate = nil;
-	self.filteredFetchedResultsController = nil;
-    
+    if (_filteredFetchedResultsController != nil) {
+        self.filteredFetchedResultsController.delegate = nil;
+        self.filteredFetchedResultsController = nil;
+    }
     
 	// by returning YES, we make sure the table view gets reloaded:	
 	return YES;	
@@ -239,7 +246,7 @@
 #pragma mark - NSFetchedResultsController
 
 @synthesize fetchedResultsController = _fetchedResultsController;
-@synthesize filteredFetchedResultsController = _filteredFetchedResultsController;
+
 @synthesize groupBy = _groupBy;
 @synthesize sortBy = _sortBy;
 
