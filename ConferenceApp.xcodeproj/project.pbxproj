@@ -22,6 +22,8 @@
 		88467AF0143FA0EB00EB413E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88467AEE143FA0EB00EB413E /* Icon@2x.png */; };
 		88467AF3143FA9E700EB413E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 88467AF1143FA9E700EB413E /* Default.png */; };
 		88467AF4143FA9E700EB413E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88467AF2143FA9E700EB413E /* Default@2x.png */; };
+		88495FD8145711290066A8C8 /* mySchedule.png in Resources */ = {isa = PBXBuildFile; fileRef = 88495FD6145711290066A8C8 /* mySchedule.png */; };
+		88495FD9145711290066A8C8 /* mySchedule@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88495FD7145711290066A8C8 /* mySchedule@2x.png */; };
 		885FB61C1445CC2D00FED297 /* EasterEgg.png in Resources */ = {isa = PBXBuildFile; fileRef = 885FB61A1445CC2D00FED297 /* EasterEgg.png */; };
 		885FB61D1445CC2D00FED297 /* EasterEgg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 885FB61B1445CC2D00FED297 /* EasterEgg@2x.png */; };
 		88675A851429B713003A42E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675A841429B713003A42E1 /* UIKit.framework */; };
@@ -247,6 +249,8 @@
 		88467AEE143FA0EB00EB413E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		88467AF1143FA9E700EB413E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		88467AF2143FA9E700EB413E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		88495FD6145711290066A8C8 /* mySchedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mySchedule.png; sourceTree = "<group>"; };
+		88495FD7145711290066A8C8 /* mySchedule@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mySchedule@2x.png"; sourceTree = "<group>"; };
 		885FB61A1445CC2D00FED297 /* EasterEgg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasterEgg.png; sourceTree = "<group>"; };
 		885FB61B1445CC2D00FED297 /* EasterEgg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EasterEgg@2x.png"; sourceTree = "<group>"; };
 		88675A801429B713003A42E1 /* ECE 2011.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECE 2011.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -501,6 +505,8 @@
 		88202655142CC2EA003BA1F5 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
+				88495FD6145711290066A8C8 /* mySchedule.png */,
+				88495FD7145711290066A8C8 /* mySchedule@2x.png */,
 				88C848B6143479A800C500EB /* 66-microphone.png */,
 				88C848B7143479A800C500EB /* 66-microphone@2x.png */,
 				88C848B8143479A800C500EB /* 83-calendar.png */,
@@ -1019,6 +1025,8 @@
 				886E98F3144427FE00CD3386 /* SVProgressHUD.bundle in Resources */,
 				885FB61C1445CC2D00FED297 /* EasterEgg.png in Resources */,
 				885FB61D1445CC2D00FED297 /* EasterEgg@2x.png in Resources */,
+				88495FD8145711290066A8C8 /* mySchedule.png in Resources */,
+				88495FD9145711290066A8C8 /* mySchedule@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
