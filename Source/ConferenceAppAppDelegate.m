@@ -8,7 +8,7 @@
 
 #import "ConferenceAppAppDelegate.h"
 #import <RestKit/RestKit.h>
-#import <RestKit/CoreData/CoreData.h>
+#import <RestKit/CoreData.h>
 #import "Session.h"
 #import "SpeakerTableViewController.h"
 #import "Speaker.h"

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <RestKit/CoreData/CoreData.h>
+#import <RestKit/CoreData.h>
 
 @interface BaseUIViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, RKObjectLoaderDelegate, UISearchDisplayDelegate>
 

@@ -34,12 +34,10 @@
 		88675AE61429BA2A003A42E1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AE51429BA2A003A42E1 /* MobileCoreServices.framework */; };
 		88675AE81429BA33003A42E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AE71429BA33003A42E1 /* SystemConfiguration.framework */; };
 		88675AEA1429BA41003A42E1 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AE91429BA41003A42E1 /* libxml2.dylib */; };
-		88675AEB1429BA6A003A42E1 /* libRestKitJSONParserJSONKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675ABF1429B8E3003A42E1 /* libRestKitJSONParserJSONKit.a */; };
-		88675AEC1429BA6A003A42E1 /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AB31429B8E3003A42E1 /* libRestKitNetwork.a */; };
-		88675AED1429BA6A003A42E1 /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AB51429B8E3003A42E1 /* libRestKitObjectMapping.a */; };
-		88675AEE1429BA6A003A42E1 /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AB71429B8E3003A42E1 /* libRestKitSupport.a */; };
 		886E98F3144427FE00CD3386 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 886E98F0144427FE00CD3386 /* SVProgressHUD.bundle */; };
 		886E98F4144427FE00CD3386 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 886E98F2144427FE00CD3386 /* SVProgressHUD.m */; };
+		88746CDE14D728B200D0ED28 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88746CDD14D728B200D0ED28 /* Security.framework */; };
+		88746CF314D72AA600D0ED28 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88746CEA14D729E500D0ED28 /* libRestKit.a */; };
 		889E20B9143FB07A008558F0 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20B7143FB07A008558F0 /* header.png */; };
 		889E20BA143FB07A008558F0 /* header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20B8143FB07A008558F0 /* header@2x.png */; };
 		889E20BD143FB135008558F0 /* header2.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20BB143FB135008558F0 /* header2.png */; };
@@ -111,7 +109,6 @@
 		88C84A45143AEE0200C500EB /* NSAttributedString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A11143AEE0200C500EB /* NSAttributedString+HTML.m */; };
 		88C84A46143AEE0200C500EB /* NSAttributedStringRunDelegates.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A13143AEE0200C500EB /* NSAttributedStringRunDelegates.m */; };
 		88C84A47143AEE0200C500EB /* NSCharacterSet+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A15143AEE0200C500EB /* NSCharacterSet+HTML.m */; };
-		88C84A48143AEE0200C500EB /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A17143AEE0200C500EB /* NSData+Base64.m */; };
 		88C84A49143AEE0200C500EB /* NSMutableAttributedString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A19143AEE0200C500EB /* NSMutableAttributedString+HTML.m */; };
 		88C84A4A143AEE0200C500EB /* NSScanner+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A1B143AEE0200C500EB /* NSScanner+HTML.m */; };
 		88C84A4B143AEE0200C500EB /* NSString+HTML.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C84A1D143AEE0200C500EB /* NSString+HTML.m */; };
@@ -138,92 +135,42 @@
 		88F3499114330B7800F06F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F3499014330B7700F06F1F /* QuartzCore.framework */; };
 		88F3499314330B9400F06F1F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F3499214330B9300F06F1F /* CoreText.framework */; };
 		88F3499514330BB100F06F1F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F3499414330BB100F06F1F /* ImageIO.framework */; };
-		88FAA9B21429BE7A00238530 /* libRestKitCoreData.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88675AC31429B8E3003A42E1 /* libRestKitCoreData.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		88675AB21429B8E3003A42E1 /* PBXContainerItemProxy */ = {
+		88746CE914D729E500D0ED28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
+			containerPortal = 88746CDF14D729E400D0ED28 /* RestKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 253A07FC1255161B00976E89;
-			remoteInfo = RestKitNetwork;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
 		};
-		88675AB41429B8E3003A42E1 /* PBXContainerItemProxy */ = {
+		88746CEB14D729E500D0ED28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
+			containerPortal = 88746CDF14D729E400D0ED28 /* RestKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 253A08031255162C00976E89;
-			remoteInfo = RestKitObjectMapping;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
 		};
-		88675AB61429B8E3003A42E1 /* PBXContainerItemProxy */ = {
+		88746CED14D729E500D0ED28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
+			containerPortal = 88746CDF14D729E400D0ED28 /* RestKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 253A080C12551D3000976E89;
-			remoteInfo = RestKitSupport;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
 		};
-		88675AB81429B8E3003A42E1 /* PBXContainerItemProxy */ = {
+		88746CEF14D729E500D0ED28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
+			containerPortal = 88746CDF14D729E400D0ED28 /* RestKit.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 20808DBD13DE8CDC000A156A;
-			remoteInfo = "RestKitJSONParser+NXJSON";
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
 		};
-		88675ABA1429B8E3003A42E1 /* PBXContainerItemProxy */ = {
+		88746CF114D72A8A00D0ED28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2590E64F125231F600531FA8;
-			remoteInfo = "RestKitJSONParser+YAJL";
-		};
-		88675ABC1429B8E3003A42E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2590E66B1252353700531FA8;
-			remoteInfo = "RestKitJSONParser+SBJSON";
-		};
-		88675ABE1429B8E3003A42E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 73057FD11331AD2E001908EE;
-			remoteInfo = "RestKitJSONParser+JSONKit";
-		};
-		88675AC01429B8E3003A42E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25BD43BD1340315800DBACDD;
-			remoteInfo = "RestKitXMLParser+Libxml";
-		};
-		88675AC21429B8E3003A42E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 253A081412551D5300976E89;
-			remoteInfo = RestKitCoreData;
-		};
-		88675AC41429B8E3003A42E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2523360511E79F090048F9B4;
-			remoteInfo = RestKitThree20;
-		};
-		88675AC61429B8E3003A42E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3F6C39A510FE5C95008F47C5;
-			remoteInfo = "RestKit Specs";
-		};
-		88675ADF1429B9F6003A42E1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
+			containerPortal = 88746CDF14D729E400D0ED28 /* RestKit.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 255B7588133BABBF00ED76AD;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
 			remoteInfo = RestKit;
 		};
 /* End PBXContainerItemProxy section */
@@ -257,7 +204,6 @@
 		88675A841429B713003A42E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88675A861429B713003A42E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88675A881429B713003A42E1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = Frameworks/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		88675AE11429BA15003A42E1 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		88675AE31429BA20003A42E1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		88675AE51429BA2A003A42E1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -266,6 +212,8 @@
 		886E98F0144427FE00CD3386 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		886E98F1144427FE00CD3386 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		886E98F2144427FE00CD3386 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		88746CDD14D728B200D0ED28 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		88746CDF14D729E400D0ED28 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = Frameworks/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		889E20B7143FB07A008558F0 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
 		889E20B8143FB07A008558F0 /* header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header@2x.png"; sourceTree = "<group>"; };
 		889E20BB143FB135008558F0 /* header2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header2.png; sourceTree = "<group>"; };
@@ -370,8 +318,6 @@
 		88C84A13143AEE0200C500EB /* NSAttributedStringRunDelegates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSAttributedStringRunDelegates.m; sourceTree = "<group>"; };
 		88C84A14143AEE0200C500EB /* NSCharacterSet+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCharacterSet+HTML.h"; sourceTree = "<group>"; };
 		88C84A15143AEE0200C500EB /* NSCharacterSet+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCharacterSet+HTML.m"; sourceTree = "<group>"; };
-		88C84A16143AEE0200C500EB /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		88C84A17143AEE0200C500EB /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		88C84A18143AEE0200C500EB /* NSMutableAttributedString+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+HTML.h"; sourceTree = "<group>"; };
 		88C84A19143AEE0200C500EB /* NSMutableAttributedString+HTML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+HTML.m"; sourceTree = "<group>"; };
 		88C84A1A143AEE0200C500EB /* NSScanner+HTML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSScanner+HTML.h"; sourceTree = "<group>"; };
@@ -422,14 +368,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88746CF314D72AA600D0ED28 /* libRestKit.a in Frameworks */,
+				88746CDE14D728B200D0ED28 /* Security.framework in Frameworks */,
 				88F3499514330BB100F06F1F /* ImageIO.framework in Frameworks */,
 				88F3499314330B9400F06F1F /* CoreText.framework in Frameworks */,
 				88F3499114330B7800F06F1F /* QuartzCore.framework in Frameworks */,
-				88FAA9B21429BE7A00238530 /* libRestKitCoreData.a in Frameworks */,
-				88675AEB1429BA6A003A42E1 /* libRestKitJSONParserJSONKit.a in Frameworks */,
-				88675AEC1429BA6A003A42E1 /* libRestKitNetwork.a in Frameworks */,
-				88675AED1429BA6A003A42E1 /* libRestKitObjectMapping.a in Frameworks */,
-				88675AEE1429BA6A003A42E1 /* libRestKitSupport.a in Frameworks */,
 				88675AEA1429BA41003A42E1 /* libxml2.dylib in Frameworks */,
 				88675AE81429BA33003A42E1 /* SystemConfiguration.framework in Frameworks */,
 				88675AE61429BA2A003A42E1 /* MobileCoreServices.framework in Frameworks */,
@@ -540,8 +483,8 @@
 		88675A751429B713003A42E1 = {
 			isa = PBXGroup;
 			children = (
+				88746CDF14D729E400D0ED28 /* RestKit.xcodeproj */,
 				889E211E144030B3008558F0 /* Entitlements.entitlements */,
-				88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */,
 				88BDF1B11429C936008E2774 /* Source */,
 				88BDF1C01429CA34008E2774 /* Resources */,
 				882025B71429D6D4003BA1F5 /* Model */,
@@ -561,6 +504,7 @@
 		88675A831429B713003A42E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88746CDD14D728B200D0ED28 /* Security.framework */,
 				88F3499414330BB100F06F1F /* ImageIO.framework */,
 				88F3499214330B9300F06F1F /* CoreText.framework */,
 				88F3499014330B7700F06F1F /* QuartzCore.framework */,
@@ -576,24 +520,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		88675A9F1429B8E2003A42E1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				88675AB31429B8E3003A42E1 /* libRestKitNetwork.a */,
-				88675AB51429B8E3003A42E1 /* libRestKitObjectMapping.a */,
-				88675AB71429B8E3003A42E1 /* libRestKitSupport.a */,
-				88675AB91429B8E3003A42E1 /* libRestKitJSONParserNXJSON.a */,
-				88675ABB1429B8E3003A42E1 /* libRestKitJSONParserYAJL.a */,
-				88675ABD1429B8E3003A42E1 /* libRestKitJSONParserSBJSON.a */,
-				88675ABF1429B8E3003A42E1 /* libRestKitJSONParserJSONKit.a */,
-				88675AC11429B8E3003A42E1 /* libRestKitXMLParserLibxml.a */,
-				88675AC31429B8E3003A42E1 /* libRestKitCoreData.a */,
-				88675AC51429B8E3003A42E1 /* libRestKitThree20.a */,
-				88675AC71429B8E3003A42E1 /* RestKitSpecs.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		886E98EF144427FE00CD3386 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +528,17 @@
 				886E98F2144427FE00CD3386 /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		88746CE014D729E400D0ED28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				88746CEA14D729E500D0ED28 /* libRestKit.a */,
+				88746CEC14D729E500D0ED28 /* RestKitTests.octest */,
+				88746CEE14D729E500D0ED28 /* RestKit.framework */,
+				88746CF014D729E500D0ED28 /* RestKitFrameworkTests.octest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		889E20B6143FB07A008558F0 /* Header */ = {
@@ -795,8 +732,6 @@
 				88C84A13143AEE0200C500EB /* NSAttributedStringRunDelegates.m */,
 				88C84A14143AEE0200C500EB /* NSCharacterSet+HTML.h */,
 				88C84A15143AEE0200C500EB /* NSCharacterSet+HTML.m */,
-				88C84A16143AEE0200C500EB /* NSData+Base64.h */,
-				88C84A17143AEE0200C500EB /* NSData+Base64.m */,
 				88C84A18143AEE0200C500EB /* NSMutableAttributedString+HTML.h */,
 				88C84A19143AEE0200C500EB /* NSMutableAttributedString+HTML.m */,
 				88C84A1A143AEE0200C500EB /* NSScanner+HTML.h */,
@@ -844,7 +779,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				88675AE01429B9F6003A42E1 /* PBXTargetDependency */,
+				88746CF214D72A8A00D0ED28 /* PBXTargetDependency */,
 			);
 			name = "ECE 2011";
 			productName = ConferenceApp;
@@ -872,8 +807,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 88675A9F1429B8E2003A42E1 /* Products */;
-					ProjectRef = 88675A9E1429B8E2003A42E1 /* RestKit.xcodeproj */;
+					ProductGroup = 88746CE014D729E400D0ED28 /* Products */;
+					ProjectRef = 88746CDF14D729E400D0ED28 /* RestKit.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -884,81 +819,32 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		88675AB31429B8E3003A42E1 /* libRestKitNetwork.a */ = {
+		88746CEA14D729E500D0ED28 /* libRestKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
-			path = libRestKitNetwork.a;
-			remoteRef = 88675AB21429B8E3003A42E1 /* PBXContainerItemProxy */;
+			path = libRestKit.a;
+			remoteRef = 88746CE914D729E500D0ED28 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		88675AB51429B8E3003A42E1 /* libRestKitObjectMapping.a */ = {
+		88746CEC14D729E500D0ED28 /* RestKitTests.octest */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitObjectMapping.a;
-			remoteRef = 88675AB41429B8E3003A42E1 /* PBXContainerItemProxy */;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 88746CEB14D729E500D0ED28 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		88675AB71429B8E3003A42E1 /* libRestKitSupport.a */ = {
+		88746CEE14D729E500D0ED28 /* RestKit.framework */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitSupport.a;
-			remoteRef = 88675AB61429B8E3003A42E1 /* PBXContainerItemProxy */;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 88746CED14D729E500D0ED28 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		88675AB91429B8E3003A42E1 /* libRestKitJSONParserNXJSON.a */ = {
+		88746CF014D729E500D0ED28 /* RestKitFrameworkTests.octest */ = {
 			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitJSONParserNXJSON.a;
-			remoteRef = 88675AB81429B8E3003A42E1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		88675ABB1429B8E3003A42E1 /* libRestKitJSONParserYAJL.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitJSONParserYAJL.a;
-			remoteRef = 88675ABA1429B8E3003A42E1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		88675ABD1429B8E3003A42E1 /* libRestKitJSONParserSBJSON.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitJSONParserSBJSON.a;
-			remoteRef = 88675ABC1429B8E3003A42E1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		88675ABF1429B8E3003A42E1 /* libRestKitJSONParserJSONKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitJSONParserJSONKit.a;
-			remoteRef = 88675ABE1429B8E3003A42E1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		88675AC11429B8E3003A42E1 /* libRestKitXMLParserLibxml.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitXMLParserLibxml.a;
-			remoteRef = 88675AC01429B8E3003A42E1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		88675AC31429B8E3003A42E1 /* libRestKitCoreData.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitCoreData.a;
-			remoteRef = 88675AC21429B8E3003A42E1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		88675AC51429B8E3003A42E1 /* libRestKitThree20.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitThree20.a;
-			remoteRef = 88675AC41429B8E3003A42E1 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		88675AC71429B8E3003A42E1 /* RestKitSpecs.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = RestKitSpecs.app;
-			remoteRef = 88675AC61429B8E3003A42E1 /* PBXContainerItemProxy */;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 88746CEF14D729E500D0ED28 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1071,7 +957,6 @@
 				88C84A45143AEE0200C500EB /* NSAttributedString+HTML.m in Sources */,
 				88C84A46143AEE0200C500EB /* NSAttributedStringRunDelegates.m in Sources */,
 				88C84A47143AEE0200C500EB /* NSCharacterSet+HTML.m in Sources */,
-				88C84A48143AEE0200C500EB /* NSData+Base64.m in Sources */,
 				88C84A49143AEE0200C500EB /* NSMutableAttributedString+HTML.m in Sources */,
 				88C84A4A143AEE0200C500EB /* NSScanner+HTML.m in Sources */,
 				88C84A4B143AEE0200C500EB /* NSString+HTML.m in Sources */,
@@ -1100,10 +985,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		88675AE01429B9F6003A42E1 /* PBXTargetDependency */ = {
+		88746CF214D72A8A00D0ED28 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = RestKit;
-			targetProxy = 88675ADF1429B9F6003A42E1 /* PBXContainerItemProxy */;
+			targetProxy = 88746CF114D72A8A00D0ED28 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1144,7 +1029,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "App Store";
@@ -1153,15 +1038,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Friese";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peter Friese (GB8JX7TGVR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/Frameworks/RestKit/Build\"";
 				INFOPLIST_FILE = "Resources/ConferenceApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "449C2F22-87D7-49B0-9E1E-E70945CF0E85";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "588E15C9-2FFF-4323-83C3-18931D865D2D";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1190,7 +1078,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -1211,7 +1099,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1220,13 +1108,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peter Friese (GB8JX7TGVR)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/Frameworks/RestKit/Build\"";
 				INFOPLIST_FILE = "Resources/ConferenceApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "588E15C9-2FFF-4323-83C3-18931D865D2D";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1236,15 +1129,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peter Friese (X52US8A2LC)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/Frameworks/RestKit/Build\"";
 				INFOPLIST_FILE = "Resources/ConferenceApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "28EDFE7D-305C-4340-85B6-2353A231C414";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1267,7 +1163,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = "Ad hoc";
@@ -1280,10 +1176,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Friese";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
-				HEADER_SEARCH_PATHS = "\"${SOURCE_ROOT}/Frameworks/RestKit/Build\"";
+				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/Frameworks/RestKit/Build\"";
 				INFOPLIST_FILE = "Resources/ConferenceApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A7D205B4-09B1-42C7-886D-89F423115DE0";
 				USER_HEADER_SEARCH_PATHS = "";

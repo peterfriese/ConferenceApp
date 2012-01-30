@@ -9,7 +9,7 @@
 #import "BaseUITableViewController.h"
 
 #import <RestKit/RestKit.h>
-#import <RestKit/CoreData/CoreData.h>
+#import <RestKit/CoreData.h>
 #import "Session.h"
 
 @implementation BaseUITableViewController

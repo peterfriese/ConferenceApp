@@ -9,8 +9,8 @@
 #import "BaseUIViewController.h"
 
 #import <RestKit/RestKit.h>
-#import <RestKit/CoreData/CoreData.h>
-#import <RestKit/CoreData/NSManagedObject+ActiveRecord.h>
+#import <RestKit/CoreData.h>
+#import <RestKit/NSManagedObject+ActiveRecord.h>
 #import "SVProgressHUD.h"
 
 @interface BaseUIViewController()
