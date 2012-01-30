@@ -20,6 +20,7 @@
 @dynamic sessions;
 @dynamic initial;
 @dynamic fullName;
+@dynamic picture;
 
 /*
 - (NSString *)fullName 

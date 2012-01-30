@@ -32,10 +32,6 @@
 - (id)init 
 {
     if ((self = [super init])) {
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(reachabilityChanged:)
-                                                     name:RKReachabilityStateChangedNotification
-                                                   object:nil];
     }
     
     return self;
@@ -45,7 +41,9 @@
     RKReachabilityObserver* observer = (RKReachabilityObserver*)[notification object];
     
     if ([observer isNetworkReachable]) {
-        [self loadData];
+        if (![self.view isHidden]) {
+            [self loadData];            
+        }
     } 
     else {
     }
@@ -60,6 +58,11 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reachabilityChanged:)
+                                                 name:RKReachabilityDidChangeNotification
+                                               object:nil];
+    
     [super viewWillAppear:animated];
     [self updatePredicates];
 }
@@ -232,15 +235,15 @@
 }
 
 - (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error {
-    [SVProgressHUD dismissWithError:[error localizedDescription] afterDelay:2.0];
-    /*
+//    [SVProgressHUD dismissWithError:[error localizedDescription] afterDelay:2.0];
+
 	UIAlertView* alert = [[[UIAlertView alloc] initWithTitle:@"Error" 
                                                      message:[error localizedDescription] 
                                                     delegate:nil 
                                            cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease];
 	[alert show];
 	NSLog(@"Hit error: %@", error);
-     */
+
 }
 
 #pragma mark - NSFetchedResultsController

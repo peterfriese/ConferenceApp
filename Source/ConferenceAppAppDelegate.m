@@ -26,8 +26,8 @@
 - (void)setupRestKit
 {
     // NSString *baseURL = @"http://www.eclipsecon.org/europe2011/json";
-    // NSString *baseURL = @"http://peterfriese.local:3000";
-    NSString *baseURL = @"http://conferenceapp-node.webbyapp.com";
+    NSString *baseURL = @"http://peterfriese.local:3000";
+    // NSString *baseURL = @"http://conferenceapp-node.webbyapp.com";
     RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:baseURL];
     
     objectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;
@@ -51,19 +51,20 @@
     
     // Speaker Mapping
     RKManagedObjectMapping *speakerMapping = [RKManagedObjectMapping mappingForClass:[Speaker class]];
-    speakerMapping.primaryKeyAttribute = @"speakerId";
     [speakerMapping mapKeyPathsToAttributes:
-     @"id", @"speakerId", 
-     @"fullname", @"fullName",
-     @"lastname", @"lastName",
-     @"firstname", @"firstName",
-     @"organization", @"affiliation",
-     @"bio", @"bio",
+        @"id", @"speakerId", 
+        @"fullname", @"fullName",
+        @"lastname", @"lastName",
+        @"firstname", @"firstName",
+        @"organization", @"affiliation",
+        @"bio", @"bio",
+        @"picture", @"picture",
      nil];    
+    speakerMapping.primaryKeyAttribute = @"speakerId";    
     
     // Session Mapping
     RKManagedObjectMapping *sessionMapping = [RKManagedObjectMapping mappingForClass:[Session class]];
-    sessionMapping.primaryKeyAttribute = @"sessionId";
+    sessionMapping.primaryKeyAttribute = @"sessionId";    
     [sessionMapping mapKeyPathsToAttributes:
         @"id", @"sessionId",
         @"title", @"title",
@@ -79,7 +80,7 @@
     
     // Add mappings to mapping manager:
     [objectManager.mappingProvider setMapping:sessionMapping forKeyPath:@"session"];
-    [objectManager.mappingProvider setMapping:speakerMapping forKeyPath:@"presenter"];
+//    [objectManager.mappingProvider setMapping:speakerMapping forKeyPath:@"presenter"];
 }
 
 -(void)managedObjectStore:(RKManagedObjectStore *)objectStore didFailToCreatePersistentStoreCoordinatorWithError:(NSError *)error
@@ -111,9 +112,9 @@
     */
     
     NSArray *dates = [NSArray arrayWithObjects:
-                      [NSDate dateFromString:@"2011-11-02"], 
-                      [NSDate dateFromString:@"2011-11-03"], 
-                      [NSDate dateFromString:@"2011-11-04"], 
+                      [NSDate dateFromString:@"2012-03-27"], 
+                      [NSDate dateFromString:@"2012-03-28"], 
+                      [NSDate dateFromString:@"2012-03-29"], 
                       nil];
 
     ScheduleViewController *scheduleViewController2 = [[ScheduleViewController alloc] init];
