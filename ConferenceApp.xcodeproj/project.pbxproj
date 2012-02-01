@@ -18,8 +18,8 @@
 		8820265B142CC2EA003BA1F5 /* Star@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88202657142CC2EA003BA1F5 /* Star@2x.png */; };
 		8820265C142CC2EA003BA1F5 /* StarSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 88202658142CC2EA003BA1F5 /* StarSelected.png */; };
 		8820265D142CC2EA003BA1F5 /* StarSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88202659142CC2EA003BA1F5 /* StarSelected@2x.png */; };
-		88467AEF143FA0EB00EB413E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 88467AED143FA0EB00EB413E /* Icon.png */; };
-		88467AF0143FA0EB00EB413E /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88467AEE143FA0EB00EB413E /* Icon@2x.png */; };
+		882B5AF814D9E5A6007A21F9 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 882B5AF614D9E5A6007A21F9 /* Icon.png */; };
+		882B5AF914D9E5A6007A21F9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 882B5AF714D9E5A6007A21F9 /* Icon@2x.png */; };
 		88467AF3143FA9E700EB413E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 88467AF1143FA9E700EB413E /* Default.png */; };
 		88467AF4143FA9E700EB413E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88467AF2143FA9E700EB413E /* Default@2x.png */; };
 		88495FD8145711290066A8C8 /* mySchedule.png in Resources */ = {isa = PBXBuildFile; fileRef = 88495FD6145711290066A8C8 /* mySchedule.png */; };
@@ -192,15 +192,15 @@
 		88202657142CC2EA003BA1F5 /* Star@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star@2x.png"; sourceTree = "<group>"; };
 		88202658142CC2EA003BA1F5 /* StarSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StarSelected.png; sourceTree = "<group>"; };
 		88202659142CC2EA003BA1F5 /* StarSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StarSelected@2x.png"; sourceTree = "<group>"; };
-		88467AED143FA0EB00EB413E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
-		88467AEE143FA0EB00EB413E /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		882B5AF614D9E5A6007A21F9 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		882B5AF714D9E5A6007A21F9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		88467AF1143FA9E700EB413E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		88467AF2143FA9E700EB413E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		88495FD6145711290066A8C8 /* mySchedule.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mySchedule.png; sourceTree = "<group>"; };
 		88495FD7145711290066A8C8 /* mySchedule@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mySchedule@2x.png"; sourceTree = "<group>"; };
 		885FB61A1445CC2D00FED297 /* EasterEgg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EasterEgg.png; sourceTree = "<group>"; };
 		885FB61B1445CC2D00FED297 /* EasterEgg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EasterEgg@2x.png"; sourceTree = "<group>"; };
-		88675A801429B713003A42E1 /* ECE 2011.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECE 2011.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88675A801429B713003A42E1 /* ECon2012.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECon2012.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88675A841429B713003A42E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88675A861429B713003A42E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88675A881429B713003A42E1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -465,8 +465,8 @@
 		88467AEC143FA0EB00EB413E /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				88467AED143FA0EB00EB413E /* Icon.png */,
-				88467AEE143FA0EB00EB413E /* Icon@2x.png */,
+				882B5AF614D9E5A6007A21F9 /* Icon.png */,
+				882B5AF714D9E5A6007A21F9 /* Icon@2x.png */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -496,7 +496,7 @@
 		88675A811429B713003A42E1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				88675A801429B713003A42E1 /* ECE 2011.app */,
+				88675A801429B713003A42E1 /* ECon2012.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -768,9 +768,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		88675A7F1429B713003A42E1 /* ECE 2011 */ = {
+		88675A7F1429B713003A42E1 /* ECon2012 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 88675A9B1429B713003A42E1 /* Build configuration list for PBXNativeTarget "ECE 2011" */;
+			buildConfigurationList = 88675A9B1429B713003A42E1 /* Build configuration list for PBXNativeTarget "ECon2012" */;
 			buildPhases = (
 				88675A7C1429B713003A42E1 /* Sources */,
 				88675A7D1429B713003A42E1 /* Frameworks */,
@@ -781,9 +781,9 @@
 			dependencies = (
 				88746CF214D72A8A00D0ED28 /* PBXTargetDependency */,
 			);
-			name = "ECE 2011";
+			name = ECon2012;
 			productName = ConferenceApp;
-			productReference = 88675A801429B713003A42E1 /* ECE 2011.app */;
+			productReference = 88675A801429B713003A42E1 /* ECon2012.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -813,7 +813,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				88675A7F1429B713003A42E1 /* ECE 2011 */,
+				88675A7F1429B713003A42E1 /* ECon2012 */,
 			);
 		};
 /* End PBXProject section */
@@ -892,8 +892,6 @@
 				88CABDB4143E3DB300D6008B /* SpeakerDetailsViewController.xib in Resources */,
 				88CABE2E143E716D00D6008B /* 111-user.png in Resources */,
 				88CABE2F143E716D00D6008B /* 111-user@2x.png in Resources */,
-				88467AEF143FA0EB00EB413E /* Icon.png in Resources */,
-				88467AF0143FA0EB00EB413E /* Icon@2x.png in Resources */,
 				88467AF3143FA9E700EB413E /* Default.png in Resources */,
 				88467AF4143FA9E700EB413E /* Default@2x.png in Resources */,
 				889E20B9143FB07A008558F0 /* header.png in Resources */,
@@ -913,6 +911,8 @@
 				885FB61D1445CC2D00FED297 /* EasterEgg@2x.png in Resources */,
 				88495FD8145711290066A8C8 /* mySchedule.png in Resources */,
 				88495FD9145711290066A8C8 /* mySchedule@2x.png in Resources */,
+				882B5AF814D9E5A6007A21F9 /* Icon.png in Resources */,
+				882B5AF914D9E5A6007A21F9 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1204,7 +1204,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		88675A9B1429B713003A42E1 /* Build configuration list for PBXNativeTarget "ECE 2011" */ = {
+		88675A9B1429B713003A42E1 /* Build configuration list for PBXNativeTarget "ECon2012" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				88675A9C1429B713003A42E1 /* Debug */,
