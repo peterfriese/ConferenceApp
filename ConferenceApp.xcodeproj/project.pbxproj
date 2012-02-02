@@ -130,6 +130,9 @@
 		88CABDD4143E626D00D6008B /* UIImage+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CABDD3143E626D00D6008B /* UIImage+Blocks.m */; };
 		88CABE2E143E716D00D6008B /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CABE2C143E716D00D6008B /* 111-user.png */; };
 		88CABE2F143E716D00D6008B /* 111-user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CABE2D143E716D00D6008B /* 111-user@2x.png */; };
+		88D8A33814DB33C4009660E6 /* JBAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D8A33714DB33C4009660E6 /* JBAsyncImageView.m */; };
+		88D8A33B14DB36C7009660E6 /* SpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D8A33A14DB36C7009660E6 /* SpeakerTableViewCell.m */; };
+		88D8A33D14DB36FA009660E6 /* SpeakerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D8A33C14DB36FA009660E6 /* SpeakerTableViewCell.xib */; };
 		88F348BB1430737300F06F1F /* Zigzag.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BA1430737300F06F1F /* Zigzag.png */; };
 		88F348BD14307A9400F06F1F /* Zickzack.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F348BC14307A9400F06F1F /* Zickzack.png */; };
 		88F3499114330B7800F06F1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88F3499014330B7700F06F1F /* QuartzCore.framework */; };
@@ -356,6 +359,11 @@
 		88CABDD3143E626D00D6008B /* UIImage+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blocks.m"; sourceTree = "<group>"; };
 		88CABE2C143E716D00D6008B /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
 		88CABE2D143E716D00D6008B /* 111-user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user@2x.png"; sourceTree = "<group>"; };
+		88D8A33614DB33C4009660E6 /* JBAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBAsyncImageView.h; sourceTree = "<group>"; };
+		88D8A33714DB33C4009660E6 /* JBAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBAsyncImageView.m; sourceTree = "<group>"; };
+		88D8A33914DB36C7009660E6 /* SpeakerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerTableViewCell.h; sourceTree = "<group>"; };
+		88D8A33A14DB36C7009660E6 /* SpeakerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeakerTableViewCell.m; sourceTree = "<group>"; };
+		88D8A33C14DB36FA009660E6 /* SpeakerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SpeakerTableViewCell.xib; sourceTree = "<group>"; };
 		88F348BA1430737300F06F1F /* Zigzag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zigzag.png; sourceTree = "<group>"; };
 		88F348BC14307A9400F06F1F /* Zickzack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Zickzack.png; sourceTree = "<group>"; };
 		88F3499014330B7700F06F1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -417,6 +425,9 @@
 		8803DCDF143CDAFC00AE93F8 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				88D8A33914DB36C7009660E6 /* SpeakerTableViewCell.h */,
+				88D8A33A14DB36C7009660E6 /* SpeakerTableViewCell.m */,
+				88D8A33C14DB36FA009660E6 /* SpeakerTableViewCell.xib */,
 				88C849D9143AEDEA00C500EB /* SpeakerTableViewController.h */,
 				88C849DA143AEDEA00C500EB /* SpeakerTableViewController.m */,
 			);
@@ -672,6 +683,7 @@
 		88C849E2143AEE0200C500EB /* 3rdParty */ = {
 			isa = PBXGroup;
 			children = (
+				88D8A33514DB33C4009660E6 /* JBAsyncImageView */,
 				886E98EF144427FE00CD3386 /* SVProgressHUD */,
 				88C849E3143AEE0200C500EB /* NSAttributedStrings */,
 				88C84A26143AEE0200C500EB /* WebArchive */,
@@ -763,6 +775,15 @@
 				88C84A2E143AEE0200C500EB /* UIPasteboard+DTWebArchive.m */,
 			);
 			path = WebArchive;
+			sourceTree = "<group>";
+		};
+		88D8A33514DB33C4009660E6 /* JBAsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				88D8A33614DB33C4009660E6 /* JBAsyncImageView.h */,
+				88D8A33714DB33C4009660E6 /* JBAsyncImageView.m */,
+			);
+			path = JBAsyncImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -913,6 +934,7 @@
 				88495FD9145711290066A8C8 /* mySchedule@2x.png in Resources */,
 				882B5AF814D9E5A6007A21F9 /* Icon.png in Resources */,
 				882B5AF914D9E5A6007A21F9 /* Icon@2x.png in Resources */,
+				88D8A33D14DB36FA009660E6 /* SpeakerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -979,6 +1001,8 @@
 				880DED1F144339B0007BE6F7 /* DateNavigator.m in Sources */,
 				880DEA3A144393C900855964 /* BaseUIViewController.m in Sources */,
 				886E98F4144427FE00CD3386 /* SVProgressHUD.m in Sources */,
+				88D8A33814DB33C4009660E6 /* JBAsyncImageView.m in Sources */,
+				88D8A33B14DB36C7009660E6 /* SpeakerTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

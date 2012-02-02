@@ -9,6 +9,9 @@
 #import "SpeakerTableViewController.h"
 #import "Speaker.h"
 #import "SpeakerDetailsViewController.h"
+#import "UIViewController+NibCells.h"
+#import "JBAsyncImageView.h"
+#import "SpeakerTableViewCell.h"
 
 @implementation SpeakerTableViewController
 
@@ -72,11 +75,38 @@
     return @"";    
 }
 
+- (NSString *)cellIdentifier
+{
+    static NSString *kCellIdentifier = @"SpeakerTableViewCell";
+    return kCellIdentifier;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView instantiateCellForRowAtIndexPath:(NSIndexPath *)indexPath withReuseIdentifier:(NSString *)cellIdentifier
+{
+    return [self loadReusableTableViewCellFromNibNamed:cellIdentifier];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+
+
 -(void)configureCell:(UITableViewCell *)cell withManagedObject:(NSManagedObject *)managedObject atIndexPath:(NSIndexPath *)indexPath
 {
     Speaker *speaker = (Speaker *)managedObject;
-    cell.textLabel.text = speaker.fullName;
-    cell.detailTextLabel.text = speaker.affiliation;
+    
+    SpeakerTableViewCell *speakerCell = (SpeakerTableViewCell *)cell;
+    speakerCell.speakerName.text = speaker.fullName;
+    speakerCell.affiliation.text = speaker.affiliation;
+    
+    [speakerCell.speakerImage cancel];
+    speakerCell.speakerImage.image = [UIImage imageNamed:@"111-user.png"];
+    
+    if ([speaker.picture length] > 0) {
+        speakerCell.speakerImage.cachesImage = YES;
+        speakerCell.speakerImage.imageURL = [NSURL URLWithString:speaker.picture];
+    }
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
