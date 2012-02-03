@@ -81,6 +81,12 @@
     return kCellIdentifier;
 }
 
+- (NSString *)cellIdentifierForSearch
+{
+    static NSString *kCellIdentifier = @"SpeakerTableViewCell";
+    return kCellIdentifier;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView instantiateCellForRowAtIndexPath:(NSIndexPath *)indexPath withReuseIdentifier:(NSString *)cellIdentifier
 {
     return [self loadReusableTableViewCellFromNibNamed:cellIdentifier];
