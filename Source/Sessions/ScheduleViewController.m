@@ -169,9 +169,9 @@
 -(UIView *)easterEggHeaderView
 {
     if (_easterEggHeaderView == nil) {
-        self.easterEggHeaderView = [[[UIView alloc] initWithFrame:CGRectMake(0, -269, 320, 269)] autorelease];
+        self.easterEggHeaderView = [[[UIView alloc] initWithFrame:CGRectMake(0, -170, 320, 170)] autorelease];
         self.easterEggHeaderView.backgroundColor = [UIColor clearColor];
-        UIImageView *easterEggImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"EasterEgg.png"]];
+        UIImageView *easterEggImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"zuehlke_dornier.png"]];
         [self.easterEggHeaderView addSubview:easterEggImageView];
         [easterEggImageView release];
     }

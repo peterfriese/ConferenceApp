@@ -132,6 +132,13 @@
 		88CABDD4143E626D00D6008B /* UIImage+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CABDD3143E626D00D6008B /* UIImage+Blocks.m */; };
 		88CABE2E143E716D00D6008B /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CABE2C143E716D00D6008B /* 111-user.png */; };
 		88CABE2F143E716D00D6008B /* 111-user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CABE2D143E716D00D6008B /* 111-user@2x.png */; };
+		88CD394A14E2B6BB005FF3F6 /* blue_textured.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CD394814E2B6BB005FF3F6 /* blue_textured.png */; };
+		88CD394B14E2B6BB005FF3F6 /* grey_textured.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CD394914E2B6BB005FF3F6 /* grey_textured.png */; };
+		88CD394D14E2C499005FF3F6 /* yellowish_textured.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CD394C14E2C499005FF3F6 /* yellowish_textured.png */; };
+		88CD395014E2C5C3005FF3F6 /* gray233_textured.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CD394E14E2C5C3005FF3F6 /* gray233_textured.png */; };
+		88CD395114E2C5C3005FF3F6 /* gray250_textured.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CD394F14E2C5C3005FF3F6 /* gray250_textured.png */; };
+		88CD395414E318E1005FF3F6 /* zuehlke_dornier.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CD395214E318E1005FF3F6 /* zuehlke_dornier.png */; };
+		88CD395514E318E1005FF3F6 /* zuehlke_dornier@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88CD395314E318E1005FF3F6 /* zuehlke_dornier@2x.png */; };
 		88D8A33814DB33C4009660E6 /* JBAsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D8A33714DB33C4009660E6 /* JBAsyncImageView.m */; };
 		88D8A33B14DB36C7009660E6 /* SpeakerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D8A33A14DB36C7009660E6 /* SpeakerTableViewCell.m */; };
 		88D8A33D14DB36FA009660E6 /* SpeakerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 88D8A33C14DB36FA009660E6 /* SpeakerTableViewCell.xib */; };
@@ -364,6 +371,13 @@
 		88CABDD3143E626D00D6008B /* UIImage+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blocks.m"; sourceTree = "<group>"; };
 		88CABE2C143E716D00D6008B /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user.png"; sourceTree = "<group>"; };
 		88CABE2D143E716D00D6008B /* 111-user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "111-user@2x.png"; sourceTree = "<group>"; };
+		88CD394814E2B6BB005FF3F6 /* blue_textured.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blue_textured.png; sourceTree = "<group>"; };
+		88CD394914E2B6BB005FF3F6 /* grey_textured.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grey_textured.png; sourceTree = "<group>"; };
+		88CD394C14E2C499005FF3F6 /* yellowish_textured.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellowish_textured.png; sourceTree = "<group>"; };
+		88CD394E14E2C5C3005FF3F6 /* gray233_textured.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray233_textured.png; sourceTree = "<group>"; };
+		88CD394F14E2C5C3005FF3F6 /* gray250_textured.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray250_textured.png; sourceTree = "<group>"; };
+		88CD395214E318E1005FF3F6 /* zuehlke_dornier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zuehlke_dornier.png; sourceTree = "<group>"; };
+		88CD395314E318E1005FF3F6 /* zuehlke_dornier@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zuehlke_dornier@2x.png"; sourceTree = "<group>"; };
 		88D8A33614DB33C4009660E6 /* JBAsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JBAsyncImageView.h; sourceTree = "<group>"; };
 		88D8A33714DB33C4009660E6 /* JBAsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JBAsyncImageView.m; sourceTree = "<group>"; };
 		88D8A33914DB36C7009660E6 /* SpeakerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeakerTableViewCell.h; sourceTree = "<group>"; };
@@ -490,6 +504,8 @@
 		885FB6191445CC2D00FED297 /* EasterEgg */ = {
 			isa = PBXGroup;
 			children = (
+				88CD395214E318E1005FF3F6 /* zuehlke_dornier.png */,
+				88CD395314E318E1005FF3F6 /* zuehlke_dornier@2x.png */,
 				885FB61A1445CC2D00FED297 /* EasterEgg.png */,
 				885FB61B1445CC2D00FED297 /* EasterEgg@2x.png */,
 			);
@@ -595,12 +611,19 @@
 		88BDF1C01429CA34008E2774 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8884C41314E1F1DB00BFA03D /* iPadBackgroundTexture-grey.png */,
-				885FB6191445CC2D00FED297 /* EasterEgg */,
+				88467AEC143FA0EB00EB413E /* Icons */,
+				88202655142CC2EA003BA1F5 /* Buttons */,
 				889E20B6143FB07A008558F0 /* Header */,
+				885FB6191445CC2D00FED297 /* EasterEgg */,
+				88C84977143981ED00C500EB /* DateNavigator */,
+				88CD394E14E2C5C3005FF3F6 /* gray233_textured.png */,
+				88CD394F14E2C5C3005FF3F6 /* gray250_textured.png */,
+				88CD394C14E2C499005FF3F6 /* yellowish_textured.png */,
+				88CD394814E2B6BB005FF3F6 /* blue_textured.png */,
+				88CD394914E2B6BB005FF3F6 /* grey_textured.png */,
+				8884C41314E1F1DB00BFA03D /* iPadBackgroundTexture-grey.png */,
 				88467AF1143FA9E700EB413E /* Default.png */,
 				88467AF2143FA9E700EB413E /* Default@2x.png */,
-				88467AEC143FA0EB00EB413E /* Icons */,
 				88CABE2C143E716D00D6008B /* 111-user.png */,
 				88CABE2D143E716D00D6008B /* 111-user@2x.png */,
 				88C849C6143A616F00C500EB /* navbar_grained2.png */,
@@ -615,10 +638,8 @@
 				88C849B9143A53C200C500EB /* section_grained@2x.png */,
 				88C849B2143A4BE300C500EB /* sectionheadergradient.png */,
 				88C849B3143A4BE300C500EB /* sectionheadergradient@2x.png */,
-				88C84977143981ED00C500EB /* DateNavigator */,
 				88F348BC14307A9400F06F1F /* Zickzack.png */,
 				88F348BA1430737300F06F1F /* Zigzag.png */,
-				88202655142CC2EA003BA1F5 /* Buttons */,
 				88BDF1C11429CA34008E2774 /* ConferenceApp-Info.plist */,
 			);
 			path = Resources;
@@ -944,6 +965,13 @@
 				882B5AF914D9E5A6007A21F9 /* Icon@2x.png in Resources */,
 				88D8A33D14DB36FA009660E6 /* SpeakerTableViewCell.xib in Resources */,
 				8884C41414E1F1DB00BFA03D /* iPadBackgroundTexture-grey.png in Resources */,
+				88CD394A14E2B6BB005FF3F6 /* blue_textured.png in Resources */,
+				88CD394B14E2B6BB005FF3F6 /* grey_textured.png in Resources */,
+				88CD394D14E2C499005FF3F6 /* yellowish_textured.png in Resources */,
+				88CD395014E2C5C3005FF3F6 /* gray233_textured.png in Resources */,
+				88CD395114E2C5C3005FF3F6 /* gray250_textured.png in Resources */,
+				88CD395414E318E1005FF3F6 /* zuehlke_dornier.png in Resources */,
+				88CD395514E318E1005FF3F6 /* zuehlke_dornier@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1072,7 +1100,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peter Friese (GB8JX7TGVR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Friese";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/Frameworks/RestKit/Build\"";
@@ -1083,7 +1111,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "588E15C9-2FFF-4323-83C3-18931D865D2D";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9E3DDD77-FC57-4484-B7C6-3BC14BA4F9AB";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1163,7 +1191,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peter Friese (X52US8A2LC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Friese";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SOURCE_ROOT)/Frameworks/RestKit/Build\"";
@@ -1174,7 +1202,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "28EDFE7D-305C-4340-85B6-2353A231C414";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "9E3DDD77-FC57-4484-B7C6-3BC14BA4F9AB";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1206,7 +1234,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_ENTITLEMENTS = Entitlements.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Peter Friese";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Source/ConferenceApp-Prefix.pch";
@@ -1218,7 +1245,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A7D205B4-09B1-42C7-886D-89F423115DE0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4C55ED68-71E3-440A-8AC9-F6C92C95884D";
 				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = app;
 			};

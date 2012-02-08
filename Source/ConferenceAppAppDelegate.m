@@ -26,8 +26,8 @@
 - (void)setupRestKit
 {
     // NSString *baseURL = @"http://www.eclipsecon.org/europe2011/json";
-    NSString *baseURL = @"http://peterfriese.local:3000";
-    // NSString *baseURL = @"http://conferenceapp-node.webbyapp.com";
+    // NSString *baseURL = @"http://peterfriese.local:3000";
+    NSString *baseURL = @"http://conferenceapp-node.webbyapp.com";
     RKObjectManager *objectManager = [RKObjectManager objectManagerWithBaseURL:baseURL];
     
     objectManager.client.requestQueue.showsNetworkActivityIndicatorWhenBusy = YES;

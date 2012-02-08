@@ -100,8 +100,8 @@ typedef enum {
     self.trackLabel.text = session.type;
     self.timeLabel.text = [NSString stringWithFormat:@"%@, %@", session.day, session.timeSlot];
     self.trackIndicator.backgroundColor = session.sessionColor;
-    
-    [self.zigzagView curlyShadow];
+
+    [self.zigzagView shadow];
     
     [self updateFavoriteButtonState];
     [self updateHeaderDimensions];

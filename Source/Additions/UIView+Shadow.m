@@ -16,9 +16,9 @@
     // drop shadow
     self.layer.masksToBounds = NO;
     self.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.layer.shadowOpacity = 0.6f;
-    self.layer.shadowOffset = CGSizeMake(0.0f, 5.0f);
-    self.layer.shadowRadius = 2.0f;    
+    self.layer.shadowOpacity = 0.5f;
+    self.layer.shadowOffset = CGSizeMake(0.0f, 3.0f);
+    self.layer.shadowRadius = 1.0f;    
 }
 
 - (void)curlyShadowWithColor:(UIColor *)color radius:(CGFloat)radius offset:(CGFloat)offset curlFactor:(CGFloat)curlFactor shadowDepth:(CGFloat)shadowDepth
@@ -45,7 +45,7 @@
 
 - (void)curlyShadow
 {
-    [self curlyShadowWithColor:[UIColor blackColor] radius:5.0f offset:10.0f curlFactor:15.0f shadowDepth:5.0f];
+    [self curlyShadowWithColor:[UIColor blackColor] radius:2.0f offset:5.0f curlFactor:10.0f shadowDepth:3.0f];
 }
 
 

@@ -64,11 +64,15 @@ typedef enum {
     self.speakernameLabel.text = speaker.fullName;
     self.affiliationLabel.text = speaker.affiliation;
     
-    [self.zigzagView curlyShadow];
+    [self.zigzagView shadow];
     
+    [self.photoView cancel];
     if ([speaker.picture length] > 0) {
         self.photoView.cachesImage = YES;
         self.photoView.imageURL = [NSURL URLWithString:speaker.picture];
+    }
+    else {
+        self.photoView.image = [UIImage imageNamed:@"111-user.png"];
     }
     
     // white border
@@ -77,8 +81,11 @@ typedef enum {
     self.pictureFrame.layer.borderWidth = 1.0;    
     self.pictureFrame.layer.cornerRadius = 5.0;
     
-    [self.pictureFrame curlyShadow];
+    self.photoView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.photoView.layer.borderWidth = 1.0;
     
+    // curly shadow
+    [self.pictureFrame curlyShadow];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -279,6 +286,7 @@ typedef enum {
     [_pictureFrame release];
     [super dealloc];
 }
+
 - (void)viewDidUnload {
     [self setPictureFrame:nil];
     [super viewDidUnload];

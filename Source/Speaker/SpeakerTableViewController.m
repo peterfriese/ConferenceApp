@@ -124,11 +124,13 @@
     speakerCell.affiliation.text = speaker.affiliation;
     
     [speakerCell.speakerImage cancel];
-    speakerCell.speakerImage.image = [UIImage imageNamed:@"111-user.png"];
-    
+    speakerCell.speakerImage.image = nil;
     if ([speaker.picture length] > 0) {
         speakerCell.speakerImage.cachesImage = YES;
         speakerCell.speakerImage.imageURL = [NSURL URLWithString:speaker.picture];
+    }
+    else {
+        speakerCell.speakerImage.image = [UIImage imageNamed:@"111-user.png"];
     }
 }
 
