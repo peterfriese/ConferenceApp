@@ -13,6 +13,7 @@
 
 @property (nonatomic, retain) IBOutlet UILabel *speakerName;
 @property (nonatomic, retain) IBOutlet UILabel *affiliation;
+@property (retain, nonatomic) IBOutlet UIView *pictureFrame;
 @property (nonatomic, retain) IBOutlet JBAsyncImageView *speakerImage;
 
 @end

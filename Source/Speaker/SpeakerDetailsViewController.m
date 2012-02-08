@@ -15,6 +15,8 @@
 #import "Session+Color.h"
 #import "UIImage+Blocks.h"
 #import "SessionDetailsViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "UIView+Shadow.h"
 
 static int const kMargin = 5;
 static int const kBottomMargin = 10;
@@ -34,6 +36,7 @@ static int const kBottomMargin = 10;
 @synthesize affiliationLabel = _affiliationLabel;
 @synthesize tableView = _tableView;
 @synthesize zigzagView = _zigzagView;
+@synthesize pictureFrame = _pictureFrame;
 @synthesize photoView = _photoView;
 
 typedef enum {
@@ -48,6 +51,7 @@ typedef enum {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         self.title = @"Speaker";
+        
     }
     return self;
 }
@@ -60,19 +64,26 @@ typedef enum {
     self.speakernameLabel.text = speaker.fullName;
     self.affiliationLabel.text = speaker.affiliation;
     
-    /**
-     * TODO: enable image loading for M2. Take care of resizing images, caching them offline and ideally use
-     * nicer pictures than the ones we have got now! Maybe use the server to fetch / deliver appropriate images.
-    self.photoView.image = [UIImage imageNamed:@"111-user"];
-    NSString *imageURL =[NSString stringWithFormat:@"http://eclipsecon.org/sites/default/files/pictures/picture-%@.jpg", speaker.speakerId];
-    [UIImage imageFromURL:imageURL withResultHandler:^(UIImage *image) {
-        if (image != nil) {
-            self.photoView.image = image;
-        }
-    }];
-     */
+    [self.zigzagView curlyShadow];
     
-    [self updateHeaderDimensions];
+    if ([speaker.picture length] > 0) {
+        self.photoView.cachesImage = YES;
+        self.photoView.imageURL = [NSURL URLWithString:speaker.picture];
+    }
+    
+    // white border
+    self.pictureFrame.backgroundColor = [UIColor whiteColor];
+    self.pictureFrame.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.pictureFrame.layer.borderWidth = 1.0;    
+    self.pictureFrame.layer.cornerRadius = 5.0;
+    
+    [self.pictureFrame curlyShadow];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
 }
 
 #pragma mark - View Header
@@ -264,4 +275,12 @@ typedef enum {
     }
 }
 
+- (void)dealloc {
+    [_pictureFrame release];
+    [super dealloc];
+}
+- (void)viewDidUnload {
+    [self setPictureFrame:nil];
+    [super viewDidUnload];
+}
 @end

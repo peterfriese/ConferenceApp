@@ -7,18 +7,20 @@
 //
 
 #import "SpeakerTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
+#import "UIView+Shadow.h"
 
 @implementation SpeakerTableViewCell
 
 @synthesize speakerName = _speakerName;
 @synthesize affiliation = _affiliation;
+@synthesize pictureFrame = _pictureFrame;
 @synthesize speakerImage = _speakerImage;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
     }
     return self;
 }
@@ -30,11 +32,11 @@
     // Configure the view for the selected state
 }
 
-
 - (void)dealloc {
     [_speakerName release];
     [_affiliation release];
     [_speakerImage release];
+    [_pictureFrame release];
     [super dealloc];
 }
 

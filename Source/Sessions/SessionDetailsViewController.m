@@ -14,6 +14,8 @@
 #import <RestKit/RestKit.h>
 #import "Session+Color.h"
 #import "SpeakerDetailsViewController.h"
+#import <QuartzCore/QuartzCore.h>
+#import "UIView+Shadow.h"
 
 static int const kMargin = 5;
 static int const kBottomMargin = 10;
@@ -98,6 +100,9 @@ typedef enum {
     self.trackLabel.text = session.type;
     self.timeLabel.text = [NSString stringWithFormat:@"%@, %@", session.day, session.timeSlot];
     self.trackIndicator.backgroundColor = session.sessionColor;
+    
+    [self.zigzagView curlyShadow];
+    
     [self updateFavoriteButtonState];
     [self updateHeaderDimensions];
 }

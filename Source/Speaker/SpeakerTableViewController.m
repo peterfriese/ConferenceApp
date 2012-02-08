@@ -12,6 +12,8 @@
 #import "UIViewController+NibCells.h"
 #import "JBAsyncImageView.h"
 #import "SpeakerTableViewCell.h"
+#import <QuartzCore/QuartzCore.h>
+#import "UIView+Shadow.h"
 
 @implementation SpeakerTableViewController
 
@@ -23,6 +25,7 @@
         self.scopes = [NSDictionary dictionaryWithObjectsAndKeys:@"First Name", @"firstName", @"Last Name", @"lastName", @"Company", @"affiliation", nil];
         self.groupBy = @"initial";
         self.sortBy = @"lastName";
+        
     }
     return self;
 }
@@ -89,12 +92,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView instantiateCellForRowAtIndexPath:(NSIndexPath *)indexPath withReuseIdentifier:(NSString *)cellIdentifier
 {
-    return [self loadReusableTableViewCellFromNibNamed:cellIdentifier];
+    SpeakerTableViewCell *result = (SpeakerTableViewCell *)[self loadReusableTableViewCellFromNibNamed:cellIdentifier];
+    
+    // white border
+    result.pictureFrame.backgroundColor = [UIColor whiteColor];
+    result.pictureFrame.layer.borderColor = [UIColor whiteColor].CGColor;
+    result.pictureFrame.layer.borderWidth = 1.0;    
+    result.pictureFrame.layer.cornerRadius = 4.0;
+
+    [result.pictureFrame curlyShadowWithColor:[UIColor blackColor] 
+                                       radius:1.0f
+                                       offset:2.0f 
+                                   curlFactor:5 
+                                  shadowDepth:1.0f];
+    
+    return result;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 60;
+    return 64;
 }
 
 

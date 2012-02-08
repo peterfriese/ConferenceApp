@@ -38,6 +38,8 @@
 		886E98F4144427FE00CD3386 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 886E98F2144427FE00CD3386 /* SVProgressHUD.m */; };
 		88746CDE14D728B200D0ED28 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88746CDD14D728B200D0ED28 /* Security.framework */; };
 		88746CF314D72AA600D0ED28 /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88746CEA14D729E500D0ED28 /* libRestKit.a */; };
+		8884C41014E1D7EA00BFA03D /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = 8884C40F14E1D7EA00BFA03D /* UIView+Shadow.m */; };
+		8884C41414E1F1DB00BFA03D /* iPadBackgroundTexture-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 8884C41314E1F1DB00BFA03D /* iPadBackgroundTexture-grey.png */; };
 		889E20B9143FB07A008558F0 /* header.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20B7143FB07A008558F0 /* header.png */; };
 		889E20BA143FB07A008558F0 /* header@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20B8143FB07A008558F0 /* header@2x.png */; };
 		889E20BD143FB135008558F0 /* header2.png in Resources */ = {isa = PBXBuildFile; fileRef = 889E20BB143FB135008558F0 /* header2.png */; };
@@ -217,6 +219,9 @@
 		886E98F2144427FE00CD3386 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		88746CDD14D728B200D0ED28 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		88746CDF14D729E400D0ED28 /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = Frameworks/RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		8884C40E14E1D7EA00BFA03D /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
+		8884C40F14E1D7EA00BFA03D /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
+		8884C41314E1F1DB00BFA03D /* iPadBackgroundTexture-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iPadBackgroundTexture-grey.png"; sourceTree = "<group>"; };
 		889E20B7143FB07A008558F0 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
 		889E20B8143FB07A008558F0 /* header@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header@2x.png"; sourceTree = "<group>"; };
 		889E20BB143FB135008558F0 /* header2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header2.png; sourceTree = "<group>"; };
@@ -590,6 +595,7 @@
 		88BDF1C01429CA34008E2774 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8884C41314E1F1DB00BFA03D /* iPadBackgroundTexture-grey.png */,
 				885FB6191445CC2D00FED297 /* EasterEgg */,
 				889E20B6143FB07A008558F0 /* Header */,
 				88467AF1143FA9E700EB413E /* Default.png */,
@@ -643,6 +649,8 @@
 				88C84A5F143AF41600C500EB /* UIViewController+NibCells.m */,
 				88C849CB143AEDEA00C500EB /* NSDate+Additions.h */,
 				88C849CC143AEDEA00C500EB /* NSDate+Additions.m */,
+				8884C40E14E1D7EA00BFA03D /* UIView+Shadow.h */,
+				8884C40F14E1D7EA00BFA03D /* UIView+Shadow.m */,
 			);
 			path = Additions;
 			sourceTree = "<group>";
@@ -935,6 +943,7 @@
 				882B5AF814D9E5A6007A21F9 /* Icon.png in Resources */,
 				882B5AF914D9E5A6007A21F9 /* Icon@2x.png in Resources */,
 				88D8A33D14DB36FA009660E6 /* SpeakerTableViewCell.xib in Resources */,
+				8884C41414E1F1DB00BFA03D /* iPadBackgroundTexture-grey.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1003,6 +1012,7 @@
 				886E98F4144427FE00CD3386 /* SVProgressHUD.m in Sources */,
 				88D8A33814DB33C4009660E6 /* JBAsyncImageView.m in Sources */,
 				88D8A33B14DB36C7009660E6 /* SpeakerTableViewCell.m in Sources */,
+				8884C41014E1D7EA00BFA03D /* UIView+Shadow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
