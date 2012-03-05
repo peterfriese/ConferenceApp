@@ -112,6 +112,7 @@
     */
     
     NSArray *dates = [NSArray arrayWithObjects:
+                      [NSDate dateFromString:@"2012-03-26"],                       
                       [NSDate dateFromString:@"2012-03-27"], 
                       [NSDate dateFromString:@"2012-03-28"], 
                       [NSDate dateFromString:@"2012-03-29"], 
